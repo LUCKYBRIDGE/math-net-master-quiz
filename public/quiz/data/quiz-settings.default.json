@@ -1,0 +1,15 @@
+{
+  "timeLimitSec": 0,
+  "score": {
+    "base": 10,
+    "penalty": 0,
+    "comboEnabled": false,
+    "comboBonus": 2,
+    "timeBonusEnabled": false,
+    "timeBonusPerSec": 0
+  },
+  "questionCount": 10,
+  "selectionMode": "random",
+  "avoidRepeat": true,
+  "shuffleChoices": true
+}
