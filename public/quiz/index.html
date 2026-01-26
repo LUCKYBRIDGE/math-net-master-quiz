@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>전개도 퀴즈</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>전개도 퀴즈 MVP</header>
+    <main>
+      <section class="card" id="settings-card">
+        <h2>퀴즈 설정</h2>
+        <div class="settings-grid">
+          <div>
+            <label>문제 수</label>
+            <input type="number" id="setting-count" min="1" value="10" />
+          </div>
+          <div>
+            <label>출제 방식</label>
+            <select id="setting-mode">
+              <option value="random">랜덤</option>
+              <option value="sequential">순차</option>
+            </select>
+          </div>
+          <div>
+            <label>중복 방지</label>
+            <select id="setting-repeat">
+              <option value="true">켜짐</option>
+              <option value="false">꺼짐</option>
+            </select>
+          </div>
+          <div>
+            <label>선택지 섞기</label>
+            <select id="setting-shuffle">
+              <option value="true">켜짐</option>
+              <option value="false">꺼짐</option>
+            </select>
+          </div>
+          <div>
+            <label>제한시간(초, 0=없음)</label>
+            <input type="number" id="setting-time" min="0" value="0" />
+          </div>
+          <div>
+            <label>정답 점수</label>
+            <input type="number" id="setting-score" min="0" value="10" />
+          </div>
+          <div>
+            <label>오답 패널티</label>
+            <input type="number" id="setting-penalty" min="0" value="0" />
+          </div>
+          <div>
+            <label>콤보 활성화</label>
+            <select id="setting-combo">
+              <option value="false">꺼짐</option>
+              <option value="true">켜짐</option>
+            </select>
+          </div>
+          <div>
+            <label>콤보 보너스</label>
+            <input type="number" id="setting-combo-bonus" min="0" value="2" />
+          </div>
+          <div>
+            <label>시간 보너스</label>
+            <select id="setting-time-bonus">
+              <option value="false">꺼짐</option>
+              <option value="true">켜짐</option>
+            </select>
+          </div>
+          <div>
+            <label>초당 보너스</label>
+            <input type="number" id="setting-time-bonus-per" min="0" value="0" />
+          </div>
+        </div>
+        <div style="margin-top: 16px; display: flex; gap: 12px;">
+          <button class="primary" id="start-btn">퀴즈 시작</button>
+          <button class="secondary" id="reset-btn">초기화</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="quiz-card">
+        <div class="quiz-header">
+          <div>문제 <strong id="progress">0/0</strong></div>
+          <div>점수 <strong id="score">0</strong></div>
+          <div>정답률 <strong id="accuracy">0%</strong></div>
+          <div>콤보 <strong id="combo">0</strong></div>
+          <div class="timer">남은 시간 <span id="timer">-</span></div>
+        </div>
+        <div class="prompt" id="prompt">문제 로딩중...</div>
+        <div class="question-frame">
+          <img id="question-img" alt="question" />
+        </div>
+        <div class="choices" id="choices"></div>
+        <div class="feedback" id="feedback"></div>
+      </section>
+
+      <section class="card hidden" id="summary-card">
+        <h2>결과</h2>
+        <div class="summary" id="summary-text">-</div>
+        <button class="primary" id="restart-btn" style="margin-top: 12px;">다시 시작</button>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
