@@ -66,11 +66,50 @@ let answerLog = [];
 let sessionSettings = null;
 
 const banks = {};
+const basePools = {};
+const CACHE_BUST = Date.now();
 
 const loadJson = async (path) => {
-  const res = await fetch(path);
+  const res = await fetch(`${path}?v=${CACHE_BUST}`);
   if (!res.ok) throw new Error(`Failed to load ${path}`);
   return res.json();
+};
+
+const getBaseId = (type, assetPath) => {
+  if (type === 'facecolor') {
+    return assetPath.replace('facecolor/', '').split('-facecolor-')[0];
+  }
+  if (type === 'edgecolor') {
+    return assetPath.replace('edgecolor/', '').split('-edgecolor')[0];
+  }
+  return assetPath;
+};
+
+const buildBasePools = (bank, type) => {
+  const pool = new Map();
+  bank.questions.forEach((question) => {
+    if (question.type !== type) return;
+    const baseId = getBaseId(type, question.question);
+    if (!pool.has(baseId)) pool.set(baseId, new Set());
+    pool.get(baseId).add(question.question);
+    pool.get(baseId).add(question.answer);
+  });
+  return pool;
+};
+
+const fixChoices = (question) => {
+  if (!['facecolor', 'edgecolor'].includes(question.type)) return question;
+  const pool = basePools[question.type];
+  if (!pool) return question;
+  const baseId = getBaseId(question.type, question.question);
+  const poolSet = pool.get(baseId);
+  if (!poolSet) return question;
+  const all = [...poolSet].filter((item) => item !== question.question && item !== question.answer);
+  const needed = Math.max(0, question.choices.length - 1);
+  const shuffled = all.sort(() => Math.random() - 0.5);
+  const distractors = shuffled.slice(0, needed);
+  const choices = [question.answer, ...distractors].sort(() => Math.random() - 0.5);
+  return { ...question, choices };
 };
 
 const applyDefaultSettings = (settings) => {
@@ -184,14 +223,14 @@ const updateHeader = () => {
 };
 
 const renderQuestion = (question) => {
-  currentQuestion = question;
+  currentQuestion = fixChoices(question);
   promptEl.textContent = question.prompt;
-  questionImg.src = `./nets/${question.question}`;
+  questionImg.src = `./nets/${currentQuestion.question}`;
   choicesEl.innerHTML = '';
   setFeedback('', null);
   locked = false;
 
-  question.choices.forEach((choice) => {
+  currentQuestion.choices.forEach((choice) => {
     const btn = document.createElement('button');
     btn.className = 'choice-btn';
     btn.dataset.choice = choice;
@@ -337,6 +376,9 @@ const init = async () => {
   } else {
     setLoadStatus('문제 데이터 로드 완료', 'success');
   }
+
+  basePools.facecolor = buildBasePools(banks.facecolor, 'facecolor');
+  basePools.edgecolor = buildBasePools(banks.edgecolor, 'edgecolor');
   defaultSettings = await loadJson('./data/quiz-settings.default.json');
   applyDefaultSettings(defaultSettings);
 
