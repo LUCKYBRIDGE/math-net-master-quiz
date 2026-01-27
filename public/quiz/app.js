@@ -22,6 +22,7 @@ const restartBtn = $('#restart-btn');
 
 const settingsInputs = {
   count: $('#setting-count'),
+  type: $('#setting-type'),
   mode: $('#setting-mode'),
   repeat: $('#setting-repeat'),
   shuffle: $('#setting-shuffle'),
@@ -41,6 +42,8 @@ let currentQuestion = null;
 let timerId = null;
 let locked = false;
 
+const banks = {};
+
 const loadJson = async (path) => {
   const res = await fetch(path);
   if (!res.ok) throw new Error(`Failed to load ${path}`);
@@ -49,6 +52,7 @@ const loadJson = async (path) => {
 
 const applyDefaultSettings = (settings) => {
   settingsInputs.count.value = settings.questionCount;
+  settingsInputs.type.value = settings.questionType || 'facecolor';
   settingsInputs.mode.value = settings.selectionMode;
   settingsInputs.repeat.value = settings.avoidRepeat ? 'true' : 'false';
   settingsInputs.shuffle.value = settings.shuffleChoices ? 'true' : 'false';
@@ -62,6 +66,7 @@ const applyDefaultSettings = (settings) => {
 };
 
 const readSettings = () => ({
+  questionType: settingsInputs.type.value,
   timeLimitSec: Number(settingsInputs.time.value) || 0,
   score: {
     base: Number(settingsInputs.score.value) || 0,
@@ -193,6 +198,7 @@ const handleAnswer = (choice, isTimeout) => {
 
 const startQuiz = () => {
   const settings = readSettings();
+  questionBank = banks[settings.questionType] || banks.facecolor;
   engine = createQuizEngine({
     questionBank,
     settings
@@ -218,7 +224,8 @@ const restartQuiz = () => {
 };
 
 const init = async () => {
-  questionBank = await loadJson('./data/facecolor-questions.json');
+  banks.facecolor = await loadJson('./data/facecolor-questions.json');
+  banks.edgecolor = await loadJson('./data/edgecolor-questions.json');
   defaultSettings = await loadJson('./data/quiz-settings.default.json');
   applyDefaultSettings(defaultSettings);
 

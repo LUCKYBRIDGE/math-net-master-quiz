@@ -9,6 +9,7 @@
     "timeBonusPerSec": 0
   },
   "questionCount": 10,
+  "questionType": "facecolor",
   "selectionMode": "random",
   "avoidRepeat": true,
   "shuffleChoices": true
