@@ -89,6 +89,11 @@ button.primary {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 button.secondary {
   padding: 8px 14px;
   border: 1px solid var(--border);
