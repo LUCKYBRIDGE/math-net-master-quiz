@@ -16,6 +16,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
+  min-height: 100vh;
 }
 
 header {
@@ -32,6 +33,7 @@ main {
   padding: 24px;
   display: grid;
   gap: 20px;
+  min-height: calc(100vh - 72px);
 }
 
 section.card {
@@ -129,12 +131,15 @@ button.secondary {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 260px;
+  min-height: 220px;
+  max-height: 45vh;
 }
 
 .question-frame img {
   max-width: 100%;
+  max-height: 40vh;
   height: auto;
+  object-fit: contain;
 }
 
 .choices {
@@ -155,8 +160,10 @@ button.secondary {
 
 .choice-btn img {
   max-width: 100%;
+  max-height: 18vh;
   display: block;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .choice-btn:hover {
@@ -198,4 +205,40 @@ button.secondary {
 .timer {
   font-weight: 700;
   color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  main {
+    padding: 16px;
+  }
+
+  .question-frame {
+    max-height: 40vh;
+  }
+
+  .question-frame img {
+    max-height: 34vh;
+  }
+
+  .choice-btn img {
+    max-height: 16vh;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 16px 20px;
+  }
+
+  .prompt {
+    font-size: 16px;
+  }
+
+  .choices {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .choice-btn img {
+    max-height: 20vh;
+  }
 }
