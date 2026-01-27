@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generatedAt": "2026-01-27T02:13:13.315Z",
+  "version": 2,
+  "generatedAt": "2026-01-27T03:58:42.209Z",
   "count": 220,
   "questions": [
     {
@@ -10,10 +10,10 @@
       "question": "edgecolor/cube-01-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-02-02.svg",
-        "edgecolor/cube-01-edgecolor-02-01.svg",
+        "edgecolor/cube-01-edgecolor-04-02.svg",
+        "edgecolor/cube-01-edgecolor-02-02.svg",
         "edgecolor/cube-01-edgecolor-01-02.svg",
-        "edgecolor/cube-08-edgecolor-01-02.svg"
+        "edgecolor/cube-01-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -22,6 +22,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-01",
+        "baseId": "cube-01",
         "pair": "01"
       }
     },
@@ -32,10 +33,10 @@
       "question": "edgecolor/cube-01-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-03-01.svg",
+        "edgecolor/cube-01-edgecolor-03-01.svg",
         "edgecolor/cube-01-edgecolor-01-01.svg",
-        "edgecolor/cube-04-edgecolor-04-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor01-02.svg"
+        "edgecolor/cube-01-edgecolor-05-01.svg",
+        "edgecolor/cube-01-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -44,6 +45,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-01",
+        "baseId": "cube-01",
         "pair": "01"
       }
     },
@@ -54,10 +56,10 @@
       "question": "edgecolor/cube-01-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-04-01.svg",
-        "edgecolor/cube-09-edgecolor-01-01.svg",
+        "edgecolor/cube-01-edgecolor-04-02.svg",
+        "edgecolor/cube-01-edgecolor-05-01.svg",
         "edgecolor/cube-01-edgecolor-02-02.svg",
-        "edgecolor/cube-04-edgecolor-02-01.svg"
+        "edgecolor/cube-01-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -66,6 +68,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-02",
+        "baseId": "cube-01",
         "pair": "02"
       }
     },
@@ -76,9 +79,9 @@
       "question": "edgecolor/cube-01-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-08-01-edgecolor03-01.svg",
+        "edgecolor/cube-01-edgecolor-03-02.svg",
+        "edgecolor/cube-01-edgecolor-01-02.svg",
         "edgecolor/cube-01-edgecolor-03-01.svg",
-        "edgecolor/cube-11-edgecolor-05-01.svg",
         "edgecolor/cube-01-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
@@ -88,6 +91,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-02",
+        "baseId": "cube-01",
         "pair": "02"
       }
     },
@@ -98,10 +102,10 @@
       "question": "edgecolor/cube-01-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-01.svg",
+        "edgecolor/cube-01-edgecolor-04-01.svg",
+        "edgecolor/cube-01-edgecolor-02-02.svg",
         "edgecolor/cube-01-edgecolor-03-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor02-02.svg"
+        "edgecolor/cube-01-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -110,6 +114,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-03",
+        "baseId": "cube-01",
         "pair": "03"
       }
     },
@@ -120,10 +125,10 @@
       "question": "edgecolor/cube-01-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-05-02.svg",
-        "edgecolor/cube-06-edgecolor-02-01.svg",
+        "edgecolor/cube-01-edgecolor-05-01.svg",
+        "edgecolor/cube-01-edgecolor-02-02.svg",
         "edgecolor/cube-01-edgecolor-03-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor03-02.svg"
+        "edgecolor/cube-01-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -132,6 +137,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-03",
+        "baseId": "cube-01",
         "pair": "03"
       }
     },
@@ -142,9 +148,9 @@
       "question": "edgecolor/cube-01-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
-        "edgecolor/cube-07-edgecolor-04-02.svg",
-        "edgecolor/cube-06-edgecolor-01-01.svg",
+        "edgecolor/cube-01-edgecolor-01-02.svg",
+        "edgecolor/cube-01-edgecolor-05-02.svg",
+        "edgecolor/cube-01-edgecolor-03-01.svg",
         "edgecolor/cube-01-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
@@ -154,6 +160,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-04",
+        "baseId": "cube-01",
         "pair": "04"
       }
     },
@@ -165,9 +172,9 @@
       "answer": "edgecolor/cube-01-edgecolor-04-01.svg",
       "choices": [
         "edgecolor/cube-01-edgecolor-04-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor05-01.svg",
-        "edgecolor/cube-04-edgecolor-04-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor01-02.svg"
+        "edgecolor/cube-01-edgecolor-01-02.svg",
+        "edgecolor/cube-01-edgecolor-03-02.svg",
+        "edgecolor/cube-01-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -176,6 +183,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-04",
+        "baseId": "cube-01",
         "pair": "04"
       }
     },
@@ -186,10 +194,10 @@
       "question": "edgecolor/cube-01-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-01-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
+        "edgecolor/cube-01-edgecolor-02-01.svg",
+        "edgecolor/cube-01-edgecolor-04-02.svg",
         "edgecolor/cube-01-edgecolor-05-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor04-02.svg"
+        "edgecolor/cube-01-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -198,6 +206,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-05",
+        "baseId": "cube-01",
         "pair": "05"
       }
     },
@@ -208,10 +217,10 @@
       "question": "edgecolor/cube-01-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-04-02.svg",
+        "edgecolor/cube-01-edgecolor-01-01.svg",
         "edgecolor/cube-01-edgecolor-05-01.svg",
-        "edgecolor/cube-06-edgecolor-04-01.svg",
-        "edgecolor/cube-01-edgecolor-02-02.svg"
+        "edgecolor/cube-01-edgecolor-02-01.svg",
+        "edgecolor/cube-01-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -220,6 +229,7 @@
       ],
       "meta": {
         "base": "cube-01-edgecolor-05",
+        "baseId": "cube-01",
         "pair": "05"
       }
     },
@@ -231,9 +241,9 @@
       "answer": "edgecolor/cube-02-edgecolor-01-02.svg",
       "choices": [
         "edgecolor/cube-02-edgecolor-01-02.svg",
-        "edgecolor/cube-11-edgecolor-01-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
-        "edgecolor/cube-05-edgecolor-01-02.svg"
+        "edgecolor/cube-02-edgecolor-05-02.svg",
+        "edgecolor/cube-02-edgecolor-03-01.svg",
+        "edgecolor/cube-02-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -242,6 +252,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-01",
+        "baseId": "cube-02",
         "pair": "01"
       }
     },
@@ -252,9 +263,9 @@
       "question": "edgecolor/cube-02-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
+        "edgecolor/cube-02-edgecolor-05-02.svg",
+        "edgecolor/cube-02-edgecolor-03-02.svg",
+        "edgecolor/cube-02-edgecolor-05-01.svg",
         "edgecolor/cube-02-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
@@ -264,6 +275,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-01",
+        "baseId": "cube-02",
         "pair": "01"
       }
     },
@@ -275,9 +287,9 @@
       "answer": "edgecolor/cube-02-edgecolor-02-02.svg",
       "choices": [
         "edgecolor/cube-02-edgecolor-02-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor03-01.svg"
+        "edgecolor/cube-02-edgecolor-03-02.svg",
+        "edgecolor/cube-02-edgecolor-05-01.svg",
+        "edgecolor/cube-02-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -286,6 +298,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-02",
+        "baseId": "cube-02",
         "pair": "02"
       }
     },
@@ -296,10 +309,10 @@
       "question": "edgecolor/cube-02-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor03-02.svg",
-        "edgecolor/cube-07-edgecolor-01-01.svg",
+        "edgecolor/cube-02-edgecolor-01-02.svg",
+        "edgecolor/cube-02-edgecolor-03-02.svg",
         "edgecolor/cube-02-edgecolor-02-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor01-02.svg"
+        "edgecolor/cube-02-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -308,6 +321,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-02",
+        "baseId": "cube-02",
         "pair": "02"
       }
     },
@@ -319,9 +333,9 @@
       "answer": "edgecolor/cube-02-edgecolor-03-02.svg",
       "choices": [
         "edgecolor/cube-02-edgecolor-03-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-01.svg",
         "edgecolor/cube-02-edgecolor-05-01.svg",
-        "edgecolor/cube-01-edgecolor-01-01.svg"
+        "edgecolor/cube-02-edgecolor-04-01.svg",
+        "edgecolor/cube-02-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -330,6 +344,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-03",
+        "baseId": "cube-02",
         "pair": "03"
       }
     },
@@ -340,10 +355,10 @@
       "question": "edgecolor/cube-02-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-04-01.svg",
+        "edgecolor/cube-02-edgecolor-01-01.svg",
         "edgecolor/cube-02-edgecolor-03-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor04-01.svg"
+        "edgecolor/cube-02-edgecolor-02-02.svg",
+        "edgecolor/cube-02-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -352,6 +367,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-03",
+        "baseId": "cube-02",
         "pair": "03"
       }
     },
@@ -363,9 +379,9 @@
       "answer": "edgecolor/cube-02-edgecolor-04-02.svg",
       "choices": [
         "edgecolor/cube-02-edgecolor-04-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
-        "edgecolor/cube-01-edgecolor-01-01.svg",
-        "edgecolor/cube-10-edgecolor-03-01.svg"
+        "edgecolor/cube-02-edgecolor-01-01.svg",
+        "edgecolor/cube-02-edgecolor-03-02.svg",
+        "edgecolor/cube-02-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -374,6 +390,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-04",
+        "baseId": "cube-02",
         "pair": "04"
       }
     },
@@ -385,9 +402,9 @@
       "answer": "edgecolor/cube-02-edgecolor-04-01.svg",
       "choices": [
         "edgecolor/cube-02-edgecolor-04-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
-        "edgecolor/cube-05-edgecolor-04-02.svg",
-        "edgecolor/cube-09-edgecolor-03-01.svg"
+        "edgecolor/cube-02-edgecolor-02-02.svg",
+        "edgecolor/cube-02-edgecolor-02-01.svg",
+        "edgecolor/cube-02-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -396,6 +413,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-04",
+        "baseId": "cube-02",
         "pair": "04"
       }
     },
@@ -406,10 +424,10 @@
       "question": "edgecolor/cube-02-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-02-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
+        "edgecolor/cube-02-edgecolor-02-01.svg",
         "edgecolor/cube-02-edgecolor-05-02.svg",
-        "edgecolor/cube-04-edgecolor-02-01.svg",
-        "edgecolor/cube-10-edgecolor-03-02.svg"
+        "edgecolor/cube-02-edgecolor-01-01.svg",
+        "edgecolor/cube-02-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -418,6 +436,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-05",
+        "baseId": "cube-02",
         "pair": "05"
       }
     },
@@ -428,10 +447,10 @@
       "question": "edgecolor/cube-02-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-03-01.svg",
+        "edgecolor/cube-02-edgecolor-02-01.svg",
         "edgecolor/cube-02-edgecolor-05-01.svg",
-        "edgecolor/cube-11-edgecolor-03-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor05-02.svg"
+        "edgecolor/cube-02-edgecolor-04-01.svg",
+        "edgecolor/cube-02-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -440,6 +459,7 @@
       ],
       "meta": {
         "base": "cube-02-edgecolor-05",
+        "baseId": "cube-02",
         "pair": "05"
       }
     },
@@ -450,10 +470,10 @@
       "question": "edgecolor/cube-03-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-01.svg",
+        "edgecolor/cube-03-edgecolor-05-02.svg",
+        "edgecolor/cube-03-edgecolor-04-02.svg",
         "edgecolor/cube-03-edgecolor-01-02.svg",
-        "edgecolor/cube-07-edgecolor-01-01.svg"
+        "edgecolor/cube-03-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -462,6 +482,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-01",
+        "baseId": "cube-03",
         "pair": "01"
       }
     },
@@ -472,10 +493,10 @@
       "question": "edgecolor/cube-03-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-02.svg",
+        "edgecolor/cube-03-edgecolor-02-02.svg",
+        "edgecolor/cube-03-edgecolor-05-01.svg",
         "edgecolor/cube-03-edgecolor-01-01.svg",
-        "edgecolor/cube-06-edgecolor-05-01.svg"
+        "edgecolor/cube-03-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -484,6 +505,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-01",
+        "baseId": "cube-03",
         "pair": "01"
       }
     },
@@ -494,10 +516,10 @@
       "question": "edgecolor/cube-03-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cube-07-edgecolor-05-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-01.svg",
+        "edgecolor/cube-03-edgecolor-03-01.svg",
+        "edgecolor/cube-03-edgecolor-01-02.svg",
         "edgecolor/cube-03-edgecolor-02-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-01.svg"
+        "edgecolor/cube-03-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -506,6 +528,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-02",
+        "baseId": "cube-03",
         "pair": "02"
       }
     },
@@ -516,10 +539,10 @@
       "question": "edgecolor/cube-03-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
-        "edgecolor/cube-04-edgecolor-04-01.svg",
+        "edgecolor/cube-03-edgecolor-05-02.svg",
+        "edgecolor/cube-03-edgecolor-03-02.svg",
         "edgecolor/cube-03-edgecolor-02-01.svg",
-        "edgecolor/cube-04-edgecolor-02-01.svg"
+        "edgecolor/cube-03-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -528,6 +551,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-02",
+        "baseId": "cube-03",
         "pair": "02"
       }
     },
@@ -538,10 +562,10 @@
       "question": "edgecolor/cube-03-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
+        "edgecolor/cube-03-edgecolor-02-01.svg",
+        "edgecolor/cube-03-edgecolor-01-02.svg",
         "edgecolor/cube-03-edgecolor-03-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-02.svg"
+        "edgecolor/cube-03-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -550,6 +574,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-03",
+        "baseId": "cube-03",
         "pair": "03"
       }
     },
@@ -561,9 +586,9 @@
       "answer": "edgecolor/cube-03-edgecolor-03-01.svg",
       "choices": [
         "edgecolor/cube-03-edgecolor-03-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor03-01.svg",
-        "edgecolor/cube-05-edgecolor-05-02.svg"
+        "edgecolor/cube-03-edgecolor-01-01.svg",
+        "edgecolor/cube-03-edgecolor-04-02.svg",
+        "edgecolor/cube-03-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -572,6 +597,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-03",
+        "baseId": "cube-03",
         "pair": "03"
       }
     },
@@ -583,9 +609,9 @@
       "answer": "edgecolor/cube-03-edgecolor-04-02.svg",
       "choices": [
         "edgecolor/cube-03-edgecolor-04-02.svg",
-        "edgecolor/cube-09-edgecolor-01-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg"
+        "edgecolor/cube-03-edgecolor-05-02.svg",
+        "edgecolor/cube-03-edgecolor-01-01.svg",
+        "edgecolor/cube-03-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -594,6 +620,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-04",
+        "baseId": "cube-03",
         "pair": "04"
       }
     },
@@ -604,10 +631,10 @@
       "question": "edgecolor/cube-03-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-05-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
+        "edgecolor/cube-03-edgecolor-05-02.svg",
+        "edgecolor/cube-03-edgecolor-05-01.svg",
         "edgecolor/cube-03-edgecolor-04-01.svg",
-        "edgecolor/cube-09-edgecolor-04-01.svg"
+        "edgecolor/cube-03-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -616,6 +643,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-04",
+        "baseId": "cube-03",
         "pair": "04"
       }
     },
@@ -626,10 +654,10 @@
       "question": "edgecolor/cube-03-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-01-02.svg",
-        "edgecolor/cube-09-edgecolor-05-01.svg",
+        "edgecolor/cube-03-edgecolor-03-01.svg",
+        "edgecolor/cube-03-edgecolor-04-01.svg",
         "edgecolor/cube-03-edgecolor-05-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor04-01.svg"
+        "edgecolor/cube-03-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -638,6 +666,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-05",
+        "baseId": "cube-03",
         "pair": "05"
       }
     },
@@ -648,10 +677,10 @@
       "question": "edgecolor/cube-03-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor01-01.svg",
+        "edgecolor/cube-03-edgecolor-03-01.svg",
         "edgecolor/cube-03-edgecolor-05-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
-        "edgecolor/cube-10-edgecolor-01-01.svg"
+        "edgecolor/cube-03-edgecolor-04-01.svg",
+        "edgecolor/cube-03-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -660,6 +689,7 @@
       ],
       "meta": {
         "base": "cube-03-edgecolor-05",
+        "baseId": "cube-03",
         "pair": "05"
       }
     },
@@ -670,9 +700,9 @@
       "question": "edgecolor/cube-04-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-04-01.svg",
-        "edgecolor/cube-05-edgecolor-04-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
+        "edgecolor/cube-04-edgecolor-05-01.svg",
+        "edgecolor/cube-04-edgecolor-04-02.svg",
+        "edgecolor/cube-04-edgecolor-02-02.svg",
         "edgecolor/cube-04-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
@@ -682,6 +712,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-01",
+        "baseId": "cube-04",
         "pair": "01"
       }
     },
@@ -693,9 +724,9 @@
       "answer": "edgecolor/cube-04-edgecolor-01-01.svg",
       "choices": [
         "edgecolor/cube-04-edgecolor-01-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor02-02.svg"
+        "edgecolor/cube-04-edgecolor-02-02.svg",
+        "edgecolor/cube-04-edgecolor-03-01.svg",
+        "edgecolor/cube-04-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -704,6 +735,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-01",
+        "baseId": "cube-04",
         "pair": "01"
       }
     },
@@ -714,9 +746,9 @@
       "question": "edgecolor/cube-04-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
-        "edgecolor/cube-07-edgecolor-05-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor04-02.svg",
+        "edgecolor/cube-04-edgecolor-04-01.svg",
+        "edgecolor/cube-04-edgecolor-03-01.svg",
+        "edgecolor/cube-04-edgecolor-03-02.svg",
         "edgecolor/cube-04-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
@@ -726,6 +758,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-02",
+        "baseId": "cube-04",
         "pair": "02"
       }
     },
@@ -736,10 +769,10 @@
       "question": "edgecolor/cube-04-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor05-02.svg",
+        "edgecolor/cube-04-edgecolor-01-01.svg",
         "edgecolor/cube-04-edgecolor-02-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor04-02.svg"
+        "edgecolor/cube-04-edgecolor-04-01.svg",
+        "edgecolor/cube-04-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -748,6 +781,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-02",
+        "baseId": "cube-04",
         "pair": "02"
       }
     },
@@ -758,10 +792,10 @@
       "question": "edgecolor/cube-04-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-02-02.svg",
+        "edgecolor/cube-04-edgecolor-05-02.svg",
         "edgecolor/cube-04-edgecolor-03-02.svg",
-        "edgecolor/cube-05-edgecolor-05-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor01-02.svg"
+        "edgecolor/cube-04-edgecolor-04-01.svg",
+        "edgecolor/cube-04-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -770,6 +804,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-03",
+        "baseId": "cube-04",
         "pair": "03"
       }
     },
@@ -780,10 +815,10 @@
       "question": "edgecolor/cube-04-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
-        "edgecolor/cube-02-edgecolor-03-01.svg",
+        "edgecolor/cube-04-edgecolor-01-01.svg",
+        "edgecolor/cube-04-edgecolor-05-01.svg",
         "edgecolor/cube-04-edgecolor-03-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor02-02.svg"
+        "edgecolor/cube-04-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -792,6 +827,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-03",
+        "baseId": "cube-04",
         "pair": "03"
       }
     },
@@ -802,9 +838,9 @@
       "question": "edgecolor/cube-04-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-04-01.svg",
-        "edgecolor/cube-09-edgecolor-02-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor04-01.svg",
+        "edgecolor/cube-04-edgecolor-01-02.svg",
+        "edgecolor/cube-04-edgecolor-03-01.svg",
+        "edgecolor/cube-04-edgecolor-01-01.svg",
         "edgecolor/cube-04-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
@@ -814,6 +850,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-04",
+        "baseId": "cube-04",
         "pair": "04"
       }
     },
@@ -824,10 +861,10 @@
       "question": "edgecolor/cube-04-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor03-01.svg",
+        "edgecolor/cube-04-edgecolor-05-01.svg",
+        "edgecolor/cube-04-edgecolor-01-02.svg",
         "edgecolor/cube-04-edgecolor-04-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor02-01.svg"
+        "edgecolor/cube-04-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -836,6 +873,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-04",
+        "baseId": "cube-04",
         "pair": "04"
       }
     },
@@ -846,10 +884,10 @@
       "question": "edgecolor/cube-04-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cuboid-08-01-edgecolor02-01.svg",
-        "edgecolor/cube-06-edgecolor-04-02.svg",
+        "edgecolor/cube-04-edgecolor-02-01.svg",
+        "edgecolor/cube-04-edgecolor-01-02.svg",
         "edgecolor/cube-04-edgecolor-05-02.svg",
-        "edgecolor/cube-11-edgecolor-03-02.svg"
+        "edgecolor/cube-04-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -858,6 +896,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-05",
+        "baseId": "cube-04",
         "pair": "05"
       }
     },
@@ -868,9 +907,9 @@
       "question": "edgecolor/cube-04-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-06-edgecolor-03-02.svg",
-        "edgecolor/cube-08-edgecolor-02-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
+        "edgecolor/cube-04-edgecolor-01-02.svg",
+        "edgecolor/cube-04-edgecolor-02-01.svg",
+        "edgecolor/cube-04-edgecolor-04-01.svg",
         "edgecolor/cube-04-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
@@ -880,6 +919,7 @@
       ],
       "meta": {
         "base": "cube-04-edgecolor-05",
+        "baseId": "cube-04",
         "pair": "05"
       }
     },
@@ -890,10 +930,10 @@
       "question": "edgecolor/cube-05-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-03-01.svg",
+        "edgecolor/cube-05-edgecolor-04-01.svg",
         "edgecolor/cube-05-edgecolor-01-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor05-01.svg"
+        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cube-05-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -902,6 +942,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-01",
+        "baseId": "cube-05",
         "pair": "01"
       }
     },
@@ -912,9 +953,9 @@
       "question": "edgecolor/cube-05-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-03-01.svg",
-        "edgecolor/cube-06-edgecolor-01-01.svg",
-        "edgecolor/cube-07-edgecolor-05-02.svg",
+        "edgecolor/cube-05-edgecolor-05-01.svg",
+        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cube-05-edgecolor-04-01.svg",
         "edgecolor/cube-05-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
@@ -924,6 +965,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-01",
+        "baseId": "cube-05",
         "pair": "01"
       }
     },
@@ -934,10 +976,10 @@
       "question": "edgecolor/cube-05-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
-        "edgecolor/cube-01-edgecolor-01-01.svg",
+        "edgecolor/cube-05-edgecolor-03-02.svg",
+        "edgecolor/cube-05-edgecolor-04-02.svg",
         "edgecolor/cube-05-edgecolor-02-02.svg",
-        "edgecolor/cube-03-edgecolor-01-01.svg"
+        "edgecolor/cube-05-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -946,6 +988,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-02",
+        "baseId": "cube-05",
         "pair": "02"
       }
     },
@@ -956,9 +999,9 @@
       "question": "edgecolor/cube-05-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
+        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cube-05-edgecolor-05-01.svg",
+        "edgecolor/cube-05-edgecolor-05-02.svg",
         "edgecolor/cube-05-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
@@ -968,6 +1011,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-02",
+        "baseId": "cube-05",
         "pair": "02"
       }
     },
@@ -978,10 +1022,10 @@
       "question": "edgecolor/cube-05-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor01-02.svg",
+        "edgecolor/cube-05-edgecolor-04-01.svg",
         "edgecolor/cube-05-edgecolor-03-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor05-02.svg"
+        "edgecolor/cube-05-edgecolor-02-01.svg",
+        "edgecolor/cube-05-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -990,6 +1034,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-03",
+        "baseId": "cube-05",
         "pair": "03"
       }
     },
@@ -1000,10 +1045,10 @@
       "question": "edgecolor/cube-05-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-02-02.svg",
-        "edgecolor/cube-05-edgecolor-05-01.svg",
+        "edgecolor/cube-05-edgecolor-04-01.svg",
+        "edgecolor/cube-05-edgecolor-02-02.svg",
         "edgecolor/cube-05-edgecolor-03-01.svg",
-        "edgecolor/cube-05-edgecolor-02-01.svg"
+        "edgecolor/cube-05-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1012,6 +1057,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-03",
+        "baseId": "cube-05",
         "pair": "03"
       }
     },
@@ -1022,10 +1068,10 @@
       "question": "edgecolor/cube-05-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-05-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-01.svg",
+        "edgecolor/cube-05-edgecolor-05-02.svg",
+        "edgecolor/cube-05-edgecolor-05-01.svg",
         "edgecolor/cube-05-edgecolor-04-02.svg",
-        "edgecolor/cube-04-edgecolor-05-01.svg"
+        "edgecolor/cube-05-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1034,6 +1080,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-04",
+        "baseId": "cube-05",
         "pair": "04"
       }
     },
@@ -1044,9 +1091,9 @@
       "question": "edgecolor/cube-05-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor05-01.svg",
-        "edgecolor/cube-06-edgecolor-02-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor05-02.svg",
+        "edgecolor/cube-05-edgecolor-03-02.svg",
+        "edgecolor/cube-05-edgecolor-05-01.svg",
+        "edgecolor/cube-05-edgecolor-02-02.svg",
         "edgecolor/cube-05-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
@@ -1056,6 +1103,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-04",
+        "baseId": "cube-05",
         "pair": "04"
       }
     },
@@ -1067,9 +1115,9 @@
       "answer": "edgecolor/cube-05-edgecolor-05-02.svg",
       "choices": [
         "edgecolor/cube-05-edgecolor-05-02.svg",
-        "edgecolor/cube-02-edgecolor-01-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg"
+        "edgecolor/cube-05-edgecolor-02-01.svg",
+        "edgecolor/cube-05-edgecolor-01-01.svg",
+        "edgecolor/cube-05-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1078,6 +1126,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-05",
+        "baseId": "cube-05",
         "pair": "05"
       }
     },
@@ -1088,10 +1137,10 @@
       "question": "edgecolor/cube-05-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-02-02.svg",
+        "edgecolor/cube-05-edgecolor-03-02.svg",
         "edgecolor/cube-05-edgecolor-05-01.svg",
-        "edgecolor/cube-01-edgecolor-05-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor03-02.svg"
+        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cube-05-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1100,6 +1149,7 @@
       ],
       "meta": {
         "base": "cube-05-edgecolor-05",
+        "baseId": "cube-05",
         "pair": "05"
       }
     },
@@ -1111,9 +1161,9 @@
       "answer": "edgecolor/cube-06-edgecolor-01-02.svg",
       "choices": [
         "edgecolor/cube-06-edgecolor-01-02.svg",
-        "edgecolor/cube-05-edgecolor-05-01.svg",
-        "edgecolor/cube-06-edgecolor-04-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor03-01.svg"
+        "edgecolor/cube-06-edgecolor-03-01.svg",
+        "edgecolor/cube-06-edgecolor-05-02.svg",
+        "edgecolor/cube-06-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1122,6 +1172,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-01",
+        "baseId": "cube-06",
         "pair": "01"
       }
     },
@@ -1132,10 +1183,10 @@
       "question": "edgecolor/cube-06-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor01-02.svg",
+        "edgecolor/cube-06-edgecolor-04-02.svg",
+        "edgecolor/cube-06-edgecolor-05-01.svg",
         "edgecolor/cube-06-edgecolor-01-01.svg",
-        "edgecolor/cube-04-edgecolor-01-01.svg"
+        "edgecolor/cube-06-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1144,6 +1195,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-01",
+        "baseId": "cube-06",
         "pair": "01"
       }
     },
@@ -1154,10 +1206,10 @@
       "question": "edgecolor/cube-06-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
+        "edgecolor/cube-06-edgecolor-04-02.svg",
         "edgecolor/cube-06-edgecolor-02-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor03-02.svg"
+        "edgecolor/cube-06-edgecolor-03-02.svg",
+        "edgecolor/cube-06-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1166,6 +1218,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-02",
+        "baseId": "cube-06",
         "pair": "02"
       }
     },
@@ -1177,9 +1230,9 @@
       "answer": "edgecolor/cube-06-edgecolor-02-01.svg",
       "choices": [
         "edgecolor/cube-06-edgecolor-02-01.svg",
-        "edgecolor/cube-07-edgecolor-02-02.svg",
-        "edgecolor/cube-10-edgecolor-01-01.svg",
-        "edgecolor/cube-10-edgecolor-05-01.svg"
+        "edgecolor/cube-06-edgecolor-05-02.svg",
+        "edgecolor/cube-06-edgecolor-01-01.svg",
+        "edgecolor/cube-06-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1188,6 +1241,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-02",
+        "baseId": "cube-06",
         "pair": "02"
       }
     },
@@ -1199,9 +1253,9 @@
       "answer": "edgecolor/cube-06-edgecolor-03-02.svg",
       "choices": [
         "edgecolor/cube-06-edgecolor-03-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-02.svg",
-        "edgecolor/cube-08-edgecolor-04-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg"
+        "edgecolor/cube-06-edgecolor-02-01.svg",
+        "edgecolor/cube-06-edgecolor-05-01.svg",
+        "edgecolor/cube-06-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1210,6 +1264,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-03",
+        "baseId": "cube-06",
         "pair": "03"
       }
     },
@@ -1220,10 +1275,10 @@
       "question": "edgecolor/cube-06-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-05-02.svg",
+        "edgecolor/cube-06-edgecolor-05-02.svg",
         "edgecolor/cube-06-edgecolor-03-01.svg",
-        "edgecolor/cube-02-edgecolor-02-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor02-01.svg"
+        "edgecolor/cube-06-edgecolor-05-01.svg",
+        "edgecolor/cube-06-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1232,6 +1287,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-03",
+        "baseId": "cube-06",
         "pair": "03"
       }
     },
@@ -1242,10 +1298,10 @@
       "question": "edgecolor/cube-06-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-02-02.svg",
+        "edgecolor/cube-06-edgecolor-03-01.svg",
         "edgecolor/cube-06-edgecolor-04-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg"
+        "edgecolor/cube-06-edgecolor-05-02.svg",
+        "edgecolor/cube-06-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1254,6 +1310,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-04",
+        "baseId": "cube-06",
         "pair": "04"
       }
     },
@@ -1264,10 +1321,10 @@
       "question": "edgecolor/cube-06-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
-        "edgecolor/cube-04-edgecolor-05-01.svg",
+        "edgecolor/cube-06-edgecolor-05-02.svg",
+        "edgecolor/cube-06-edgecolor-01-02.svg",
         "edgecolor/cube-06-edgecolor-04-01.svg",
-        "edgecolor/cube-09-edgecolor-01-02.svg"
+        "edgecolor/cube-06-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1276,6 +1333,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-04",
+        "baseId": "cube-06",
         "pair": "04"
       }
     },
@@ -1286,9 +1344,9 @@
       "question": "edgecolor/cube-06-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cube-05-edgecolor-02-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor05-02.svg",
+        "edgecolor/cube-06-edgecolor-01-01.svg",
+        "edgecolor/cube-06-edgecolor-04-01.svg",
+        "edgecolor/cube-06-edgecolor-03-01.svg",
         "edgecolor/cube-06-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
@@ -1298,6 +1356,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-05",
+        "baseId": "cube-06",
         "pair": "05"
       }
     },
@@ -1308,10 +1367,10 @@
       "question": "edgecolor/cube-06-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor03-02.svg",
-        "edgecolor/cube-01-edgecolor-02-02.svg",
+        "edgecolor/cube-06-edgecolor-04-01.svg",
+        "edgecolor/cube-06-edgecolor-02-01.svg",
         "edgecolor/cube-06-edgecolor-05-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor01-01.svg"
+        "edgecolor/cube-06-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1320,6 +1379,7 @@
       ],
       "meta": {
         "base": "cube-06-edgecolor-05",
+        "baseId": "cube-06",
         "pair": "05"
       }
     },
@@ -1330,9 +1390,9 @@
       "question": "edgecolor/cube-07-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-01-02.svg",
-        "edgecolor/cube-08-edgecolor-04-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-01.svg",
+        "edgecolor/cube-07-edgecolor-04-01.svg",
+        "edgecolor/cube-07-edgecolor-03-01.svg",
+        "edgecolor/cube-07-edgecolor-02-02.svg",
         "edgecolor/cube-07-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
@@ -1342,6 +1402,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-01",
+        "baseId": "cube-07",
         "pair": "01"
       }
     },
@@ -1352,10 +1413,10 @@
       "question": "edgecolor/cube-07-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cuboid-04-01-edgecolor03-02.svg",
-        "edgecolor/cube-02-edgecolor-05-01.svg",
+        "edgecolor/cube-07-edgecolor-02-01.svg",
+        "edgecolor/cube-07-edgecolor-05-01.svg",
         "edgecolor/cube-07-edgecolor-01-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor04-02.svg"
+        "edgecolor/cube-07-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1364,6 +1425,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-01",
+        "baseId": "cube-07",
         "pair": "01"
       }
     },
@@ -1374,10 +1436,10 @@
       "question": "edgecolor/cube-07-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-03-02.svg",
+        "edgecolor/cube-07-edgecolor-04-02.svg",
         "edgecolor/cube-07-edgecolor-02-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor03-02.svg"
+        "edgecolor/cube-07-edgecolor-04-01.svg",
+        "edgecolor/cube-07-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1386,6 +1448,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-02",
+        "baseId": "cube-07",
         "pair": "02"
       }
     },
@@ -1396,10 +1459,10 @@
       "question": "edgecolor/cube-07-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
+        "edgecolor/cube-07-edgecolor-04-01.svg",
         "edgecolor/cube-07-edgecolor-02-01.svg",
-        "edgecolor/cube-01-edgecolor-01-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor01-02.svg"
+        "edgecolor/cube-07-edgecolor-04-02.svg",
+        "edgecolor/cube-07-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1408,6 +1471,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-02",
+        "baseId": "cube-07",
         "pair": "02"
       }
     },
@@ -1418,10 +1482,10 @@
       "question": "edgecolor/cube-07-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-02-01.svg",
+        "edgecolor/cube-07-edgecolor-02-02.svg",
         "edgecolor/cube-07-edgecolor-03-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor05-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor03-02.svg"
+        "edgecolor/cube-07-edgecolor-04-01.svg",
+        "edgecolor/cube-07-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1430,6 +1494,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-03",
+        "baseId": "cube-07",
         "pair": "03"
       }
     },
@@ -1440,9 +1505,9 @@
       "question": "edgecolor/cube-07-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-06-edgecolor-04-01.svg",
-        "edgecolor/cube-04-edgecolor-02-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor01-01.svg",
+        "edgecolor/cube-07-edgecolor-05-01.svg",
+        "edgecolor/cube-07-edgecolor-02-01.svg",
+        "edgecolor/cube-07-edgecolor-04-02.svg",
         "edgecolor/cube-07-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
@@ -1452,6 +1517,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-03",
+        "baseId": "cube-07",
         "pair": "03"
       }
     },
@@ -1463,9 +1529,9 @@
       "answer": "edgecolor/cube-07-edgecolor-04-02.svg",
       "choices": [
         "edgecolor/cube-07-edgecolor-04-02.svg",
-        "edgecolor/cube-04-edgecolor-01-01.svg",
-        "edgecolor/cube-11-edgecolor-01-01.svg",
-        "edgecolor/cube-06-edgecolor-01-02.svg"
+        "edgecolor/cube-07-edgecolor-01-02.svg",
+        "edgecolor/cube-07-edgecolor-02-01.svg",
+        "edgecolor/cube-07-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1474,6 +1540,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-04",
+        "baseId": "cube-07",
         "pair": "04"
       }
     },
@@ -1484,10 +1551,10 @@
       "question": "edgecolor/cube-07-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cuboid-04-01-edgecolor02-01.svg",
+        "edgecolor/cube-07-edgecolor-01-01.svg",
         "edgecolor/cube-07-edgecolor-04-01.svg",
-        "edgecolor/cube-09-edgecolor-02-01.svg",
-        "edgecolor/cube-05-edgecolor-01-02.svg"
+        "edgecolor/cube-07-edgecolor-03-02.svg",
+        "edgecolor/cube-07-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1496,6 +1563,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-04",
+        "baseId": "cube-07",
         "pair": "04"
       }
     },
@@ -1507,9 +1575,9 @@
       "answer": "edgecolor/cube-07-edgecolor-05-02.svg",
       "choices": [
         "edgecolor/cube-07-edgecolor-05-02.svg",
-        "edgecolor/cube-06-edgecolor-04-01.svg",
-        "edgecolor/cube-06-edgecolor-05-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor03-01.svg"
+        "edgecolor/cube-07-edgecolor-04-02.svg",
+        "edgecolor/cube-07-edgecolor-01-01.svg",
+        "edgecolor/cube-07-edgecolor-02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1518,6 +1586,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-05",
+        "baseId": "cube-07",
         "pair": "05"
       }
     },
@@ -1528,10 +1597,10 @@
       "question": "edgecolor/cube-07-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-04-01.svg",
-        "edgecolor/cube-02-edgecolor-02-02.svg",
+        "edgecolor/cube-07-edgecolor-04-01.svg",
+        "edgecolor/cube-07-edgecolor-01-01.svg",
         "edgecolor/cube-07-edgecolor-05-01.svg",
-        "edgecolor/cube-01-edgecolor-02-02.svg"
+        "edgecolor/cube-07-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1540,6 +1609,7 @@
       ],
       "meta": {
         "base": "cube-07-edgecolor-05",
+        "baseId": "cube-07",
         "pair": "05"
       }
     },
@@ -1550,10 +1620,10 @@
       "question": "edgecolor/cube-08-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-03-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
+        "edgecolor/cube-08-edgecolor-02-01.svg",
+        "edgecolor/cube-08-edgecolor-04-01.svg",
         "edgecolor/cube-08-edgecolor-01-02.svg",
-        "edgecolor/cube-05-edgecolor-01-02.svg"
+        "edgecolor/cube-08-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1562,6 +1632,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-01",
+        "baseId": "cube-08",
         "pair": "01"
       }
     },
@@ -1572,10 +1643,10 @@
       "question": "edgecolor/cube-08-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-03-01.svg",
-        "edgecolor/cube-11-edgecolor-01-02.svg",
+        "edgecolor/cube-08-edgecolor-04-01.svg",
+        "edgecolor/cube-08-edgecolor-03-01.svg",
         "edgecolor/cube-08-edgecolor-01-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg"
+        "edgecolor/cube-08-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1584,6 +1655,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-01",
+        "baseId": "cube-08",
         "pair": "01"
       }
     },
@@ -1594,10 +1666,10 @@
       "question": "edgecolor/cube-08-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cube-06-edgecolor-05-02.svg",
+        "edgecolor/cube-08-edgecolor-03-01.svg",
         "edgecolor/cube-08-edgecolor-02-02.svg",
-        "edgecolor/cube-09-edgecolor-03-02.svg",
-        "edgecolor/cube-11-edgecolor-03-01.svg"
+        "edgecolor/cube-08-edgecolor-01-01.svg",
+        "edgecolor/cube-08-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1606,6 +1678,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-02",
+        "baseId": "cube-08",
         "pair": "02"
       }
     },
@@ -1616,9 +1689,9 @@
       "question": "edgecolor/cube-08-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor04-01.svg",
-        "edgecolor/cube-04-edgecolor-04-01.svg",
-        "edgecolor/cube-07-edgecolor-04-01.svg",
+        "edgecolor/cube-08-edgecolor-01-01.svg",
+        "edgecolor/cube-08-edgecolor-05-01.svg",
+        "edgecolor/cube-08-edgecolor-03-01.svg",
         "edgecolor/cube-08-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
@@ -1628,6 +1701,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-02",
+        "baseId": "cube-08",
         "pair": "02"
       }
     },
@@ -1639,9 +1713,9 @@
       "answer": "edgecolor/cube-08-edgecolor-03-02.svg",
       "choices": [
         "edgecolor/cube-08-edgecolor-03-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-01.svg",
-        "edgecolor/cube-08-edgecolor-01-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg"
+        "edgecolor/cube-08-edgecolor-02-02.svg",
+        "edgecolor/cube-08-edgecolor-05-01.svg",
+        "edgecolor/cube-08-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1650,6 +1724,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-03",
+        "baseId": "cube-08",
         "pair": "03"
       }
     },
@@ -1660,10 +1735,10 @@
       "question": "edgecolor/cube-08-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor01-02.svg",
+        "edgecolor/cube-08-edgecolor-02-02.svg",
         "edgecolor/cube-08-edgecolor-03-01.svg",
-        "edgecolor/cube-01-edgecolor-05-01.svg",
-        "edgecolor/cube-10-edgecolor-03-02.svg"
+        "edgecolor/cube-08-edgecolor-01-01.svg",
+        "edgecolor/cube-08-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1672,6 +1747,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-03",
+        "baseId": "cube-08",
         "pair": "03"
       }
     },
@@ -1682,10 +1758,10 @@
       "question": "edgecolor/cube-08-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cuboid-08-01-edgecolor02-01.svg",
+        "edgecolor/cube-08-edgecolor-02-02.svg",
         "edgecolor/cube-08-edgecolor-04-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor01-01.svg"
+        "edgecolor/cube-08-edgecolor-03-01.svg",
+        "edgecolor/cube-08-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1694,6 +1770,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-04",
+        "baseId": "cube-08",
         "pair": "04"
       }
     },
@@ -1704,10 +1781,10 @@
       "question": "edgecolor/cube-08-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-02.svg",
+        "edgecolor/cube-08-edgecolor-02-02.svg",
+        "edgecolor/cube-08-edgecolor-03-02.svg",
         "edgecolor/cube-08-edgecolor-04-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor03-02.svg"
+        "edgecolor/cube-08-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1716,6 +1793,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-04",
+        "baseId": "cube-08",
         "pair": "04"
       }
     },
@@ -1727,9 +1805,9 @@
       "answer": "edgecolor/cube-08-edgecolor-05-02.svg",
       "choices": [
         "edgecolor/cube-08-edgecolor-05-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor04-01.svg",
-        "edgecolor/cube-04-edgecolor-05-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-02.svg"
+        "edgecolor/cube-08-edgecolor-02-01.svg",
+        "edgecolor/cube-08-edgecolor-03-01.svg",
+        "edgecolor/cube-08-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1738,6 +1816,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-05",
+        "baseId": "cube-08",
         "pair": "05"
       }
     },
@@ -1748,10 +1827,10 @@
       "question": "edgecolor/cube-08-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
+        "edgecolor/cube-08-edgecolor-03-01.svg",
         "edgecolor/cube-08-edgecolor-05-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor03-02.svg",
-        "edgecolor/cube-09-edgecolor-05-01.svg"
+        "edgecolor/cube-08-edgecolor-02-01.svg",
+        "edgecolor/cube-08-edgecolor-04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1760,6 +1839,7 @@
       ],
       "meta": {
         "base": "cube-08-edgecolor-05",
+        "baseId": "cube-08",
         "pair": "05"
       }
     },
@@ -1770,9 +1850,9 @@
       "question": "edgecolor/cube-09-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-02-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
-        "edgecolor/cube-10-edgecolor-01-02.svg",
+        "edgecolor/cube-09-edgecolor-03-01.svg",
+        "edgecolor/cube-09-edgecolor-03-02.svg",
+        "edgecolor/cube-09-edgecolor-04-02.svg",
         "edgecolor/cube-09-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
@@ -1782,6 +1862,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-01",
+        "baseId": "cube-09",
         "pair": "01"
       }
     },
@@ -1792,10 +1873,10 @@
       "question": "edgecolor/cube-09-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cube-07-edgecolor-03-01.svg",
+        "edgecolor/cube-09-edgecolor-03-02.svg",
         "edgecolor/cube-09-edgecolor-01-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor03-02.svg"
+        "edgecolor/cube-09-edgecolor-04-01.svg",
+        "edgecolor/cube-09-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1804,6 +1885,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-01",
+        "baseId": "cube-09",
         "pair": "01"
       }
     },
@@ -1814,10 +1896,10 @@
       "question": "edgecolor/cube-09-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-05-02.svg",
-        "edgecolor/cube-08-edgecolor-05-01.svg",
+        "edgecolor/cube-09-edgecolor-04-01.svg",
+        "edgecolor/cube-09-edgecolor-03-02.svg",
         "edgecolor/cube-09-edgecolor-02-02.svg",
-        "edgecolor/cube-06-edgecolor-03-02.svg"
+        "edgecolor/cube-09-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1826,6 +1908,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-02",
+        "baseId": "cube-09",
         "pair": "02"
       }
     },
@@ -1837,9 +1920,9 @@
       "answer": "edgecolor/cube-09-edgecolor-02-01.svg",
       "choices": [
         "edgecolor/cube-09-edgecolor-02-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor03-02.svg",
-        "edgecolor/cube-03-edgecolor-03-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor04-01.svg"
+        "edgecolor/cube-09-edgecolor-04-02.svg",
+        "edgecolor/cube-09-edgecolor-01-01.svg",
+        "edgecolor/cube-09-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1848,6 +1931,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-02",
+        "baseId": "cube-09",
         "pair": "02"
       }
     },
@@ -1859,9 +1943,9 @@
       "answer": "edgecolor/cube-09-edgecolor-03-02.svg",
       "choices": [
         "edgecolor/cube-09-edgecolor-03-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor05-01.svg",
-        "edgecolor/cube-01-edgecolor-05-02.svg",
-        "edgecolor/cube-03-edgecolor-02-02.svg"
+        "edgecolor/cube-09-edgecolor-02-01.svg",
+        "edgecolor/cube-09-edgecolor-01-01.svg",
+        "edgecolor/cube-09-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1870,6 +1954,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-03",
+        "baseId": "cube-09",
         "pair": "03"
       }
     },
@@ -1880,10 +1965,10 @@
       "question": "edgecolor/cube-09-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-05-edgecolor-02-02.svg",
-        "edgecolor/cube-01-edgecolor-04-02.svg",
+        "edgecolor/cube-09-edgecolor-02-01.svg",
+        "edgecolor/cube-09-edgecolor-05-02.svg",
         "edgecolor/cube-09-edgecolor-03-01.svg",
-        "edgecolor/cube-06-edgecolor-05-02.svg"
+        "edgecolor/cube-09-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1892,6 +1977,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-03",
+        "baseId": "cube-09",
         "pair": "03"
       }
     },
@@ -1903,9 +1989,9 @@
       "answer": "edgecolor/cube-09-edgecolor-04-02.svg",
       "choices": [
         "edgecolor/cube-09-edgecolor-04-02.svg",
-        "edgecolor/cube-10-edgecolor-03-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor02-02.svg"
+        "edgecolor/cube-09-edgecolor-01-02.svg",
+        "edgecolor/cube-09-edgecolor-05-02.svg",
+        "edgecolor/cube-09-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1914,6 +2000,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-04",
+        "baseId": "cube-09",
         "pair": "04"
       }
     },
@@ -1924,9 +2011,9 @@
       "question": "edgecolor/cube-09-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-05-02.svg",
-        "edgecolor/cube-08-edgecolor-03-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-01.svg",
+        "edgecolor/cube-09-edgecolor-02-01.svg",
+        "edgecolor/cube-09-edgecolor-01-02.svg",
+        "edgecolor/cube-09-edgecolor-03-02.svg",
         "edgecolor/cube-09-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
@@ -1936,6 +2023,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-04",
+        "baseId": "cube-09",
         "pair": "04"
       }
     },
@@ -1946,10 +2034,10 @@
       "question": "edgecolor/cube-09-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor05-01.svg",
+        "edgecolor/cube-09-edgecolor-01-01.svg",
+        "edgecolor/cube-09-edgecolor-01-02.svg",
         "edgecolor/cube-09-edgecolor-05-02.svg",
-        "edgecolor/cube-02-edgecolor-04-01.svg"
+        "edgecolor/cube-09-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1958,6 +2046,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-05",
+        "baseId": "cube-09",
         "pair": "05"
       }
     },
@@ -1970,8 +2059,8 @@
       "choices": [
         "edgecolor/cube-09-edgecolor-05-01.svg",
         "edgecolor/cube-09-edgecolor-02-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
-        "edgecolor/cube-07-edgecolor-01-02.svg"
+        "edgecolor/cube-09-edgecolor-01-02.svg",
+        "edgecolor/cube-09-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -1980,6 +2069,7 @@
       ],
       "meta": {
         "base": "cube-09-edgecolor-05",
+        "baseId": "cube-09",
         "pair": "05"
       }
     },
@@ -1990,9 +2080,9 @@
       "question": "edgecolor/cube-10-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-04-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor01-01.svg",
+        "edgecolor/cube-10-edgecolor-03-01.svg",
+        "edgecolor/cube-10-edgecolor-05-01.svg",
+        "edgecolor/cube-10-edgecolor-03-02.svg",
         "edgecolor/cube-10-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
@@ -2002,6 +2092,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-01",
+        "baseId": "cube-10",
         "pair": "01"
       }
     },
@@ -2013,9 +2104,9 @@
       "answer": "edgecolor/cube-10-edgecolor-01-01.svg",
       "choices": [
         "edgecolor/cube-10-edgecolor-01-01.svg",
-        "edgecolor/cube-06-edgecolor-05-02.svg",
-        "edgecolor/cube-01-edgecolor-04-01.svg",
-        "edgecolor/cube-02-edgecolor-01-02.svg"
+        "edgecolor/cube-10-edgecolor-03-02.svg",
+        "edgecolor/cube-10-edgecolor-05-01.svg",
+        "edgecolor/cube-10-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2024,6 +2115,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-01",
+        "baseId": "cube-10",
         "pair": "01"
       }
     },
@@ -2034,10 +2126,10 @@
       "question": "edgecolor/cube-10-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
+        "edgecolor/cube-10-edgecolor-05-02.svg",
+        "edgecolor/cube-10-edgecolor-01-02.svg",
         "edgecolor/cube-10-edgecolor-02-02.svg",
-        "edgecolor/cube-03-edgecolor-02-02.svg"
+        "edgecolor/cube-10-edgecolor-03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2046,6 +2138,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-02",
+        "baseId": "cube-10",
         "pair": "02"
       }
     },
@@ -2056,10 +2149,10 @@
       "question": "edgecolor/cube-10-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
+        "edgecolor/cube-10-edgecolor-01-01.svg",
         "edgecolor/cube-10-edgecolor-02-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor03-01.svg",
-        "edgecolor/cube-09-edgecolor-01-02.svg"
+        "edgecolor/cube-10-edgecolor-05-01.svg",
+        "edgecolor/cube-10-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2068,6 +2161,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-02",
+        "baseId": "cube-10",
         "pair": "02"
       }
     },
@@ -2078,10 +2172,10 @@
       "question": "edgecolor/cube-10-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor02-02.svg",
+        "edgecolor/cube-10-edgecolor-05-02.svg",
         "edgecolor/cube-10-edgecolor-03-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor05-02.svg"
+        "edgecolor/cube-10-edgecolor-02-01.svg",
+        "edgecolor/cube-10-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2090,6 +2184,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-03",
+        "baseId": "cube-10",
         "pair": "03"
       }
     },
@@ -2100,10 +2195,10 @@
       "question": "edgecolor/cube-10-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-05-02.svg",
-        "edgecolor/cube-06-edgecolor-01-02.svg",
+        "edgecolor/cube-10-edgecolor-01-01.svg",
+        "edgecolor/cube-10-edgecolor-05-02.svg",
         "edgecolor/cube-10-edgecolor-03-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-01.svg"
+        "edgecolor/cube-10-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2112,6 +2207,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-03",
+        "baseId": "cube-10",
         "pair": "03"
       }
     },
@@ -2122,10 +2218,10 @@
       "question": "edgecolor/cube-10-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-01-01.svg",
-        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cube-10-edgecolor-01-01.svg",
+        "edgecolor/cube-10-edgecolor-02-02.svg",
         "edgecolor/cube-10-edgecolor-04-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor02-01.svg"
+        "edgecolor/cube-10-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2134,6 +2230,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-04",
+        "baseId": "cube-10",
         "pair": "04"
       }
     },
@@ -2144,10 +2241,10 @@
       "question": "edgecolor/cube-10-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cuboid-08-01-edgecolor03-02.svg",
-        "edgecolor/cube-04-edgecolor-05-02.svg",
+        "edgecolor/cube-10-edgecolor-01-02.svg",
+        "edgecolor/cube-10-edgecolor-03-02.svg",
         "edgecolor/cube-10-edgecolor-04-01.svg",
-        "edgecolor/cube-10-edgecolor-02-01.svg"
+        "edgecolor/cube-10-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2156,6 +2253,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-04",
+        "baseId": "cube-10",
         "pair": "04"
       }
     },
@@ -2166,9 +2264,9 @@
       "question": "edgecolor/cube-10-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg",
-        "edgecolor/cube-04-edgecolor-02-01.svg",
-        "edgecolor/cube-09-edgecolor-05-02.svg",
+        "edgecolor/cube-10-edgecolor-02-01.svg",
+        "edgecolor/cube-10-edgecolor-01-01.svg",
+        "edgecolor/cube-10-edgecolor-04-02.svg",
         "edgecolor/cube-10-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
@@ -2178,6 +2276,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-05",
+        "baseId": "cube-10",
         "pair": "05"
       }
     },
@@ -2188,10 +2287,10 @@
       "question": "edgecolor/cube-10-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-05-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-01.svg",
+        "edgecolor/cube-10-edgecolor-04-02.svg",
+        "edgecolor/cube-10-edgecolor-02-02.svg",
         "edgecolor/cube-10-edgecolor-05-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor05-01.svg"
+        "edgecolor/cube-10-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2200,6 +2299,7 @@
       ],
       "meta": {
         "base": "cube-10-edgecolor-05",
+        "baseId": "cube-10",
         "pair": "05"
       }
     },
@@ -2210,9 +2310,9 @@
       "question": "edgecolor/cube-11-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-01-02.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
-        "edgecolor/cube-08-edgecolor-04-02.svg",
-        "edgecolor/cube-03-edgecolor-04-01.svg",
+        "edgecolor/cube-11-edgecolor-04-02.svg",
+        "edgecolor/cube-11-edgecolor-03-02.svg",
+        "edgecolor/cube-11-edgecolor-02-02.svg",
         "edgecolor/cube-11-edgecolor-01-02.svg"
       ],
       "difficulty": 2,
@@ -2222,6 +2322,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-01",
+        "baseId": "cube-11",
         "pair": "01"
       }
     },
@@ -2232,9 +2333,9 @@
       "question": "edgecolor/cube-11-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-01-01.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor05-01.svg",
+        "edgecolor/cube-11-edgecolor-03-02.svg",
+        "edgecolor/cube-11-edgecolor-04-02.svg",
+        "edgecolor/cube-11-edgecolor-05-02.svg",
         "edgecolor/cube-11-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
@@ -2244,6 +2345,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-01",
+        "baseId": "cube-11",
         "pair": "01"
       }
     },
@@ -2254,10 +2356,10 @@
       "question": "edgecolor/cube-11-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-02-02.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor05-01.svg",
+        "edgecolor/cube-11-edgecolor-01-01.svg",
         "edgecolor/cube-11-edgecolor-02-02.svg",
-        "edgecolor/cube-06-edgecolor-05-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg"
+        "edgecolor/cube-11-edgecolor-03-01.svg",
+        "edgecolor/cube-11-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2266,6 +2368,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-02",
+        "baseId": "cube-11",
         "pair": "02"
       }
     },
@@ -2276,9 +2379,9 @@
       "question": "edgecolor/cube-11-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-02-01.svg",
       "choices": [
-        "edgecolor/cube-03-edgecolor-04-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
-        "edgecolor/cube-03-edgecolor-05-01.svg",
+        "edgecolor/cube-11-edgecolor-04-01.svg",
+        "edgecolor/cube-11-edgecolor-01-02.svg",
+        "edgecolor/cube-11-edgecolor-03-01.svg",
         "edgecolor/cube-11-edgecolor-02-01.svg"
       ],
       "difficulty": 2,
@@ -2288,6 +2391,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-02",
+        "baseId": "cube-11",
         "pair": "02"
       }
     },
@@ -2298,10 +2402,10 @@
       "question": "edgecolor/cube-11-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-03-02.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-02-02.svg",
-        "edgecolor/cube-09-edgecolor-04-01.svg",
+        "edgecolor/cube-11-edgecolor-02-01.svg",
+        "edgecolor/cube-11-edgecolor-04-01.svg",
         "edgecolor/cube-11-edgecolor-03-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor02-02.svg"
+        "edgecolor/cube-11-edgecolor-05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2310,6 +2414,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-03",
+        "baseId": "cube-11",
         "pair": "03"
       }
     },
@@ -2320,9 +2425,9 @@
       "question": "edgecolor/cube-11-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-03-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-04-01.svg",
-        "edgecolor/cube-03-edgecolor-03-01.svg",
-        "edgecolor/cube-01-edgecolor-03-01.svg",
+        "edgecolor/cube-11-edgecolor-04-01.svg",
+        "edgecolor/cube-11-edgecolor-02-01.svg",
+        "edgecolor/cube-11-edgecolor-05-01.svg",
         "edgecolor/cube-11-edgecolor-03-01.svg"
       ],
       "difficulty": 2,
@@ -2332,6 +2437,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-03",
+        "baseId": "cube-11",
         "pair": "03"
       }
     },
@@ -2342,10 +2448,10 @@
       "question": "edgecolor/cube-11-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-04-02.svg",
       "choices": [
-        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
-        "edgecolor/cube-05-edgecolor-05-02.svg",
+        "edgecolor/cube-11-edgecolor-05-02.svg",
+        "edgecolor/cube-11-edgecolor-03-02.svg",
         "edgecolor/cube-11-edgecolor-04-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor01-02.svg"
+        "edgecolor/cube-11-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2354,6 +2460,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-04",
+        "baseId": "cube-11",
         "pair": "04"
       }
     },
@@ -2364,9 +2471,9 @@
       "question": "edgecolor/cube-11-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-04-01.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-04-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor01-01.svg",
-        "edgecolor/cube-06-edgecolor-03-01.svg",
+        "edgecolor/cube-11-edgecolor-03-02.svg",
+        "edgecolor/cube-11-edgecolor-01-01.svg",
+        "edgecolor/cube-11-edgecolor-03-01.svg",
         "edgecolor/cube-11-edgecolor-04-01.svg"
       ],
       "difficulty": 2,
@@ -2376,6 +2483,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-04",
+        "baseId": "cube-11",
         "pair": "04"
       }
     },
@@ -2386,10 +2494,10 @@
       "question": "edgecolor/cube-11-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-05-02.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor05-01.svg",
+        "edgecolor/cube-11-edgecolor-01-02.svg",
+        "edgecolor/cube-11-edgecolor-03-02.svg",
         "edgecolor/cube-11-edgecolor-05-02.svg",
-        "edgecolor/cube-03-edgecolor-03-01.svg"
+        "edgecolor/cube-11-edgecolor-01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2398,6 +2506,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-05",
+        "baseId": "cube-11",
         "pair": "05"
       }
     },
@@ -2408,9 +2517,9 @@
       "question": "edgecolor/cube-11-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-05-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-02-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor05-02.svg",
+        "edgecolor/cube-11-edgecolor-02-02.svg",
+        "edgecolor/cube-11-edgecolor-01-02.svg",
+        "edgecolor/cube-11-edgecolor-02-01.svg",
         "edgecolor/cube-11-edgecolor-05-01.svg"
       ],
       "difficulty": 2,
@@ -2420,6 +2529,7 @@
       ],
       "meta": {
         "base": "cube-11-edgecolor-05",
+        "baseId": "cube-11",
         "pair": "05"
       }
     },
@@ -2430,10 +2540,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor01-02.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor04-01.svg",
         "edgecolor/cuboid-01-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor05-01.svg"
+        "edgecolor/cuboid-01-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2442,6 +2552,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor01",
+        "baseId": "cuboid-01-01",
         "pair": "01"
       }
     },
@@ -2452,10 +2563,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
-        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
         "edgecolor/cuboid-01-01-edgecolor01-01.svg",
-        "edgecolor/cube-09-edgecolor-02-01.svg"
+        "edgecolor/cuboid-01-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2464,6 +2575,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor01",
+        "baseId": "cuboid-01-01",
         "pair": "01"
       }
     },
@@ -2474,10 +2586,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cube-07-edgecolor-01-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
         "edgecolor/cuboid-01-01-edgecolor01-02.svg",
-        "edgecolor/cube-02-edgecolor-01-01.svg"
+        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2486,6 +2598,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor02",
+        "baseId": "cuboid-01-01",
         "pair": "02"
       }
     },
@@ -2497,9 +2610,9 @@
       "answer": "edgecolor/cuboid-01-01-edgecolor02-01.svg",
       "choices": [
         "edgecolor/cuboid-01-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor04-02.svg",
-        "edgecolor/cube-06-edgecolor-01-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor05-02.svg"
+        "edgecolor/cuboid-01-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2508,6 +2621,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor02",
+        "baseId": "cuboid-01-01",
         "pair": "02"
       }
     },
@@ -2518,10 +2632,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-05-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor04-02.svg",
         "edgecolor/cuboid-01-01-edgecolor03-02.svg",
-        "edgecolor/cube-07-edgecolor-04-01.svg"
+        "edgecolor/cuboid-01-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2530,6 +2644,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor03",
+        "baseId": "cuboid-01-01",
         "pair": "03"
       }
     },
@@ -2540,10 +2655,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-04-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
         "edgecolor/cuboid-01-01-edgecolor03-01.svg",
-        "edgecolor/cube-07-edgecolor-04-01.svg",
-        "edgecolor/cube-03-edgecolor-03-01.svg"
+        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2552,6 +2667,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor03",
+        "baseId": "cuboid-01-01",
         "pair": "03"
       }
     },
@@ -2562,10 +2678,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor02-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor01-02.svg",
         "edgecolor/cuboid-01-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor05-02.svg"
+        "edgecolor/cuboid-01-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2574,6 +2690,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor04",
+        "baseId": "cuboid-01-01",
         "pair": "04"
       }
     },
@@ -2585,9 +2702,9 @@
       "answer": "edgecolor/cuboid-01-01-edgecolor04-01.svg",
       "choices": [
         "edgecolor/cuboid-01-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor05-01.svg"
+        "edgecolor/cuboid-01-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2596,6 +2713,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor04",
+        "baseId": "cuboid-01-01",
         "pair": "04"
       }
     },
@@ -2606,9 +2724,9 @@
       "question": "edgecolor/cuboid-01-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor05-02.svg",
       "choices": [
+        "edgecolor/cuboid-01-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor03-01.svg",
         "edgecolor/cuboid-01-01-edgecolor04-02.svg",
-        "edgecolor/cube-02-edgecolor-03-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-01.svg",
         "edgecolor/cuboid-01-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
@@ -2618,6 +2736,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor05",
+        "baseId": "cuboid-01-01",
         "pair": "05"
       }
     },
@@ -2628,10 +2747,10 @@
       "question": "edgecolor/cuboid-01-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
         "edgecolor/cuboid-01-01-edgecolor05-01.svg",
-        "edgecolor/cube-01-edgecolor-01-01.svg",
-        "edgecolor/cube-10-edgecolor-03-02.svg"
+        "edgecolor/cuboid-01-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-01-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2640,6 +2759,7 @@
       ],
       "meta": {
         "base": "cuboid-01-01-edgecolor05",
+        "baseId": "cuboid-01-01",
         "pair": "05"
       }
     },
@@ -2651,9 +2771,9 @@
       "answer": "edgecolor/cuboid-02-01-edgecolor01-02.svg",
       "choices": [
         "edgecolor/cuboid-02-01-edgecolor01-02.svg",
-        "edgecolor/cube-06-edgecolor-03-02.svg",
-        "edgecolor/cube-08-edgecolor-03-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg"
+        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2662,6 +2782,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor01",
+        "baseId": "cuboid-02-01",
         "pair": "01"
       }
     },
@@ -2672,10 +2793,10 @@
       "question": "edgecolor/cuboid-02-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-05-02.svg",
-        "edgecolor/cube-02-edgecolor-01-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-02.svg",
         "edgecolor/cuboid-02-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg"
+        "edgecolor/cuboid-02-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2684,6 +2805,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor01",
+        "baseId": "cuboid-02-01",
         "pair": "01"
       }
     },
@@ -2694,10 +2816,10 @@
       "question": "edgecolor/cuboid-02-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cuboid-09-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor01-02.svg",
         "edgecolor/cuboid-02-01-edgecolor02-02.svg",
-        "edgecolor/cube-10-edgecolor-01-01.svg"
+        "edgecolor/cuboid-02-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2706,6 +2828,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor02",
+        "baseId": "cuboid-02-01",
         "pair": "02"
       }
     },
@@ -2717,9 +2840,9 @@
       "answer": "edgecolor/cuboid-02-01-edgecolor02-01.svg",
       "choices": [
         "edgecolor/cuboid-02-01-edgecolor02-01.svg",
-        "edgecolor/cube-11-edgecolor-04-02.svg",
-        "edgecolor/cube-09-edgecolor-02-02.svg",
-        "edgecolor/cube-02-edgecolor-03-02.svg"
+        "edgecolor/cuboid-02-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2728,6 +2851,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor02",
+        "baseId": "cuboid-02-01",
         "pair": "02"
       }
     },
@@ -2738,10 +2862,10 @@
       "question": "edgecolor/cuboid-02-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
         "edgecolor/cuboid-02-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor02-01.svg"
+        "edgecolor/cuboid-02-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2750,6 +2874,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor03",
+        "baseId": "cuboid-02-01",
         "pair": "03"
       }
     },
@@ -2761,9 +2886,9 @@
       "answer": "edgecolor/cuboid-02-01-edgecolor03-01.svg",
       "choices": [
         "edgecolor/cuboid-02-01-edgecolor03-01.svg",
-        "edgecolor/cube-08-edgecolor-01-02.svg",
-        "edgecolor/cube-03-edgecolor-04-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-01.svg"
+        "edgecolor/cuboid-02-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2772,6 +2897,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor03",
+        "baseId": "cuboid-02-01",
         "pair": "03"
       }
     },
@@ -2782,10 +2908,10 @@
       "question": "edgecolor/cuboid-02-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-02-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-02.svg",
         "edgecolor/cuboid-02-01-edgecolor04-02.svg",
-        "edgecolor/cube-01-edgecolor-01-01.svg",
-        "edgecolor/cube-01-edgecolor-05-01.svg"
+        "edgecolor/cuboid-02-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2794,6 +2920,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor04",
+        "baseId": "cuboid-02-01",
         "pair": "04"
       }
     },
@@ -2804,10 +2931,10 @@
       "question": "edgecolor/cuboid-02-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-03-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-01.svg",
         "edgecolor/cuboid-02-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor03-01.svg"
+        "edgecolor/cuboid-02-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2816,6 +2943,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor04",
+        "baseId": "cuboid-02-01",
         "pair": "04"
       }
     },
@@ -2826,9 +2954,9 @@
       "question": "edgecolor/cuboid-02-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-02-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-01.svg",
-        "edgecolor/cube-09-edgecolor-03-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor03-02.svg",
         "edgecolor/cuboid-02-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
@@ -2838,6 +2966,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor05",
+        "baseId": "cuboid-02-01",
         "pair": "05"
       }
     },
@@ -2848,10 +2977,10 @@
       "question": "edgecolor/cuboid-02-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-04-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-02-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-02-01-edgecolor03-01.svg",
         "edgecolor/cuboid-02-01-edgecolor05-01.svg",
-        "edgecolor/cube-03-edgecolor-05-01.svg"
+        "edgecolor/cuboid-02-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2860,6 +2989,7 @@
       ],
       "meta": {
         "base": "cuboid-02-01-edgecolor05",
+        "baseId": "cuboid-02-01",
         "pair": "05"
       }
     },
@@ -2870,9 +3000,9 @@
       "question": "edgecolor/cuboid-03-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor01-02.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
-        "edgecolor/cube-04-edgecolor-03-01.svg",
-        "edgecolor/cube-09-edgecolor-03-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor05-02.svg",
         "edgecolor/cuboid-03-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
@@ -2882,6 +3012,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor01",
+        "baseId": "cuboid-03-01",
         "pair": "01"
       }
     },
@@ -2892,10 +3023,10 @@
       "question": "edgecolor/cuboid-03-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
         "edgecolor/cuboid-03-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor04-01.svg",
-        "edgecolor/cube-10-edgecolor-04-02.svg"
+        "edgecolor/cuboid-03-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2904,6 +3035,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor01",
+        "baseId": "cuboid-03-01",
         "pair": "01"
       }
     },
@@ -2914,10 +3046,10 @@
       "question": "edgecolor/cuboid-03-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-01-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor04-02.svg",
         "edgecolor/cuboid-03-01-edgecolor02-02.svg",
-        "edgecolor/cube-08-edgecolor-04-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor04-01.svg"
+        "edgecolor/cuboid-03-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2926,6 +3058,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor02",
+        "baseId": "cuboid-03-01",
         "pair": "02"
       }
     },
@@ -2936,10 +3069,10 @@
       "question": "edgecolor/cuboid-03-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor05-02.svg",
         "edgecolor/cuboid-03-01-edgecolor02-01.svg",
-        "edgecolor/cube-03-edgecolor-04-01.svg"
+        "edgecolor/cuboid-03-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2948,6 +3081,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor02",
+        "baseId": "cuboid-03-01",
         "pair": "02"
       }
     },
@@ -2958,10 +3092,10 @@
       "question": "edgecolor/cuboid-03-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
         "edgecolor/cuboid-03-01-edgecolor03-02.svg",
-        "edgecolor/cube-09-edgecolor-05-02.svg"
+        "edgecolor/cuboid-03-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -2970,6 +3104,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor03",
+        "baseId": "cuboid-03-01",
         "pair": "03"
       }
     },
@@ -2980,9 +3115,9 @@
       "question": "edgecolor/cuboid-03-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-01.svg",
         "edgecolor/cuboid-03-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
@@ -2992,6 +3127,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor03",
+        "baseId": "cuboid-03-01",
         "pair": "03"
       }
     },
@@ -3002,9 +3138,9 @@
       "question": "edgecolor/cuboid-03-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor04-02.svg",
-        "edgecolor/cube-08-edgecolor-01-02.svg",
-        "edgecolor/cube-09-edgecolor-01-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
         "edgecolor/cuboid-03-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
@@ -3014,6 +3150,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor04",
+        "baseId": "cuboid-03-01",
         "pair": "04"
       }
     },
@@ -3024,10 +3161,10 @@
       "question": "edgecolor/cuboid-03-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor02-01.svg",
         "edgecolor/cuboid-03-01-edgecolor04-01.svg",
-        "edgecolor/cube-07-edgecolor-05-01.svg",
-        "edgecolor/cube-03-edgecolor-05-02.svg"
+        "edgecolor/cuboid-03-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3036,6 +3173,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor04",
+        "baseId": "cuboid-03-01",
         "pair": "04"
       }
     },
@@ -3046,10 +3184,10 @@
       "question": "edgecolor/cuboid-03-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor02-01.svg",
-        "edgecolor/cube-02-edgecolor-01-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor03-01.svg",
         "edgecolor/cuboid-03-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor04-01.svg"
+        "edgecolor/cuboid-03-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3058,6 +3196,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor05",
+        "baseId": "cuboid-03-01",
         "pair": "05"
       }
     },
@@ -3069,9 +3208,9 @@
       "answer": "edgecolor/cuboid-03-01-edgecolor05-01.svg",
       "choices": [
         "edgecolor/cuboid-03-01-edgecolor05-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor03-02.svg"
+        "edgecolor/cuboid-03-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-03-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-03-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3080,6 +3219,7 @@
       ],
       "meta": {
         "base": "cuboid-03-01-edgecolor05",
+        "baseId": "cuboid-03-01",
         "pair": "05"
       }
     },
@@ -3091,9 +3231,9 @@
       "answer": "edgecolor/cuboid-04-01-edgecolor01-02.svg",
       "choices": [
         "edgecolor/cuboid-04-01-edgecolor01-02.svg",
-        "edgecolor/cube-03-edgecolor-03-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor04-01.svg",
-        "edgecolor/cube-02-edgecolor-05-01.svg"
+        "edgecolor/cuboid-04-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3102,6 +3242,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor01",
+        "baseId": "cuboid-04-01",
         "pair": "01"
       }
     },
@@ -3112,9 +3253,9 @@
       "question": "edgecolor/cuboid-04-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-02-01.svg",
-        "edgecolor/cube-11-edgecolor-05-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-01.svg",
         "edgecolor/cuboid-04-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
@@ -3124,6 +3265,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor01",
+        "baseId": "cuboid-04-01",
         "pair": "01"
       }
     },
@@ -3134,10 +3276,10 @@
       "question": "edgecolor/cuboid-04-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-04-01.svg",
-        "edgecolor/cube-04-edgecolor-01-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-04-01-edgecolor03-01.svg",
         "edgecolor/cuboid-04-01-edgecolor02-02.svg",
-        "edgecolor/cube-03-edgecolor-05-02.svg"
+        "edgecolor/cuboid-04-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3146,6 +3288,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor02",
+        "baseId": "cuboid-04-01",
         "pair": "02"
       }
     },
@@ -3156,10 +3299,10 @@
       "question": "edgecolor/cuboid-04-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-02-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-01.svg",
         "edgecolor/cuboid-04-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor02-02.svg"
+        "edgecolor/cuboid-04-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3168,6 +3311,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor02",
+        "baseId": "cuboid-04-01",
         "pair": "02"
       }
     },
@@ -3178,10 +3322,10 @@
       "question": "edgecolor/cuboid-04-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-01.svg",
         "edgecolor/cuboid-04-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor05-02.svg"
+        "edgecolor/cuboid-04-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3190,6 +3334,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor03",
+        "baseId": "cuboid-04-01",
         "pair": "03"
       }
     },
@@ -3201,9 +3346,9 @@
       "answer": "edgecolor/cuboid-04-01-edgecolor03-01.svg",
       "choices": [
         "edgecolor/cuboid-04-01-edgecolor03-01.svg",
-        "edgecolor/cube-07-edgecolor-02-01.svg",
-        "edgecolor/cube-10-edgecolor-02-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-01.svg"
+        "edgecolor/cuboid-04-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3212,6 +3357,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor03",
+        "baseId": "cuboid-04-01",
         "pair": "03"
       }
     },
@@ -3223,9 +3369,9 @@
       "answer": "edgecolor/cuboid-04-01-edgecolor04-02.svg",
       "choices": [
         "edgecolor/cuboid-04-01-edgecolor04-02.svg",
-        "edgecolor/cube-05-edgecolor-02-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor05-01.svg",
-        "edgecolor/cube-04-edgecolor-04-02.svg"
+        "edgecolor/cuboid-04-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-04-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3234,6 +3380,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor04",
+        "baseId": "cuboid-04-01",
         "pair": "04"
       }
     },
@@ -3245,9 +3392,9 @@
       "answer": "edgecolor/cuboid-04-01-edgecolor04-01.svg",
       "choices": [
         "edgecolor/cuboid-04-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor01-01.svg",
-        "edgecolor/cube-06-edgecolor-04-02.svg",
-        "edgecolor/cube-04-edgecolor-03-02.svg"
+        "edgecolor/cuboid-04-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3256,6 +3403,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor04",
+        "baseId": "cuboid-04-01",
         "pair": "04"
       }
     },
@@ -3266,9 +3414,9 @@
       "question": "edgecolor/cuboid-04-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cube-05-edgecolor-02-01.svg",
-        "edgecolor/cube-02-edgecolor-03-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-04-01-edgecolor04-02.svg",
         "edgecolor/cuboid-04-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
@@ -3278,6 +3426,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor05",
+        "baseId": "cuboid-04-01",
         "pair": "05"
       }
     },
@@ -3288,10 +3437,10 @@
       "question": "edgecolor/cuboid-04-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cuboid-04-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-02.svg",
         "edgecolor/cuboid-04-01-edgecolor05-01.svg",
-        "edgecolor/cube-11-edgecolor-03-01.svg",
-        "edgecolor/cube-04-edgecolor-03-01.svg"
+        "edgecolor/cuboid-04-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-04-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3300,6 +3449,7 @@
       ],
       "meta": {
         "base": "cuboid-04-01-edgecolor05",
+        "baseId": "cuboid-04-01",
         "pair": "05"
       }
     },
@@ -3310,10 +3460,10 @@
       "question": "edgecolor/cuboid-05-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor01-02.svg",
       "choices": [
-        "edgecolor/cube-05-edgecolor-02-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor05-01.svg",
         "edgecolor/cuboid-05-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-01.svg"
+        "edgecolor/cuboid-05-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3322,6 +3472,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor01",
+        "baseId": "cuboid-05-01",
         "pair": "01"
       }
     },
@@ -3333,9 +3484,9 @@
       "answer": "edgecolor/cuboid-05-01-edgecolor01-01.svg",
       "choices": [
         "edgecolor/cuboid-05-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3344,6 +3495,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor01",
+        "baseId": "cuboid-05-01",
         "pair": "01"
       }
     },
@@ -3355,9 +3507,9 @@
       "answer": "edgecolor/cuboid-05-01-edgecolor02-02.svg",
       "choices": [
         "edgecolor/cuboid-05-01-edgecolor02-02.svg",
-        "edgecolor/cube-04-edgecolor-03-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor02-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor04-02.svg"
+        "edgecolor/cuboid-05-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3366,6 +3518,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor02",
+        "baseId": "cuboid-05-01",
         "pair": "02"
       }
     },
@@ -3376,10 +3529,10 @@
       "question": "edgecolor/cuboid-05-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cube-03-edgecolor-02-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-02.svg",
         "edgecolor/cuboid-05-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor04-01.svg"
+        "edgecolor/cuboid-05-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3388,6 +3541,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor02",
+        "baseId": "cuboid-05-01",
         "pair": "02"
       }
     },
@@ -3399,9 +3553,9 @@
       "answer": "edgecolor/cuboid-05-01-edgecolor03-02.svg",
       "choices": [
         "edgecolor/cuboid-05-01-edgecolor03-02.svg",
-        "edgecolor/cube-04-edgecolor-01-01.svg",
-        "edgecolor/cube-09-edgecolor-01-01.svg",
-        "edgecolor/cube-03-edgecolor-02-02.svg"
+        "edgecolor/cuboid-05-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3410,6 +3564,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor03",
+        "baseId": "cuboid-05-01",
         "pair": "03"
       }
     },
@@ -3420,10 +3575,10 @@
       "question": "edgecolor/cuboid-05-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cube-03-edgecolor-05-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor01-01.svg",
         "edgecolor/cuboid-05-01-edgecolor03-01.svg",
-        "edgecolor/cube-08-edgecolor-04-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor02-02.svg"
+        "edgecolor/cuboid-05-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3432,6 +3587,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor03",
+        "baseId": "cuboid-05-01",
         "pair": "03"
       }
     },
@@ -3442,9 +3598,9 @@
       "question": "edgecolor/cuboid-05-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor01-01.svg",
         "edgecolor/cuboid-05-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor01-02.svg",
         "edgecolor/cuboid-05-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
@@ -3454,6 +3610,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor04",
+        "baseId": "cuboid-05-01",
         "pair": "04"
       }
     },
@@ -3464,10 +3621,10 @@
       "question": "edgecolor/cuboid-05-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cuboid-08-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-02.svg",
         "edgecolor/cuboid-05-01-edgecolor04-01.svg",
-        "edgecolor/cube-07-edgecolor-05-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-01.svg"
+        "edgecolor/cuboid-05-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3476,6 +3633,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor04",
+        "baseId": "cuboid-05-01",
         "pair": "04"
       }
     },
@@ -3486,9 +3644,9 @@
       "question": "edgecolor/cuboid-05-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cuboid-06-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor04-01.svg",
-        "edgecolor/cube-08-edgecolor-02-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-05-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor01-02.svg",
         "edgecolor/cuboid-05-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
@@ -3498,6 +3656,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor05",
+        "baseId": "cuboid-05-01",
         "pair": "05"
       }
     },
@@ -3508,9 +3667,9 @@
       "question": "edgecolor/cuboid-05-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-03-edgecolor-03-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-05-01-edgecolor04-02.svg",
         "edgecolor/cuboid-05-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
@@ -3520,6 +3679,7 @@
       ],
       "meta": {
         "base": "cuboid-05-01-edgecolor05",
+        "baseId": "cuboid-05-01",
         "pair": "05"
       }
     },
@@ -3531,9 +3691,9 @@
       "answer": "edgecolor/cuboid-06-01-edgecolor01-02.svg",
       "choices": [
         "edgecolor/cuboid-06-01-edgecolor01-02.svg",
-        "edgecolor/cube-01-edgecolor-03-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
-        "edgecolor/cube-06-edgecolor-05-02.svg"
+        "edgecolor/cuboid-06-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3542,6 +3702,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor01",
+        "baseId": "cuboid-06-01",
         "pair": "01"
       }
     },
@@ -3552,10 +3713,10 @@
       "question": "edgecolor/cuboid-06-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-01-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor03-02.svg",
         "edgecolor/cuboid-06-01-edgecolor01-01.svg",
-        "edgecolor/cube-01-edgecolor-03-02.svg",
-        "edgecolor/cube-08-edgecolor-03-02.svg"
+        "edgecolor/cuboid-06-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3564,6 +3725,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor01",
+        "baseId": "cuboid-06-01",
         "pair": "01"
       }
     },
@@ -3574,10 +3736,10 @@
       "question": "edgecolor/cuboid-06-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cuboid-05-01-edgecolor05-02.svg",
-        "edgecolor/cube-10-edgecolor-05-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor03-02.svg",
         "edgecolor/cuboid-06-01-edgecolor02-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor03-02.svg"
+        "edgecolor/cuboid-06-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3586,6 +3748,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor02",
+        "baseId": "cuboid-06-01",
         "pair": "02"
       }
     },
@@ -3596,10 +3759,10 @@
       "question": "edgecolor/cuboid-06-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor04-01.svg",
         "edgecolor/cuboid-06-01-edgecolor02-01.svg",
-        "edgecolor/cube-04-edgecolor-04-02.svg",
-        "edgecolor/cube-09-edgecolor-01-01.svg"
+        "edgecolor/cuboid-06-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3608,6 +3771,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor02",
+        "baseId": "cuboid-06-01",
         "pair": "02"
       }
     },
@@ -3618,9 +3782,9 @@
       "question": "edgecolor/cuboid-06-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-05-02.svg",
-        "edgecolor/cube-05-edgecolor-04-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor01-01.svg",
         "edgecolor/cuboid-06-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
@@ -3630,6 +3794,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor03",
+        "baseId": "cuboid-06-01",
         "pair": "03"
       }
     },
@@ -3640,10 +3805,10 @@
       "question": "edgecolor/cuboid-06-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-02.svg",
         "edgecolor/cuboid-06-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor02-02.svg"
+        "edgecolor/cuboid-06-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3652,6 +3817,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor03",
+        "baseId": "cuboid-06-01",
         "pair": "03"
       }
     },
@@ -3662,9 +3828,9 @@
       "question": "edgecolor/cuboid-06-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-06-01-edgecolor05-01.svg",
-        "edgecolor/cube-11-edgecolor-05-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor05-02.svg",
         "edgecolor/cuboid-06-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
@@ -3674,6 +3840,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor04",
+        "baseId": "cuboid-06-01",
         "pair": "04"
       }
     },
@@ -3684,10 +3851,10 @@
       "question": "edgecolor/cuboid-06-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-02.svg",
         "edgecolor/cuboid-06-01-edgecolor04-01.svg",
-        "edgecolor/cube-07-edgecolor-01-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-06-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3696,6 +3863,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor04",
+        "baseId": "cuboid-06-01",
         "pair": "04"
       }
     },
@@ -3707,9 +3875,9 @@
       "answer": "edgecolor/cuboid-06-01-edgecolor05-02.svg",
       "choices": [
         "edgecolor/cuboid-06-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor04-01.svg",
-        "edgecolor/cube-01-edgecolor-04-01.svg"
+        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-06-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3718,6 +3886,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor05",
+        "baseId": "cuboid-06-01",
         "pair": "05"
       }
     },
@@ -3728,10 +3897,10 @@
       "question": "edgecolor/cuboid-06-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-07-edgecolor-01-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
         "edgecolor/cuboid-06-01-edgecolor05-01.svg",
-        "edgecolor/cube-07-edgecolor-05-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-06-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-06-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3740,6 +3909,7 @@
       ],
       "meta": {
         "base": "cuboid-06-01-edgecolor05",
+        "baseId": "cuboid-06-01",
         "pair": "05"
       }
     },
@@ -3750,10 +3920,10 @@
       "question": "edgecolor/cuboid-07-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor01-02.svg",
       "choices": [
-        "edgecolor/cuboid-02-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor02-02.svg",
         "edgecolor/cuboid-07-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-01.svg"
+        "edgecolor/cuboid-07-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3762,6 +3932,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor01",
+        "baseId": "cuboid-07-01",
         "pair": "01"
       }
     },
@@ -3772,9 +3943,9 @@
       "question": "edgecolor/cuboid-07-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-01-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor03-01.svg",
         "edgecolor/cuboid-07-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
@@ -3784,6 +3955,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor01",
+        "baseId": "cuboid-07-01",
         "pair": "01"
       }
     },
@@ -3794,10 +3966,10 @@
       "question": "edgecolor/cuboid-07-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cube-01-edgecolor-01-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor04-01.svg",
         "edgecolor/cuboid-07-01-edgecolor02-02.svg",
-        "edgecolor/cube-05-edgecolor-01-02.svg"
+        "edgecolor/cuboid-07-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3806,6 +3978,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor02",
+        "baseId": "cuboid-07-01",
         "pair": "02"
       }
     },
@@ -3816,10 +3989,10 @@
       "question": "edgecolor/cuboid-07-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor03-02.svg",
-        "edgecolor/cube-03-edgecolor-03-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor01-01.svg",
         "edgecolor/cuboid-07-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-07-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3828,6 +4001,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor02",
+        "baseId": "cuboid-07-01",
         "pair": "02"
       }
     },
@@ -3838,9 +4012,9 @@
       "question": "edgecolor/cuboid-07-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-02-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor04-01.svg",
         "edgecolor/cuboid-07-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
@@ -3850,6 +4024,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor03",
+        "baseId": "cuboid-07-01",
         "pair": "03"
       }
     },
@@ -3860,9 +4035,9 @@
       "question": "edgecolor/cuboid-07-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-04-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
         "edgecolor/cuboid-07-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
@@ -3872,6 +4047,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor03",
+        "baseId": "cuboid-07-01",
         "pair": "03"
       }
     },
@@ -3883,9 +4059,9 @@
       "answer": "edgecolor/cuboid-07-01-edgecolor04-02.svg",
       "choices": [
         "edgecolor/cuboid-07-01-edgecolor04-02.svg",
-        "edgecolor/cube-01-edgecolor-02-02.svg",
-        "edgecolor/cube-03-edgecolor-02-02.svg",
-        "edgecolor/cube-07-edgecolor-04-01.svg"
+        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3894,6 +4070,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor04",
+        "baseId": "cuboid-07-01",
         "pair": "04"
       }
     },
@@ -3904,10 +4081,10 @@
       "question": "edgecolor/cuboid-07-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor02-01.svg",
         "edgecolor/cuboid-07-01-edgecolor04-01.svg",
-        "edgecolor/cube-01-edgecolor-02-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-07-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3916,6 +4093,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor04",
+        "baseId": "cuboid-07-01",
         "pair": "04"
       }
     },
@@ -3926,10 +4104,10 @@
       "question": "edgecolor/cuboid-07-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-03-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor01-01.svg",
         "edgecolor/cuboid-07-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor04-01.svg"
+        "edgecolor/cuboid-07-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3938,6 +4116,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor05",
+        "baseId": "cuboid-07-01",
         "pair": "05"
       }
     },
@@ -3948,10 +4127,10 @@
       "question": "edgecolor/cuboid-07-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-02-01.svg",
-        "edgecolor/cube-09-edgecolor-05-02.svg",
+        "edgecolor/cuboid-07-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-07-01-edgecolor02-01.svg",
         "edgecolor/cuboid-07-01-edgecolor05-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor04-01.svg"
+        "edgecolor/cuboid-07-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3960,6 +4139,7 @@
       ],
       "meta": {
         "base": "cuboid-07-01-edgecolor05",
+        "baseId": "cuboid-07-01",
         "pair": "05"
       }
     },
@@ -3970,10 +4150,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor01-02.svg",
       "choices": [
-        "edgecolor/cuboid-04-01-edgecolor05-02.svg",
-        "edgecolor/cube-08-edgecolor-04-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor03-02.svg",
         "edgecolor/cuboid-08-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-08-01-edgecolor04-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -3982,6 +4162,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor01",
+        "baseId": "cuboid-08-01",
         "pair": "01"
       }
     },
@@ -3992,10 +4173,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-09-edgecolor-04-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor03-01.svg",
         "edgecolor/cuboid-08-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor03-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4004,6 +4185,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor01",
+        "baseId": "cuboid-08-01",
         "pair": "01"
       }
     },
@@ -4014,10 +4196,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-03-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor01-02.svg",
         "edgecolor/cuboid-08-01-edgecolor02-02.svg",
-        "edgecolor/cube-09-edgecolor-01-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4026,6 +4208,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor02",
+        "baseId": "cuboid-08-01",
         "pair": "02"
       }
     },
@@ -4036,10 +4219,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor03-01.svg",
         "edgecolor/cuboid-08-01-edgecolor02-01.svg",
-        "edgecolor/cube-07-edgecolor-01-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4048,6 +4231,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor02",
+        "baseId": "cuboid-08-01",
         "pair": "02"
       }
     },
@@ -4059,9 +4243,9 @@
       "answer": "edgecolor/cuboid-08-01-edgecolor03-02.svg",
       "choices": [
         "edgecolor/cuboid-08-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg",
-        "edgecolor/cube-07-edgecolor-05-02.svg",
-        "edgecolor/cube-04-edgecolor-03-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4070,6 +4254,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor03",
+        "baseId": "cuboid-08-01",
         "pair": "03"
       }
     },
@@ -4080,9 +4265,9 @@
       "question": "edgecolor/cuboid-08-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-04-01.svg",
-        "edgecolor/cube-04-edgecolor-03-02.svg",
-        "edgecolor/cube-11-edgecolor-04-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor05-02.svg",
         "edgecolor/cuboid-08-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
@@ -4092,6 +4277,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor03",
+        "baseId": "cuboid-08-01",
         "pair": "03"
       }
     },
@@ -4102,10 +4288,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cuboid-04-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor01-01.svg",
         "edgecolor/cuboid-08-01-edgecolor04-02.svg",
-        "edgecolor/cube-08-edgecolor-01-01.svg",
-        "edgecolor/cube-08-edgecolor-01-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4114,6 +4300,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor04",
+        "baseId": "cuboid-08-01",
         "pair": "04"
       }
     },
@@ -4124,9 +4311,9 @@
       "question": "edgecolor/cuboid-08-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cube-07-edgecolor-01-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-08-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor02-01.svg",
         "edgecolor/cuboid-08-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
@@ -4136,6 +4323,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor04",
+        "baseId": "cuboid-08-01",
         "pair": "04"
       }
     },
@@ -4146,10 +4334,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cuboid-10-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-04-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor03-01.svg",
         "edgecolor/cuboid-08-01-edgecolor05-02.svg",
-        "edgecolor/cube-02-edgecolor-02-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4158,6 +4346,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor05",
+        "baseId": "cuboid-08-01",
         "pair": "05"
       }
     },
@@ -4168,10 +4357,10 @@
       "question": "edgecolor/cuboid-08-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-03-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-08-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-08-01-edgecolor02-01.svg",
         "edgecolor/cuboid-08-01-edgecolor05-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor02-02.svg"
+        "edgecolor/cuboid-08-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4180,6 +4369,7 @@
       ],
       "meta": {
         "base": "cuboid-08-01-edgecolor05",
+        "baseId": "cuboid-08-01",
         "pair": "05"
       }
     },
@@ -4191,9 +4381,9 @@
       "answer": "edgecolor/cuboid-09-01-edgecolor01-02.svg",
       "choices": [
         "edgecolor/cuboid-09-01-edgecolor01-02.svg",
-        "edgecolor/cube-04-edgecolor-01-01.svg",
-        "edgecolor/cuboid-05-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor05-02.svg"
+        "edgecolor/cuboid-09-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4202,6 +4392,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor01",
+        "baseId": "cuboid-09-01",
         "pair": "01"
       }
     },
@@ -4212,10 +4403,10 @@
       "question": "edgecolor/cuboid-09-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-11-edgecolor-05-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
         "edgecolor/cuboid-09-01-edgecolor01-01.svg",
-        "edgecolor/cube-10-edgecolor-02-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-02.svg"
+        "edgecolor/cuboid-09-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4224,6 +4415,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor01",
+        "baseId": "cuboid-09-01",
         "pair": "01"
       }
     },
@@ -4235,9 +4427,9 @@
       "answer": "edgecolor/cuboid-09-01-edgecolor02-02.svg",
       "choices": [
         "edgecolor/cuboid-09-01-edgecolor02-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-02.svg",
-        "edgecolor/cube-03-edgecolor-02-01.svg"
+        "edgecolor/cuboid-09-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4246,6 +4438,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor02",
+        "baseId": "cuboid-09-01",
         "pair": "02"
       }
     },
@@ -4257,9 +4450,9 @@
       "answer": "edgecolor/cuboid-09-01-edgecolor02-01.svg",
       "choices": [
         "edgecolor/cuboid-09-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg",
-        "edgecolor/cube-05-edgecolor-03-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-01.svg"
+        "edgecolor/cuboid-09-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4268,6 +4461,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor02",
+        "baseId": "cuboid-09-01",
         "pair": "02"
       }
     },
@@ -4278,10 +4472,10 @@
       "question": "edgecolor/cuboid-09-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-05-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-01.svg",
         "edgecolor/cuboid-09-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor02-01.svg"
+        "edgecolor/cuboid-09-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4290,6 +4484,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor03",
+        "baseId": "cuboid-09-01",
         "pair": "03"
       }
     },
@@ -4300,9 +4495,9 @@
       "question": "edgecolor/cuboid-09-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-02-02.svg",
-        "edgecolor/cuboid-06-01-edgecolor01-02.svg",
-        "edgecolor/cube-11-edgecolor-02-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
         "edgecolor/cuboid-09-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
@@ -4312,6 +4507,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor03",
+        "baseId": "cuboid-09-01",
         "pair": "03"
       }
     },
@@ -4322,9 +4518,9 @@
       "question": "edgecolor/cuboid-09-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-01-01.svg",
-        "edgecolor/cuboid-07-01-edgecolor01-02.svg",
-        "edgecolor/cube-05-edgecolor-04-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor05-02.svg",
         "edgecolor/cuboid-09-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
@@ -4334,6 +4530,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor04",
+        "baseId": "cuboid-09-01",
         "pair": "04"
       }
     },
@@ -4344,10 +4541,10 @@
       "question": "edgecolor/cuboid-09-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-01-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
         "edgecolor/cuboid-09-01-edgecolor04-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor03-02.svg",
-        "edgecolor/cube-08-edgecolor-02-02.svg"
+        "edgecolor/cuboid-09-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4356,6 +4553,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor04",
+        "baseId": "cuboid-09-01",
         "pair": "04"
       }
     },
@@ -4367,9 +4565,9 @@
       "answer": "edgecolor/cuboid-09-01-edgecolor05-02.svg",
       "choices": [
         "edgecolor/cuboid-09-01-edgecolor05-02.svg",
-        "edgecolor/cube-04-edgecolor-05-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor01-01.svg",
-        "edgecolor/cube-08-edgecolor-05-01.svg"
+        "edgecolor/cuboid-09-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4378,6 +4576,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor05",
+        "baseId": "cuboid-09-01",
         "pair": "05"
       }
     },
@@ -4388,9 +4587,9 @@
       "question": "edgecolor/cuboid-09-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-03-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
-        "edgecolor/cube-08-edgecolor-04-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-09-01-edgecolor04-02.svg",
         "edgecolor/cuboid-09-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
@@ -4400,6 +4599,7 @@
       ],
       "meta": {
         "base": "cuboid-09-01-edgecolor05",
+        "baseId": "cuboid-09-01",
         "pair": "05"
       }
     },
@@ -4411,9 +4611,9 @@
       "answer": "edgecolor/cuboid-10-01-edgecolor01-02.svg",
       "choices": [
         "edgecolor/cuboid-10-01-edgecolor01-02.svg",
-        "edgecolor/cube-09-edgecolor-02-01.svg",
-        "edgecolor/cube-01-edgecolor-02-02.svg",
-        "edgecolor/cube-11-edgecolor-04-01.svg"
+        "edgecolor/cuboid-10-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor05-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4422,6 +4622,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor01",
+        "baseId": "cuboid-10-01",
         "pair": "01"
       }
     },
@@ -4432,10 +4633,10 @@
       "question": "edgecolor/cuboid-10-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cuboid-07-01-edgecolor04-02.svg",
-        "edgecolor/cube-11-edgecolor-03-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor04-01.svg",
         "edgecolor/cuboid-10-01-edgecolor01-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg"
+        "edgecolor/cuboid-10-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4444,6 +4645,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor01",
+        "baseId": "cuboid-10-01",
         "pair": "01"
       }
     },
@@ -4454,9 +4656,9 @@
       "question": "edgecolor/cuboid-10-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cuboid-06-01-edgecolor05-01.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-11-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
         "edgecolor/cuboid-10-01-edgecolor02-02.svg"
       ],
       "difficulty": 2,
@@ -4466,6 +4668,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor02",
+        "baseId": "cuboid-10-01",
         "pair": "02"
       }
     },
@@ -4476,10 +4679,10 @@
       "question": "edgecolor/cuboid-10-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cube-04-edgecolor-03-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
         "edgecolor/cuboid-10-01-edgecolor02-01.svg",
-        "edgecolor/cuboid-02-01-edgecolor04-02.svg",
-        "edgecolor/cube-04-edgecolor-03-02.svg"
+        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4488,6 +4691,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor02",
+        "baseId": "cuboid-10-01",
         "pair": "02"
       }
     },
@@ -4498,10 +4702,10 @@
       "question": "edgecolor/cuboid-10-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor03-02.svg",
       "choices": [
-        "edgecolor/cuboid-06-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor04-01.svg",
         "edgecolor/cuboid-10-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-02-01-edgecolor05-02.svg",
-        "edgecolor/cube-02-edgecolor-02-01.svg"
+        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4510,6 +4714,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor03",
+        "baseId": "cuboid-10-01",
         "pair": "03"
       }
     },
@@ -4521,9 +4726,9 @@
       "answer": "edgecolor/cuboid-10-01-edgecolor03-01.svg",
       "choices": [
         "edgecolor/cuboid-10-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg",
-        "edgecolor/cube-06-edgecolor-04-02.svg",
-        "edgecolor/cuboid-09-01-edgecolor05-01.svg"
+        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4532,6 +4737,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor03",
+        "baseId": "cuboid-10-01",
         "pair": "03"
       }
     },
@@ -4543,9 +4749,9 @@
       "answer": "edgecolor/cuboid-10-01-edgecolor04-02.svg",
       "choices": [
         "edgecolor/cuboid-10-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor03-01.svg",
-        "edgecolor/cube-10-edgecolor-02-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor03-02.svg"
+        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4554,6 +4760,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor04",
+        "baseId": "cuboid-10-01",
         "pair": "04"
       }
     },
@@ -4564,10 +4771,10 @@
       "question": "edgecolor/cuboid-10-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cube-10-edgecolor-03-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor02-02.svg",
         "edgecolor/cuboid-10-01-edgecolor04-01.svg",
-        "edgecolor/cube-07-edgecolor-04-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor03-02.svg"
+        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor03-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4576,6 +4783,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor04",
+        "baseId": "cuboid-10-01",
         "pair": "04"
       }
     },
@@ -4586,9 +4794,9 @@
       "question": "edgecolor/cuboid-10-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cube-07-edgecolor-04-02.svg",
-        "edgecolor/cube-10-edgecolor-03-01.svg",
-        "edgecolor/cube-02-edgecolor-04-01.svg",
+        "edgecolor/cuboid-10-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor01-01.svg",
         "edgecolor/cuboid-10-01-edgecolor05-02.svg"
       ],
       "difficulty": 2,
@@ -4598,6 +4806,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor05",
+        "baseId": "cuboid-10-01",
         "pair": "05"
       }
     },
@@ -4608,10 +4817,10 @@
       "question": "edgecolor/cuboid-10-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cuboid-03-01-edgecolor05-01.svg",
-        "edgecolor/cube-10-edgecolor-05-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor01-02.svg",
+        "edgecolor/cuboid-10-01-edgecolor04-02.svg",
         "edgecolor/cuboid-10-01-edgecolor05-01.svg",
-        "edgecolor/cube-01-edgecolor-05-01.svg"
+        "edgecolor/cuboid-10-01-edgecolor03-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4620,6 +4829,7 @@
       ],
       "meta": {
         "base": "cuboid-10-01-edgecolor05",
+        "baseId": "cuboid-10-01",
         "pair": "05"
       }
     },
@@ -4630,10 +4840,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor01-02.svg",
       "choices": [
-        "edgecolor/cuboid-04-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-05-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-01.svg",
         "edgecolor/cuboid-11-01-edgecolor01-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-11-01-edgecolor04-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4642,6 +4852,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor01",
+        "baseId": "cuboid-11-01",
         "pair": "01"
       }
     },
@@ -4652,9 +4863,9 @@
       "question": "edgecolor/cuboid-11-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor01-01.svg",
       "choices": [
-        "edgecolor/cube-08-edgecolor-05-01.svg",
-        "edgecolor/cube-05-edgecolor-01-01.svg",
-        "edgecolor/cube-07-edgecolor-02-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor04-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor04-02.svg",
         "edgecolor/cuboid-11-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
@@ -4664,6 +4875,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor01",
+        "baseId": "cuboid-11-01",
         "pair": "01"
       }
     },
@@ -4674,10 +4886,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor02-02.svg",
       "choices": [
-        "edgecolor/cuboid-01-01-edgecolor05-01.svg",
-        "edgecolor/cube-05-edgecolor-03-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor01-02.svg",
         "edgecolor/cuboid-11-01-edgecolor02-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-02.svg"
+        "edgecolor/cuboid-11-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4686,6 +4898,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor02",
+        "baseId": "cuboid-11-01",
         "pair": "02"
       }
     },
@@ -4696,10 +4909,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor02-01.svg",
       "choices": [
-        "edgecolor/cube-02-edgecolor-02-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor03-01.svg",
         "edgecolor/cuboid-11-01-edgecolor02-01.svg",
-        "edgecolor/cube-11-edgecolor-03-01.svg",
-        "edgecolor/cube-07-edgecolor-02-01.svg"
+        "edgecolor/cuboid-11-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4708,6 +4921,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor02",
+        "baseId": "cuboid-11-01",
         "pair": "02"
       }
     },
@@ -4719,9 +4933,9 @@
       "answer": "edgecolor/cuboid-11-01-edgecolor03-02.svg",
       "choices": [
         "edgecolor/cuboid-11-01-edgecolor03-02.svg",
-        "edgecolor/cuboid-03-01-edgecolor02-02.svg",
-        "edgecolor/cube-06-edgecolor-01-01.svg",
-        "edgecolor/cuboid-11-01-edgecolor04-02.svg"
+        "edgecolor/cuboid-11-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor01-02.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4730,6 +4944,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor03",
+        "baseId": "cuboid-11-01",
         "pair": "03"
       }
     },
@@ -4740,10 +4955,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor03-01.svg",
       "choices": [
-        "edgecolor/cuboid-11-01-edgecolor04-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor01-02.svg",
         "edgecolor/cuboid-11-01-edgecolor03-01.svg",
-        "edgecolor/cuboid-01-01-edgecolor04-02.svg",
-        "edgecolor/cuboid-01-01-edgecolor01-01.svg"
+        "edgecolor/cuboid-11-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4752,6 +4967,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor03",
+        "baseId": "cuboid-11-01",
         "pair": "03"
       }
     },
@@ -4762,10 +4978,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor04-02.svg",
       "choices": [
-        "edgecolor/cube-05-edgecolor-05-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor05-02.svg",
         "edgecolor/cuboid-11-01-edgecolor04-02.svg",
-        "edgecolor/cube-08-edgecolor-02-02.svg",
-        "edgecolor/cuboid-07-01-edgecolor02-01.svg"
+        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4774,6 +4990,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor04",
+        "baseId": "cuboid-11-01",
         "pair": "04"
       }
     },
@@ -4784,9 +5001,9 @@
       "question": "edgecolor/cuboid-11-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor04-01.svg",
       "choices": [
-        "edgecolor/cuboid-08-01-edgecolor05-02.svg",
-        "edgecolor/cube-02-edgecolor-03-02.svg",
-        "edgecolor/cuboid-04-01-edgecolor05-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor01-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor03-01.svg",
         "edgecolor/cuboid-11-01-edgecolor04-01.svg"
       ],
       "difficulty": 2,
@@ -4796,6 +5013,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor04",
+        "baseId": "cuboid-11-01",
         "pair": "04"
       }
     },
@@ -4806,10 +5024,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor05-02.svg",
       "choices": [
-        "edgecolor/cube-06-edgecolor-03-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-02.svg",
         "edgecolor/cuboid-11-01-edgecolor05-02.svg",
-        "edgecolor/cuboid-10-01-edgecolor05-02.svg",
-        "edgecolor/cube-03-edgecolor-03-02.svg"
+        "edgecolor/cuboid-11-01-edgecolor03-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4818,6 +5036,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor05",
+        "baseId": "cuboid-11-01",
         "pair": "05"
       }
     },
@@ -4828,10 +5047,10 @@
       "question": "edgecolor/cuboid-11-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor05-01.svg",
       "choices": [
-        "edgecolor/cube-03-edgecolor-03-01.svg",
+        "edgecolor/cuboid-11-01-edgecolor02-01.svg",
         "edgecolor/cuboid-11-01-edgecolor05-01.svg",
-        "edgecolor/cube-02-edgecolor-01-01.svg",
-        "edgecolor/cuboid-10-01-edgecolor01-02.svg"
+        "edgecolor/cuboid-11-01-edgecolor03-02.svg",
+        "edgecolor/cuboid-11-01-edgecolor01-01.svg"
       ],
       "difficulty": 2,
       "tags": [
@@ -4840,6 +5059,7 @@
       ],
       "meta": {
         "base": "cuboid-11-01-edgecolor05",
+        "baseId": "cuboid-11-01",
         "pair": "05"
       }
     }
