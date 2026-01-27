@@ -21,6 +21,7 @@
             <select id="setting-type">
               <option value="facecolor">facecolor</option>
               <option value="edgecolor">edgecolor</option>
+              <option value="validity">정상/비정상</option>
             </select>
           </div>
           <div>
@@ -104,6 +105,14 @@
       <section class="card hidden" id="summary-card">
         <h2>결과</h2>
         <div class="summary" id="summary-text">-</div>
+        <div style="margin-top: 16px;">
+          <label>결과 데이터(JSON)</label>
+          <textarea id="log-output" rows="8" readonly></textarea>
+          <div style="margin-top: 12px; display: flex; gap: 10px;">
+            <button class="secondary" id="copy-log-btn">JSON 복사</button>
+            <button class="secondary" id="download-log-btn">JSON 다운로드</button>
+          </div>
+        </div>
         <button class="primary" id="restart-btn" style="margin-top: 12px;">다시 시작</button>
       </section>
     </main>

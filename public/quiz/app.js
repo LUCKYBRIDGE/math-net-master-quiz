@@ -15,10 +15,13 @@ const questionImg = $('#question-img');
 const choicesEl = $('#choices');
 const feedbackEl = $('#feedback');
 const timerEl = $('#timer');
+const logOutputEl = $('#log-output');
 
 const startBtn = $('#start-btn');
 const resetBtn = $('#reset-btn');
 const restartBtn = $('#restart-btn');
+const copyLogBtn = $('#copy-log-btn');
+const downloadLogBtn = $('#download-log-btn');
 
 const settingsInputs = {
   count: $('#setting-count'),
@@ -41,6 +44,8 @@ let engine = null;
 let currentQuestion = null;
 let timerId = null;
 let locked = false;
+let answerLog = [];
+let sessionSettings = null;
 
 const banks = {};
 
@@ -160,6 +165,21 @@ const finishQuiz = () => {
     ? Math.round((state.correctCount / state.answeredCount) * 100)
     : 0;
   $('#summary-text').textContent = `점수 ${state.totalScore}점 · 정답 ${state.correctCount}/${total} (${accuracy}%)`;
+
+  const payload = {
+    settings: sessionSettings,
+    summary: {
+      totalScore: state.totalScore,
+      correctCount: state.correctCount,
+      totalCount: state.answeredCount,
+      accuracy
+    },
+    answers: answerLog
+  };
+
+  if (logOutputEl) {
+    logOutputEl.value = JSON.stringify(payload, null, 2);
+  }
 };
 
 const handleAnswer = (choice, isTimeout) => {
@@ -169,6 +189,18 @@ const handleAnswer = (choice, isTimeout) => {
   const answerChoice = choice ?? '';
   const result = engine.submitAnswer(answerChoice);
   if (!result) return;
+
+  answerLog.push({
+    questionId: currentQuestion.id,
+    question: currentQuestion.question,
+    answer: currentQuestion.answer,
+    choice: choice ?? null,
+    correct: result.correct,
+    timeMs: result.timeMs,
+    scoreDelta: result.scoreDelta,
+    totalScore: result.totalScore,
+    combo: result.combo
+  });
 
   const buttons = [...choicesEl.querySelectorAll('.choice-btn')];
   buttons.forEach((btn) => {
@@ -198,6 +230,9 @@ const handleAnswer = (choice, isTimeout) => {
 
 const startQuiz = () => {
   const settings = readSettings();
+  sessionSettings = settings;
+  answerLog = [];
+  if (logOutputEl) logOutputEl.value = '';
   questionBank = banks[settings.questionType] || banks.facecolor;
   engine = createQuizEngine({
     questionBank,
@@ -226,12 +261,35 @@ const restartQuiz = () => {
 const init = async () => {
   banks.facecolor = await loadJson('./data/facecolor-questions.json');
   banks.edgecolor = await loadJson('./data/edgecolor-questions.json');
+  banks.validity = await loadJson('./data/validity-questions.json');
   defaultSettings = await loadJson('./data/quiz-settings.default.json');
   applyDefaultSettings(defaultSettings);
 
   startBtn.addEventListener('click', startQuiz);
   resetBtn.addEventListener('click', resetSettings);
   restartBtn.addEventListener('click', restartQuiz);
+
+  copyLogBtn?.addEventListener('click', async () => {
+    if (!logOutputEl?.value) return;
+    try {
+      await navigator.clipboard.writeText(logOutputEl.value);
+      copyLogBtn.textContent = '복사됨!';
+      setTimeout(() => (copyLogBtn.textContent = 'JSON 복사'), 1500);
+    } catch (err) {
+      console.warn('copy failed', err);
+    }
+  });
+
+  downloadLogBtn?.addEventListener('click', () => {
+    if (!logOutputEl?.value) return;
+    const blob = new Blob([logOutputEl.value], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `quiz-result-${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
 };
 
 init();
