@@ -25,7 +25,7 @@ const downloadLogBtn = $('#download-log-btn');
 
 const settingsInputs = {
   count: $('#setting-count'),
-  type: $('#setting-type'),
+  student: $('#setting-student'),
   mode: $('#setting-mode'),
   repeat: $('#setting-repeat'),
   shuffle: $('#setting-shuffle'),
@@ -36,6 +36,21 @@ const settingsInputs = {
   comboBonus: $('#setting-combo-bonus'),
   timeBonus: $('#setting-time-bonus'),
   timeBonusPer: $('#setting-time-bonus-per')
+};
+
+const typeInputs = {
+  facecolor: {
+    enabled: $('#type-facecolor-enabled'),
+    weight: $('#type-facecolor-weight')
+  },
+  edgecolor: {
+    enabled: $('#type-edgecolor-enabled'),
+    weight: $('#type-edgecolor-weight')
+  },
+  validity: {
+    enabled: $('#type-validity-enabled'),
+    weight: $('#type-validity-weight')
+  }
 };
 
 let questionBank = null;
@@ -57,7 +72,7 @@ const loadJson = async (path) => {
 
 const applyDefaultSettings = (settings) => {
   settingsInputs.count.value = settings.questionCount;
-  settingsInputs.type.value = settings.questionType || 'facecolor';
+  settingsInputs.student.value = settings.studentId || '01';
   settingsInputs.mode.value = settings.selectionMode;
   settingsInputs.repeat.value = settings.avoidRepeat ? 'true' : 'false';
   settingsInputs.shuffle.value = settings.shuffleChoices ? 'true' : 'false';
@@ -68,24 +83,50 @@ const applyDefaultSettings = (settings) => {
   settingsInputs.comboBonus.value = settings.score.comboBonus;
   settingsInputs.timeBonus.value = settings.score.timeBonusEnabled ? 'true' : 'false';
   settingsInputs.timeBonusPer.value = settings.score.timeBonusPerSec;
+
+  const defaults = settings.questionTypes || {
+    facecolor: { enabled: true, weight: 100 },
+    edgecolor: { enabled: false, weight: 0 },
+    validity: { enabled: false, weight: 0 }
+  };
+
+  Object.entries(typeInputs).forEach(([key, fields]) => {
+    const config = defaults[key] || { enabled: false, weight: 0 };
+    fields.enabled.value = config.enabled ? 'true' : 'false';
+    fields.weight.value = config.weight;
+  });
 };
 
-const readSettings = () => ({
-  questionType: settingsInputs.type.value,
-  timeLimitSec: Number(settingsInputs.time.value) || 0,
-  score: {
-    base: Number(settingsInputs.score.value) || 0,
-    penalty: Number(settingsInputs.penalty.value) || 0,
-    comboEnabled: settingsInputs.combo.value === 'true',
-    comboBonus: Number(settingsInputs.comboBonus.value) || 0,
-    timeBonusEnabled: settingsInputs.timeBonus.value === 'true',
-    timeBonusPerSec: Number(settingsInputs.timeBonusPer.value) || 0
-  },
-  questionCount: Number(settingsInputs.count.value) || 10,
-  selectionMode: settingsInputs.mode.value,
-  avoidRepeat: settingsInputs.repeat.value === 'true',
-  shuffleChoices: settingsInputs.shuffle.value === 'true'
-});
+const readSettings = () => {
+  const studentIdRaw = (settingsInputs.student.value || '').trim();
+  const studentId = (/^\d{1,2}$/.test(studentIdRaw) ? studentIdRaw : '01').padStart(2, '0');
+
+  const questionTypes = {};
+  Object.entries(typeInputs).forEach(([key, fields]) => {
+    questionTypes[key] = {
+      enabled: fields.enabled.value === 'true',
+      weight: Number(fields.weight.value) || 0
+    };
+  });
+
+  return {
+    studentId,
+    questionTypes,
+    timeLimitSec: Number(settingsInputs.time.value) || 0,
+    score: {
+      base: Number(settingsInputs.score.value) || 0,
+      penalty: Number(settingsInputs.penalty.value) || 0,
+      comboEnabled: settingsInputs.combo.value === 'true',
+      comboBonus: Number(settingsInputs.comboBonus.value) || 0,
+      timeBonusEnabled: settingsInputs.timeBonus.value === 'true',
+      timeBonusPerSec: Number(settingsInputs.timeBonusPer.value) || 0
+    },
+    questionCount: Number(settingsInputs.count.value) || 10,
+    selectionMode: settingsInputs.mode.value,
+    avoidRepeat: settingsInputs.repeat.value === 'true',
+    shuffleChoices: settingsInputs.shuffle.value === 'true'
+  };
+};
 
 const setFeedback = (message, type) => {
   feedbackEl.textContent = message;
@@ -199,7 +240,8 @@ const handleAnswer = (choice, isTimeout) => {
     timeMs: result.timeMs,
     scoreDelta: result.scoreDelta,
     totalScore: result.totalScore,
-    combo: result.combo
+    combo: result.combo,
+    type: currentQuestion.type
   });
 
   const buttons = [...choicesEl.querySelectorAll('.choice-btn')];
@@ -228,12 +270,83 @@ const handleAnswer = (choice, isTimeout) => {
   }, delay);
 };
 
+const distributeCounts = (total, weights) => {
+  const weightSum = weights.reduce((sum, w) => sum + w.weight, 0);
+  if (!weightSum) return weights.map(w => ({ key: w.key, count: 0 }));
+  const base = weights.map(w => {
+    const exact = (w.weight / weightSum) * total;
+    return { key: w.key, exact, count: Math.floor(exact) };
+  });
+  let remaining = total - base.reduce((sum, item) => sum + item.count, 0);
+  base.sort((a, b) => (b.exact - b.count) - (a.exact - a.count));
+  for (let i = 0; i < base.length && remaining > 0; i += 1) {
+    base[i].count += 1;
+    remaining -= 1;
+  }
+  return base.map(item => ({ key: item.key, count: item.count }));
+};
+
+const buildQuestionBank = (settings) => {
+  const configs = Object.entries(settings.questionTypes || {}).map(([key, config]) => ({
+    key,
+    enabled: config.enabled,
+    weight: config.weight
+  }));
+
+  let enabled = configs.filter(item => item.enabled && item.weight > 0);
+  if (enabled.length === 0) {
+    enabled = [{ key: 'facecolor', enabled: true, weight: 100 }];
+  }
+
+  const total = settings.questionCount;
+  const counts = distributeCounts(total, enabled);
+  const selected = [];
+  const pools = {};
+
+  enabled.forEach(item => {
+    const bank = banks[item.key];
+    if (!bank) return;
+    pools[item.key] = bank.questions.slice().sort(() => Math.random() - 0.5);
+  });
+
+  let remaining = total;
+  counts.forEach(({ key, count }) => {
+    const pool = pools[key] || [];
+    const take = Math.min(count, pool.length);
+    selected.push(...pool.slice(0, take));
+    pools[key] = pool.slice(take);
+    remaining -= take;
+  });
+
+  if (remaining > 0) {
+    const fallback = Object.values(pools).flat();
+    const extra = fallback.slice(0, remaining);
+    selected.push(...extra);
+    remaining -= extra.length;
+  }
+
+  if (remaining > 0 && !settings.avoidRepeat) {
+    const all = Object.values(banks).flatMap(bank => bank.questions);
+    while (remaining > 0 && all.length > 0) {
+      selected.push(all[Math.floor(Math.random() * all.length)]);
+      remaining -= 1;
+    }
+  }
+
+  const finalQuestions = settings.selectionMode === 'random'
+    ? selected.sort(() => Math.random() - 0.5)
+    : selected;
+
+  return { questions: finalQuestions };
+};
+
 const startQuiz = () => {
   const settings = readSettings();
   sessionSettings = settings;
   answerLog = [];
   if (logOutputEl) logOutputEl.value = '';
-  questionBank = banks[settings.questionType] || banks.facecolor;
+  questionBank = buildQuestionBank(settings);
+  settings.questionCount = questionBank.questions.length;
   engine = createQuizEngine({
     questionBank,
     settings

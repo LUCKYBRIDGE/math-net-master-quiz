@@ -9,7 +9,12 @@
     "timeBonusPerSec": 0
   },
   "questionCount": 10,
-  "questionType": "facecolor",
+  "studentId": "01",
+  "questionTypes": {
+    "facecolor": { "enabled": true, "weight": 100 },
+    "edgecolor": { "enabled": false, "weight": 0 },
+    "validity": { "enabled": false, "weight": 0 }
+  },
   "selectionMode": "random",
   "avoidRepeat": true,
   "shuffleChoices": true

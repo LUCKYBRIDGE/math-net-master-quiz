@@ -17,12 +17,41 @@
             <input type="number" id="setting-count" min="1" value="10" />
           </div>
           <div>
-            <label>문제 유형</label>
-            <select id="setting-type">
-              <option value="facecolor">facecolor</option>
-              <option value="edgecolor">edgecolor</option>
-              <option value="validity">정상/비정상</option>
+            <label>학생 번호(01~99)</label>
+            <input type="text" id="setting-student" maxlength="2" value="01" />
+          </div>
+          <div>
+            <label>facecolor 사용</label>
+            <select id="type-facecolor-enabled">
+              <option value="true">켜짐</option>
+              <option value="false">꺼짐</option>
             </select>
+          </div>
+          <div>
+            <label>facecolor 가중치</label>
+            <input type="number" id="type-facecolor-weight" min="0" value="100" />
+          </div>
+          <div>
+            <label>edgecolor 사용</label>
+            <select id="type-edgecolor-enabled">
+              <option value="true">켜짐</option>
+              <option value="false">꺼짐</option>
+            </select>
+          </div>
+          <div>
+            <label>edgecolor 가중치</label>
+            <input type="number" id="type-edgecolor-weight" min="0" value="0" />
+          </div>
+          <div>
+            <label>정상/비정상 사용</label>
+            <select id="type-validity-enabled">
+              <option value="true">켜짐</option>
+              <option value="false">꺼짐</option>
+            </select>
+          </div>
+          <div>
+            <label>정상/비정상 가중치</label>
+            <input type="number" id="type-validity-weight" min="0" value="0" />
           </div>
           <div>
             <label>출제 방식</label>
