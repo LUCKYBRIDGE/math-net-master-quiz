@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Net Master Quiz</title>
+    <style>
+      :root {
+        --bg: #f4efe3;
+        --panel: #fffaf0;
+        --line: #2e261f;
+        --accent: #d0a62e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", serif;
+        background: radial-gradient(circle at 20% 10%, #fff8e6 0%, var(--bg) 55%);
+        color: #1e1a16;
+      }
+      main {
+        max-width: 840px;
+        margin: 48px auto;
+        padding: 0 16px;
+      }
+      h1 {
+        margin: 0 0 20px;
+        font-size: 32px;
+      }
+      p {
+        margin: 0 0 20px;
+      }
+      .links {
+        display: grid;
+        gap: 12px;
+      }
+      a {
+        display: block;
+        padding: 14px 16px;
+        border: 3px solid var(--line);
+        border-radius: 12px;
+        background: var(--panel);
+        color: inherit;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 700;
+        box-shadow: 0 4px 0 #b49a6a;
+      }
+      a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 0 #b49a6a;
+      }
+      .hint {
+        margin-top: 18px;
+        font-size: 14px;
+        color: #56493d;
+      }
+      code {
+        background: #f4e8ca;
+        padding: 1px 6px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Math Net Master Quiz</h1>
+      <p>아래에서 실행할 기능을 선택하세요.</p>
+      <div class="links">
+        <a href="./jumpmap-editor/">점프맵 에디터 열기</a>
+        <a href="./quiz/">전개도 퀴즈 열기</a>
+      </div>
+      <p class="hint">GitHub Pages 기본 URL: <code>/math-net-master-quiz/</code></p>
+    </main>
+  </body>
+</html>
