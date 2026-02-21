@@ -12,11 +12,18 @@ const clampTotalQuestions = (settings, totalQuestions) => {
 export const createQuizEngine = ({ questionBank, settings }) => {
   const { emit, on } = createEventBus();
   const questions = questionBank.questions.slice();
-  const totalLimit = clampTotalQuestions(settings, questions.length);
+  const shouldLoop = settings.quizEndMode === 'time' || settings.loopQuestions;
+  const totalLimit = shouldLoop
+    ? Number.POSITIVE_INFINITY
+    : clampTotalQuestions(settings, questions.length);
 
-  let queue = settings.selectionMode === 'random' && settings.avoidRepeat
-    ? buildRandomQueue(questions)
-    : questions.slice();
+  const buildQueue = () => (
+    settings.selectionMode === 'random' && settings.avoidRepeat
+      ? buildRandomQueue(questions)
+      : questions.slice()
+  );
+
+  let queue = buildQueue();
   let index = 0;
   let askedCount = 0;
   let answeredCount = 0;
@@ -26,11 +33,30 @@ export const createQuizEngine = ({ questionBank, settings }) => {
   let currentQuestion;
   let questionStartTime = 0;
 
+  const refillQueue = () => {
+    queue = buildQueue();
+    index = 0;
+  };
+
   const getNextFromQueue = () => {
+    if (!questions.length) return undefined;
     if (settings.selectionMode === 'random') {
-      if (settings.avoidRepeat) return queue.shift();
-      const pick = queue[Math.floor(Math.random() * queue.length)];
-      return pick;
+      if (settings.avoidRepeat) {
+        if (!queue.length) {
+          if (!shouldLoop) return undefined;
+          refillQueue();
+        }
+        return queue.shift();
+      }
+      if (!queue.length) {
+        if (!shouldLoop) return undefined;
+        refillQueue();
+      }
+      return queue[Math.floor(Math.random() * queue.length)];
+    }
+    if (index >= queue.length) {
+      if (!shouldLoop) return undefined;
+      index = 0;
     }
     const next = queue[index];
     index += 1;
@@ -38,9 +64,7 @@ export const createQuizEngine = ({ questionBank, settings }) => {
   };
 
   const reset = () => {
-    queue = settings.selectionMode === 'random' && settings.avoidRepeat
-      ? buildRandomQueue(questions)
-      : questions.slice();
+    queue = buildQueue();
     index = 0;
     askedCount = 0;
     answeredCount = 0;
@@ -52,7 +76,7 @@ export const createQuizEngine = ({ questionBank, settings }) => {
   };
 
   const nextQuestion = () => {
-    if (askedCount >= totalLimit) return null;
+    if (Number.isFinite(totalLimit) && askedCount >= totalLimit) return null;
     const next = getNextFromQueue();
     if (!next) return null;
     askedCount += 1;
@@ -85,7 +109,7 @@ export const createQuizEngine = ({ questionBank, settings }) => {
 
     emit({ type: 'answer', payload: result });
 
-    if (answeredCount >= totalLimit) {
+    if (Number.isFinite(totalLimit) && answeredCount >= totalLimit) {
       emit({ type: 'finish', payload: { totalScore, correctCount, totalCount: answeredCount } });
     }
 
@@ -100,7 +124,9 @@ export const createQuizEngine = ({ questionBank, settings }) => {
     answeredCount,
     correctCount,
     currentQuestion,
-    remainingQuestions: Math.max(0, totalLimit - answeredCount)
+    remainingQuestions: Number.isFinite(totalLimit)
+      ? Math.max(0, totalLimit - answeredCount)
+      : 0
   });
 
   return {

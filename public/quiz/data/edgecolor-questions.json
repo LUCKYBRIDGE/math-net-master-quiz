@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "generatedAt": "2026-01-27T03:58:42.209Z",
+  "generatedAt": "2026-01-28T04:49:52.287180+00:00",
   "count": 220,
   "questions": [
     {
       "id": "cube-01-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-01-02.svg",
       "choices": [
@@ -29,7 +29,7 @@
     {
       "id": "cube-01-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-01-01.svg",
       "choices": [
@@ -52,7 +52,7 @@
     {
       "id": "cube-01-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-02-02.svg",
       "choices": [
@@ -75,7 +75,7 @@
     {
       "id": "cube-01-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-02-01.svg",
       "choices": [
@@ -98,7 +98,7 @@
     {
       "id": "cube-01-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-03-02.svg",
       "choices": [
@@ -121,7 +121,7 @@
     {
       "id": "cube-01-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-03-01.svg",
       "choices": [
@@ -144,7 +144,7 @@
     {
       "id": "cube-01-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-04-02.svg",
       "choices": [
@@ -167,7 +167,7 @@
     {
       "id": "cube-01-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-04-01.svg",
       "choices": [
@@ -190,7 +190,7 @@
     {
       "id": "cube-01-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-01-edgecolor-05-02.svg",
       "choices": [
@@ -213,7 +213,7 @@
     {
       "id": "cube-01-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-01-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-01-edgecolor-05-01.svg",
       "choices": [
@@ -236,7 +236,7 @@
     {
       "id": "cube-02-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-02-edgecolor-01-02.svg",
       "choices": [
@@ -259,7 +259,7 @@
     {
       "id": "cube-02-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-01-01.svg",
       "choices": [
@@ -282,7 +282,7 @@
     {
       "id": "cube-02-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-02-edgecolor-02-02.svg",
       "choices": [
@@ -305,7 +305,7 @@
     {
       "id": "cube-02-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-02-01.svg",
       "choices": [
@@ -328,7 +328,7 @@
     {
       "id": "cube-02-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-02-edgecolor-03-02.svg",
       "choices": [
@@ -351,7 +351,7 @@
     {
       "id": "cube-02-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-03-01.svg",
       "choices": [
@@ -374,7 +374,7 @@
     {
       "id": "cube-02-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-02-edgecolor-04-02.svg",
       "choices": [
@@ -397,7 +397,7 @@
     {
       "id": "cube-02-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-04-01.svg",
       "choices": [
@@ -420,7 +420,7 @@
     {
       "id": "cube-02-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-02-edgecolor-05-02.svg",
       "choices": [
@@ -443,7 +443,7 @@
     {
       "id": "cube-02-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-02-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-02-edgecolor-05-01.svg",
       "choices": [
@@ -466,7 +466,7 @@
     {
       "id": "cube-03-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-01-02.svg",
       "choices": [
@@ -489,7 +489,7 @@
     {
       "id": "cube-03-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-01-01.svg",
       "choices": [
@@ -512,7 +512,7 @@
     {
       "id": "cube-03-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-02-02.svg",
       "choices": [
@@ -535,7 +535,7 @@
     {
       "id": "cube-03-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-02-01.svg",
       "choices": [
@@ -558,7 +558,7 @@
     {
       "id": "cube-03-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-03-02.svg",
       "choices": [
@@ -581,7 +581,7 @@
     {
       "id": "cube-03-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-03-01.svg",
       "choices": [
@@ -604,7 +604,7 @@
     {
       "id": "cube-03-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-04-02.svg",
       "choices": [
@@ -627,7 +627,7 @@
     {
       "id": "cube-03-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-04-01.svg",
       "choices": [
@@ -650,7 +650,7 @@
     {
       "id": "cube-03-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-03-edgecolor-05-02.svg",
       "choices": [
@@ -673,7 +673,7 @@
     {
       "id": "cube-03-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-03-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-03-edgecolor-05-01.svg",
       "choices": [
@@ -696,7 +696,7 @@
     {
       "id": "cube-04-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-01-02.svg",
       "choices": [
@@ -719,7 +719,7 @@
     {
       "id": "cube-04-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-01-01.svg",
       "choices": [
@@ -742,7 +742,7 @@
     {
       "id": "cube-04-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-02-02.svg",
       "choices": [
@@ -765,7 +765,7 @@
     {
       "id": "cube-04-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-02-01.svg",
       "choices": [
@@ -788,7 +788,7 @@
     {
       "id": "cube-04-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-03-02.svg",
       "choices": [
@@ -811,7 +811,7 @@
     {
       "id": "cube-04-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-03-01.svg",
       "choices": [
@@ -834,7 +834,7 @@
     {
       "id": "cube-04-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-04-02.svg",
       "choices": [
@@ -857,7 +857,7 @@
     {
       "id": "cube-04-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-04-01.svg",
       "choices": [
@@ -880,7 +880,7 @@
     {
       "id": "cube-04-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-04-edgecolor-05-02.svg",
       "choices": [
@@ -903,7 +903,7 @@
     {
       "id": "cube-04-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-04-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-04-edgecolor-05-01.svg",
       "choices": [
@@ -926,7 +926,7 @@
     {
       "id": "cube-05-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-01-02.svg",
       "choices": [
@@ -949,7 +949,7 @@
     {
       "id": "cube-05-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-01-01.svg",
       "choices": [
@@ -972,7 +972,7 @@
     {
       "id": "cube-05-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-02-02.svg",
       "choices": [
@@ -995,7 +995,7 @@
     {
       "id": "cube-05-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-02-01.svg",
       "choices": [
@@ -1018,7 +1018,7 @@
     {
       "id": "cube-05-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-03-02.svg",
       "choices": [
@@ -1041,7 +1041,7 @@
     {
       "id": "cube-05-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-03-01.svg",
       "choices": [
@@ -1064,7 +1064,7 @@
     {
       "id": "cube-05-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-04-02.svg",
       "choices": [
@@ -1087,7 +1087,7 @@
     {
       "id": "cube-05-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-04-01.svg",
       "choices": [
@@ -1110,7 +1110,7 @@
     {
       "id": "cube-05-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-05-edgecolor-05-02.svg",
       "choices": [
@@ -1133,7 +1133,7 @@
     {
       "id": "cube-05-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-05-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-05-edgecolor-05-01.svg",
       "choices": [
@@ -1156,7 +1156,7 @@
     {
       "id": "cube-06-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-01-02.svg",
       "choices": [
@@ -1179,7 +1179,7 @@
     {
       "id": "cube-06-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-01-01.svg",
       "choices": [
@@ -1202,7 +1202,7 @@
     {
       "id": "cube-06-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-02-02.svg",
       "choices": [
@@ -1225,7 +1225,7 @@
     {
       "id": "cube-06-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-02-01.svg",
       "choices": [
@@ -1248,7 +1248,7 @@
     {
       "id": "cube-06-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-03-02.svg",
       "choices": [
@@ -1271,7 +1271,7 @@
     {
       "id": "cube-06-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-03-01.svg",
       "choices": [
@@ -1294,7 +1294,7 @@
     {
       "id": "cube-06-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-04-02.svg",
       "choices": [
@@ -1317,7 +1317,7 @@
     {
       "id": "cube-06-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-04-01.svg",
       "choices": [
@@ -1340,7 +1340,7 @@
     {
       "id": "cube-06-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-06-edgecolor-05-02.svg",
       "choices": [
@@ -1363,7 +1363,7 @@
     {
       "id": "cube-06-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-06-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-06-edgecolor-05-01.svg",
       "choices": [
@@ -1386,7 +1386,7 @@
     {
       "id": "cube-07-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-01-02.svg",
       "choices": [
@@ -1409,7 +1409,7 @@
     {
       "id": "cube-07-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-01-01.svg",
       "choices": [
@@ -1432,7 +1432,7 @@
     {
       "id": "cube-07-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-02-02.svg",
       "choices": [
@@ -1455,7 +1455,7 @@
     {
       "id": "cube-07-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-02-01.svg",
       "choices": [
@@ -1478,7 +1478,7 @@
     {
       "id": "cube-07-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-03-02.svg",
       "choices": [
@@ -1501,7 +1501,7 @@
     {
       "id": "cube-07-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-03-01.svg",
       "choices": [
@@ -1524,7 +1524,7 @@
     {
       "id": "cube-07-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-04-02.svg",
       "choices": [
@@ -1547,7 +1547,7 @@
     {
       "id": "cube-07-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-04-01.svg",
       "choices": [
@@ -1570,7 +1570,7 @@
     {
       "id": "cube-07-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-07-edgecolor-05-02.svg",
       "choices": [
@@ -1593,7 +1593,7 @@
     {
       "id": "cube-07-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-07-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-07-edgecolor-05-01.svg",
       "choices": [
@@ -1616,7 +1616,7 @@
     {
       "id": "cube-08-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-01-02.svg",
       "choices": [
@@ -1639,7 +1639,7 @@
     {
       "id": "cube-08-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-01-01.svg",
       "choices": [
@@ -1662,7 +1662,7 @@
     {
       "id": "cube-08-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-02-02.svg",
       "choices": [
@@ -1685,7 +1685,7 @@
     {
       "id": "cube-08-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-02-01.svg",
       "choices": [
@@ -1708,7 +1708,7 @@
     {
       "id": "cube-08-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-03-02.svg",
       "choices": [
@@ -1731,7 +1731,7 @@
     {
       "id": "cube-08-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-03-01.svg",
       "choices": [
@@ -1754,7 +1754,7 @@
     {
       "id": "cube-08-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-04-02.svg",
       "choices": [
@@ -1777,7 +1777,7 @@
     {
       "id": "cube-08-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-04-01.svg",
       "choices": [
@@ -1800,7 +1800,7 @@
     {
       "id": "cube-08-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-08-edgecolor-05-02.svg",
       "choices": [
@@ -1823,7 +1823,7 @@
     {
       "id": "cube-08-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-08-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-08-edgecolor-05-01.svg",
       "choices": [
@@ -1846,7 +1846,7 @@
     {
       "id": "cube-09-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-01-02.svg",
       "choices": [
@@ -1869,7 +1869,7 @@
     {
       "id": "cube-09-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-01-01.svg",
       "choices": [
@@ -1892,7 +1892,7 @@
     {
       "id": "cube-09-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-02-02.svg",
       "choices": [
@@ -1915,7 +1915,7 @@
     {
       "id": "cube-09-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-02-01.svg",
       "choices": [
@@ -1938,7 +1938,7 @@
     {
       "id": "cube-09-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-03-02.svg",
       "choices": [
@@ -1961,7 +1961,7 @@
     {
       "id": "cube-09-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-03-01.svg",
       "choices": [
@@ -1984,7 +1984,7 @@
     {
       "id": "cube-09-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-04-02.svg",
       "choices": [
@@ -2007,7 +2007,7 @@
     {
       "id": "cube-09-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-04-01.svg",
       "choices": [
@@ -2030,7 +2030,7 @@
     {
       "id": "cube-09-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-09-edgecolor-05-02.svg",
       "choices": [
@@ -2053,7 +2053,7 @@
     {
       "id": "cube-09-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-09-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-09-edgecolor-05-01.svg",
       "choices": [
@@ -2076,7 +2076,7 @@
     {
       "id": "cube-10-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-01-02.svg",
       "choices": [
@@ -2099,7 +2099,7 @@
     {
       "id": "cube-10-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-01-01.svg",
       "choices": [
@@ -2122,7 +2122,7 @@
     {
       "id": "cube-10-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-02-02.svg",
       "choices": [
@@ -2145,7 +2145,7 @@
     {
       "id": "cube-10-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-02-01.svg",
       "choices": [
@@ -2168,7 +2168,7 @@
     {
       "id": "cube-10-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-03-02.svg",
       "choices": [
@@ -2191,7 +2191,7 @@
     {
       "id": "cube-10-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-03-01.svg",
       "choices": [
@@ -2214,7 +2214,7 @@
     {
       "id": "cube-10-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-04-02.svg",
       "choices": [
@@ -2237,7 +2237,7 @@
     {
       "id": "cube-10-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-04-01.svg",
       "choices": [
@@ -2260,7 +2260,7 @@
     {
       "id": "cube-10-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-10-edgecolor-05-02.svg",
       "choices": [
@@ -2283,7 +2283,7 @@
     {
       "id": "cube-10-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-10-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-10-edgecolor-05-01.svg",
       "choices": [
@@ -2306,7 +2306,7 @@
     {
       "id": "cube-11-edgecolor-01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-01-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-01-02.svg",
       "choices": [
@@ -2329,7 +2329,7 @@
     {
       "id": "cube-11-edgecolor-01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-01-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-01-01.svg",
       "choices": [
@@ -2352,7 +2352,7 @@
     {
       "id": "cube-11-edgecolor-02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-02-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-02-02.svg",
       "choices": [
@@ -2375,7 +2375,7 @@
     {
       "id": "cube-11-edgecolor-02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-02-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-02-01.svg",
       "choices": [
@@ -2398,7 +2398,7 @@
     {
       "id": "cube-11-edgecolor-03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-03-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-03-02.svg",
       "choices": [
@@ -2421,7 +2421,7 @@
     {
       "id": "cube-11-edgecolor-03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-03-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-03-01.svg",
       "choices": [
@@ -2444,7 +2444,7 @@
     {
       "id": "cube-11-edgecolor-04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-04-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-04-02.svg",
       "choices": [
@@ -2467,7 +2467,7 @@
     {
       "id": "cube-11-edgecolor-04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-04-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-04-01.svg",
       "choices": [
@@ -2490,7 +2490,7 @@
     {
       "id": "cube-11-edgecolor-05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-05-01.svg",
       "answer": "edgecolor/cube-11-edgecolor-05-02.svg",
       "choices": [
@@ -2513,7 +2513,7 @@
     {
       "id": "cube-11-edgecolor-05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cube-11-edgecolor-05-02.svg",
       "answer": "edgecolor/cube-11-edgecolor-05-01.svg",
       "choices": [
@@ -2536,7 +2536,7 @@
     {
       "id": "cuboid-01-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor01-02.svg",
       "choices": [
@@ -2559,7 +2559,7 @@
     {
       "id": "cuboid-01-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor01-01.svg",
       "choices": [
@@ -2582,7 +2582,7 @@
     {
       "id": "cuboid-01-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor02-02.svg",
       "choices": [
@@ -2605,7 +2605,7 @@
     {
       "id": "cuboid-01-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor02-01.svg",
       "choices": [
@@ -2628,7 +2628,7 @@
     {
       "id": "cuboid-01-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor03-02.svg",
       "choices": [
@@ -2651,7 +2651,7 @@
     {
       "id": "cuboid-01-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor03-01.svg",
       "choices": [
@@ -2674,7 +2674,7 @@
     {
       "id": "cuboid-01-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor04-02.svg",
       "choices": [
@@ -2697,7 +2697,7 @@
     {
       "id": "cuboid-01-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor04-01.svg",
       "choices": [
@@ -2720,7 +2720,7 @@
     {
       "id": "cuboid-01-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor05-02.svg",
       "choices": [
@@ -2743,7 +2743,7 @@
     {
       "id": "cuboid-01-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-01-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-01-01-edgecolor05-01.svg",
       "choices": [
@@ -2766,7 +2766,7 @@
     {
       "id": "cuboid-02-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor01-02.svg",
       "choices": [
@@ -2789,7 +2789,7 @@
     {
       "id": "cuboid-02-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor01-01.svg",
       "choices": [
@@ -2812,7 +2812,7 @@
     {
       "id": "cuboid-02-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor02-02.svg",
       "choices": [
@@ -2835,7 +2835,7 @@
     {
       "id": "cuboid-02-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor02-01.svg",
       "choices": [
@@ -2858,7 +2858,7 @@
     {
       "id": "cuboid-02-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor03-02.svg",
       "choices": [
@@ -2881,7 +2881,7 @@
     {
       "id": "cuboid-02-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor03-01.svg",
       "choices": [
@@ -2904,7 +2904,7 @@
     {
       "id": "cuboid-02-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor04-02.svg",
       "choices": [
@@ -2927,7 +2927,7 @@
     {
       "id": "cuboid-02-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor04-01.svg",
       "choices": [
@@ -2950,7 +2950,7 @@
     {
       "id": "cuboid-02-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor05-02.svg",
       "choices": [
@@ -2973,7 +2973,7 @@
     {
       "id": "cuboid-02-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-02-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-02-01-edgecolor05-01.svg",
       "choices": [
@@ -2996,7 +2996,7 @@
     {
       "id": "cuboid-03-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor01-02.svg",
       "choices": [
@@ -3019,7 +3019,7 @@
     {
       "id": "cuboid-03-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor01-01.svg",
       "choices": [
@@ -3042,7 +3042,7 @@
     {
       "id": "cuboid-03-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor02-02.svg",
       "choices": [
@@ -3065,7 +3065,7 @@
     {
       "id": "cuboid-03-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor02-01.svg",
       "choices": [
@@ -3088,7 +3088,7 @@
     {
       "id": "cuboid-03-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor03-02.svg",
       "choices": [
@@ -3111,7 +3111,7 @@
     {
       "id": "cuboid-03-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor03-01.svg",
       "choices": [
@@ -3134,7 +3134,7 @@
     {
       "id": "cuboid-03-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor04-02.svg",
       "choices": [
@@ -3157,7 +3157,7 @@
     {
       "id": "cuboid-03-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor04-01.svg",
       "choices": [
@@ -3180,7 +3180,7 @@
     {
       "id": "cuboid-03-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor05-02.svg",
       "choices": [
@@ -3203,7 +3203,7 @@
     {
       "id": "cuboid-03-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-03-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-03-01-edgecolor05-01.svg",
       "choices": [
@@ -3226,7 +3226,7 @@
     {
       "id": "cuboid-04-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor01-02.svg",
       "choices": [
@@ -3249,7 +3249,7 @@
     {
       "id": "cuboid-04-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor01-01.svg",
       "choices": [
@@ -3272,7 +3272,7 @@
     {
       "id": "cuboid-04-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor02-02.svg",
       "choices": [
@@ -3295,7 +3295,7 @@
     {
       "id": "cuboid-04-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor02-01.svg",
       "choices": [
@@ -3318,7 +3318,7 @@
     {
       "id": "cuboid-04-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor03-02.svg",
       "choices": [
@@ -3341,7 +3341,7 @@
     {
       "id": "cuboid-04-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor03-01.svg",
       "choices": [
@@ -3364,7 +3364,7 @@
     {
       "id": "cuboid-04-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor04-02.svg",
       "choices": [
@@ -3387,7 +3387,7 @@
     {
       "id": "cuboid-04-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor04-01.svg",
       "choices": [
@@ -3410,7 +3410,7 @@
     {
       "id": "cuboid-04-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor05-02.svg",
       "choices": [
@@ -3433,7 +3433,7 @@
     {
       "id": "cuboid-04-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-04-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-04-01-edgecolor05-01.svg",
       "choices": [
@@ -3456,7 +3456,7 @@
     {
       "id": "cuboid-05-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor01-02.svg",
       "choices": [
@@ -3479,7 +3479,7 @@
     {
       "id": "cuboid-05-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor01-01.svg",
       "choices": [
@@ -3502,7 +3502,7 @@
     {
       "id": "cuboid-05-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor02-02.svg",
       "choices": [
@@ -3525,7 +3525,7 @@
     {
       "id": "cuboid-05-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor02-01.svg",
       "choices": [
@@ -3548,7 +3548,7 @@
     {
       "id": "cuboid-05-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor03-02.svg",
       "choices": [
@@ -3571,7 +3571,7 @@
     {
       "id": "cuboid-05-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor03-01.svg",
       "choices": [
@@ -3594,7 +3594,7 @@
     {
       "id": "cuboid-05-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor04-02.svg",
       "choices": [
@@ -3617,7 +3617,7 @@
     {
       "id": "cuboid-05-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor04-01.svg",
       "choices": [
@@ -3640,7 +3640,7 @@
     {
       "id": "cuboid-05-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor05-02.svg",
       "choices": [
@@ -3663,7 +3663,7 @@
     {
       "id": "cuboid-05-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-05-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-05-01-edgecolor05-01.svg",
       "choices": [
@@ -3686,7 +3686,7 @@
     {
       "id": "cuboid-06-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor01-02.svg",
       "choices": [
@@ -3709,7 +3709,7 @@
     {
       "id": "cuboid-06-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor01-01.svg",
       "choices": [
@@ -3732,7 +3732,7 @@
     {
       "id": "cuboid-06-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor02-02.svg",
       "choices": [
@@ -3755,7 +3755,7 @@
     {
       "id": "cuboid-06-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor02-01.svg",
       "choices": [
@@ -3778,7 +3778,7 @@
     {
       "id": "cuboid-06-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor03-02.svg",
       "choices": [
@@ -3801,7 +3801,7 @@
     {
       "id": "cuboid-06-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor03-01.svg",
       "choices": [
@@ -3824,7 +3824,7 @@
     {
       "id": "cuboid-06-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor04-02.svg",
       "choices": [
@@ -3847,7 +3847,7 @@
     {
       "id": "cuboid-06-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor04-01.svg",
       "choices": [
@@ -3870,7 +3870,7 @@
     {
       "id": "cuboid-06-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor05-02.svg",
       "choices": [
@@ -3893,7 +3893,7 @@
     {
       "id": "cuboid-06-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-06-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-06-01-edgecolor05-01.svg",
       "choices": [
@@ -3916,7 +3916,7 @@
     {
       "id": "cuboid-07-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor01-02.svg",
       "choices": [
@@ -3939,7 +3939,7 @@
     {
       "id": "cuboid-07-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor01-01.svg",
       "choices": [
@@ -3962,7 +3962,7 @@
     {
       "id": "cuboid-07-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor02-02.svg",
       "choices": [
@@ -3985,7 +3985,7 @@
     {
       "id": "cuboid-07-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor02-01.svg",
       "choices": [
@@ -4008,7 +4008,7 @@
     {
       "id": "cuboid-07-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor03-02.svg",
       "choices": [
@@ -4031,7 +4031,7 @@
     {
       "id": "cuboid-07-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor03-01.svg",
       "choices": [
@@ -4054,7 +4054,7 @@
     {
       "id": "cuboid-07-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor04-02.svg",
       "choices": [
@@ -4077,7 +4077,7 @@
     {
       "id": "cuboid-07-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor04-01.svg",
       "choices": [
@@ -4100,7 +4100,7 @@
     {
       "id": "cuboid-07-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor05-02.svg",
       "choices": [
@@ -4123,7 +4123,7 @@
     {
       "id": "cuboid-07-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-07-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-07-01-edgecolor05-01.svg",
       "choices": [
@@ -4146,7 +4146,7 @@
     {
       "id": "cuboid-08-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor01-02.svg",
       "choices": [
@@ -4169,7 +4169,7 @@
     {
       "id": "cuboid-08-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor01-01.svg",
       "choices": [
@@ -4192,7 +4192,7 @@
     {
       "id": "cuboid-08-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor02-02.svg",
       "choices": [
@@ -4215,7 +4215,7 @@
     {
       "id": "cuboid-08-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor02-01.svg",
       "choices": [
@@ -4238,7 +4238,7 @@
     {
       "id": "cuboid-08-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor03-02.svg",
       "choices": [
@@ -4261,7 +4261,7 @@
     {
       "id": "cuboid-08-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor03-01.svg",
       "choices": [
@@ -4284,7 +4284,7 @@
     {
       "id": "cuboid-08-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor04-02.svg",
       "choices": [
@@ -4307,7 +4307,7 @@
     {
       "id": "cuboid-08-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor04-01.svg",
       "choices": [
@@ -4330,7 +4330,7 @@
     {
       "id": "cuboid-08-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor05-02.svg",
       "choices": [
@@ -4353,7 +4353,7 @@
     {
       "id": "cuboid-08-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-08-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-08-01-edgecolor05-01.svg",
       "choices": [
@@ -4376,7 +4376,7 @@
     {
       "id": "cuboid-09-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor01-02.svg",
       "choices": [
@@ -4399,7 +4399,7 @@
     {
       "id": "cuboid-09-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor01-01.svg",
       "choices": [
@@ -4422,7 +4422,7 @@
     {
       "id": "cuboid-09-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor02-02.svg",
       "choices": [
@@ -4445,7 +4445,7 @@
     {
       "id": "cuboid-09-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor02-01.svg",
       "choices": [
@@ -4468,7 +4468,7 @@
     {
       "id": "cuboid-09-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor03-02.svg",
       "choices": [
@@ -4491,7 +4491,7 @@
     {
       "id": "cuboid-09-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor03-01.svg",
       "choices": [
@@ -4514,7 +4514,7 @@
     {
       "id": "cuboid-09-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor04-02.svg",
       "choices": [
@@ -4537,7 +4537,7 @@
     {
       "id": "cuboid-09-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor04-01.svg",
       "choices": [
@@ -4560,7 +4560,7 @@
     {
       "id": "cuboid-09-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor05-02.svg",
       "choices": [
@@ -4583,7 +4583,7 @@
     {
       "id": "cuboid-09-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-09-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-09-01-edgecolor05-01.svg",
       "choices": [
@@ -4606,7 +4606,7 @@
     {
       "id": "cuboid-10-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor01-02.svg",
       "choices": [
@@ -4629,7 +4629,7 @@
     {
       "id": "cuboid-10-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor01-01.svg",
       "choices": [
@@ -4652,7 +4652,7 @@
     {
       "id": "cuboid-10-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor02-02.svg",
       "choices": [
@@ -4675,7 +4675,7 @@
     {
       "id": "cuboid-10-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor02-01.svg",
       "choices": [
@@ -4698,7 +4698,7 @@
     {
       "id": "cuboid-10-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor03-02.svg",
       "choices": [
@@ -4721,7 +4721,7 @@
     {
       "id": "cuboid-10-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor03-01.svg",
       "choices": [
@@ -4744,7 +4744,7 @@
     {
       "id": "cuboid-10-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor04-02.svg",
       "choices": [
@@ -4767,7 +4767,7 @@
     {
       "id": "cuboid-10-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor04-01.svg",
       "choices": [
@@ -4790,7 +4790,7 @@
     {
       "id": "cuboid-10-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor05-02.svg",
       "choices": [
@@ -4813,7 +4813,7 @@
     {
       "id": "cuboid-10-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-10-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-10-01-edgecolor05-01.svg",
       "choices": [
@@ -4836,7 +4836,7 @@
     {
       "id": "cuboid-11-01-edgecolor01-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor01-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor01-02.svg",
       "choices": [
@@ -4859,7 +4859,7 @@
     {
       "id": "cuboid-11-01-edgecolor01-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor01-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor01-01.svg",
       "choices": [
@@ -4882,7 +4882,7 @@
     {
       "id": "cuboid-11-01-edgecolor02-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor02-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor02-02.svg",
       "choices": [
@@ -4905,7 +4905,7 @@
     {
       "id": "cuboid-11-01-edgecolor02-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor02-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor02-01.svg",
       "choices": [
@@ -4928,7 +4928,7 @@
     {
       "id": "cuboid-11-01-edgecolor03-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor03-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor03-02.svg",
       "choices": [
@@ -4951,7 +4951,7 @@
     {
       "id": "cuboid-11-01-edgecolor03-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor03-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor03-01.svg",
       "choices": [
@@ -4974,7 +4974,7 @@
     {
       "id": "cuboid-11-01-edgecolor04-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor04-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor04-02.svg",
       "choices": [
@@ -4997,7 +4997,7 @@
     {
       "id": "cuboid-11-01-edgecolor04-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor04-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor04-01.svg",
       "choices": [
@@ -5020,7 +5020,7 @@
     {
       "id": "cuboid-11-01-edgecolor05-q1",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor05-01.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor05-02.svg",
       "choices": [
@@ -5043,7 +5043,7 @@
     {
       "id": "cuboid-11-01-edgecolor05-q2",
       "type": "edgecolor",
-      "prompt": "빨간 모서리와 맞닿는 모서리가 표시된 전개도를 고르세요",
+      "prompt": "빨간 모서리와 맞물리는 모서리를 고르세요",
       "question": "edgecolor/cuboid-11-01-edgecolor05-02.svg",
       "answer": "edgecolor/cuboid-11-01-edgecolor05-01.svg",
       "choices": [

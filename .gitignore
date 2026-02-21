@@ -1,0 +1,7 @@
+.DS_Store
+**/.DS_Store
+
+# Local/generated backups
+public/jumpmap-editor/data/_backup/
+public/jumpmap-editor/textures_backup_*/
+public/quiz/nets/_backup-*/

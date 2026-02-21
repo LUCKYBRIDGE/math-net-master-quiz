@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "generatedAt": "2026-01-27T03:57:33.939Z",
+  "generatedAt": "2026-01-28T04:49:52.283051+00:00",
   "count": 132,
   "questions": [
     {
       "id": "cube-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-01-facecolor-01-01.svg",
       "answer": "facecolor/cube-01-facecolor-01-02.svg",
       "choices": [
@@ -29,7 +29,7 @@
     {
       "id": "cube-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-01-facecolor-01-02.svg",
       "answer": "facecolor/cube-01-facecolor-01-01.svg",
       "choices": [
@@ -52,7 +52,7 @@
     {
       "id": "cube-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-01-facecolor-02-01.svg",
       "answer": "facecolor/cube-01-facecolor-02-02.svg",
       "choices": [
@@ -75,7 +75,7 @@
     {
       "id": "cube-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-01-facecolor-02-02.svg",
       "answer": "facecolor/cube-01-facecolor-02-01.svg",
       "choices": [
@@ -98,7 +98,7 @@
     {
       "id": "cube-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-01-facecolor-03-01.svg",
       "answer": "facecolor/cube-01-facecolor-03-02.svg",
       "choices": [
@@ -121,7 +121,7 @@
     {
       "id": "cube-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-01-facecolor-03-02.svg",
       "answer": "facecolor/cube-01-facecolor-03-01.svg",
       "choices": [
@@ -144,7 +144,7 @@
     {
       "id": "cube-02-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-02-facecolor-01-01.svg",
       "answer": "facecolor/cube-02-facecolor-01-02.svg",
       "choices": [
@@ -167,7 +167,7 @@
     {
       "id": "cube-02-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-02-facecolor-01-02.svg",
       "answer": "facecolor/cube-02-facecolor-01-01.svg",
       "choices": [
@@ -190,7 +190,7 @@
     {
       "id": "cube-02-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-02-facecolor-02-01.svg",
       "answer": "facecolor/cube-02-facecolor-02-02.svg",
       "choices": [
@@ -213,7 +213,7 @@
     {
       "id": "cube-02-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-02-facecolor-02-02.svg",
       "answer": "facecolor/cube-02-facecolor-02-01.svg",
       "choices": [
@@ -236,7 +236,7 @@
     {
       "id": "cube-02-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-02-facecolor-03-01.svg",
       "answer": "facecolor/cube-02-facecolor-03-02.svg",
       "choices": [
@@ -259,7 +259,7 @@
     {
       "id": "cube-02-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-02-facecolor-03-02.svg",
       "answer": "facecolor/cube-02-facecolor-03-01.svg",
       "choices": [
@@ -282,7 +282,7 @@
     {
       "id": "cube-03-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-03-facecolor-01-01.svg",
       "answer": "facecolor/cube-03-facecolor-01-02.svg",
       "choices": [
@@ -305,7 +305,7 @@
     {
       "id": "cube-03-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-03-facecolor-01-02.svg",
       "answer": "facecolor/cube-03-facecolor-01-01.svg",
       "choices": [
@@ -328,7 +328,7 @@
     {
       "id": "cube-03-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-03-facecolor-02-01.svg",
       "answer": "facecolor/cube-03-facecolor-02-02.svg",
       "choices": [
@@ -351,7 +351,7 @@
     {
       "id": "cube-03-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-03-facecolor-02-02.svg",
       "answer": "facecolor/cube-03-facecolor-02-01.svg",
       "choices": [
@@ -374,7 +374,7 @@
     {
       "id": "cube-03-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-03-facecolor-03-01.svg",
       "answer": "facecolor/cube-03-facecolor-03-02.svg",
       "choices": [
@@ -397,7 +397,7 @@
     {
       "id": "cube-03-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-03-facecolor-03-02.svg",
       "answer": "facecolor/cube-03-facecolor-03-01.svg",
       "choices": [
@@ -420,7 +420,7 @@
     {
       "id": "cube-04-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-04-facecolor-01-01.svg",
       "answer": "facecolor/cube-04-facecolor-01-02.svg",
       "choices": [
@@ -443,7 +443,7 @@
     {
       "id": "cube-04-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-04-facecolor-01-02.svg",
       "answer": "facecolor/cube-04-facecolor-01-01.svg",
       "choices": [
@@ -466,7 +466,7 @@
     {
       "id": "cube-04-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-04-facecolor-02-01.svg",
       "answer": "facecolor/cube-04-facecolor-02-02.svg",
       "choices": [
@@ -489,7 +489,7 @@
     {
       "id": "cube-04-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-04-facecolor-02-02.svg",
       "answer": "facecolor/cube-04-facecolor-02-01.svg",
       "choices": [
@@ -512,7 +512,7 @@
     {
       "id": "cube-04-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-04-facecolor-03-01.svg",
       "answer": "facecolor/cube-04-facecolor-03-02.svg",
       "choices": [
@@ -535,7 +535,7 @@
     {
       "id": "cube-04-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-04-facecolor-03-02.svg",
       "answer": "facecolor/cube-04-facecolor-03-01.svg",
       "choices": [
@@ -558,7 +558,7 @@
     {
       "id": "cube-05-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-05-facecolor-01-01.svg",
       "answer": "facecolor/cube-05-facecolor-01-02.svg",
       "choices": [
@@ -581,7 +581,7 @@
     {
       "id": "cube-05-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-05-facecolor-01-02.svg",
       "answer": "facecolor/cube-05-facecolor-01-01.svg",
       "choices": [
@@ -604,7 +604,7 @@
     {
       "id": "cube-05-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-05-facecolor-02-01.svg",
       "answer": "facecolor/cube-05-facecolor-02-02.svg",
       "choices": [
@@ -627,7 +627,7 @@
     {
       "id": "cube-05-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-05-facecolor-02-02.svg",
       "answer": "facecolor/cube-05-facecolor-02-01.svg",
       "choices": [
@@ -650,7 +650,7 @@
     {
       "id": "cube-05-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-05-facecolor-03-01.svg",
       "answer": "facecolor/cube-05-facecolor-03-02.svg",
       "choices": [
@@ -673,7 +673,7 @@
     {
       "id": "cube-05-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-05-facecolor-03-02.svg",
       "answer": "facecolor/cube-05-facecolor-03-01.svg",
       "choices": [
@@ -696,7 +696,7 @@
     {
       "id": "cube-06-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-06-facecolor-01-01.svg",
       "answer": "facecolor/cube-06-facecolor-01-02.svg",
       "choices": [
@@ -719,7 +719,7 @@
     {
       "id": "cube-06-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-06-facecolor-01-02.svg",
       "answer": "facecolor/cube-06-facecolor-01-01.svg",
       "choices": [
@@ -742,7 +742,7 @@
     {
       "id": "cube-06-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-06-facecolor-02-01.svg",
       "answer": "facecolor/cube-06-facecolor-02-02.svg",
       "choices": [
@@ -765,7 +765,7 @@
     {
       "id": "cube-06-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-06-facecolor-02-02.svg",
       "answer": "facecolor/cube-06-facecolor-02-01.svg",
       "choices": [
@@ -788,7 +788,7 @@
     {
       "id": "cube-06-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-06-facecolor-03-01.svg",
       "answer": "facecolor/cube-06-facecolor-03-02.svg",
       "choices": [
@@ -811,7 +811,7 @@
     {
       "id": "cube-06-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-06-facecolor-03-02.svg",
       "answer": "facecolor/cube-06-facecolor-03-01.svg",
       "choices": [
@@ -834,7 +834,7 @@
     {
       "id": "cube-07-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-07-facecolor-01-01.svg",
       "answer": "facecolor/cube-07-facecolor-01-02.svg",
       "choices": [
@@ -857,7 +857,7 @@
     {
       "id": "cube-07-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-07-facecolor-01-02.svg",
       "answer": "facecolor/cube-07-facecolor-01-01.svg",
       "choices": [
@@ -880,7 +880,7 @@
     {
       "id": "cube-07-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-07-facecolor-02-01.svg",
       "answer": "facecolor/cube-07-facecolor-02-02.svg",
       "choices": [
@@ -903,7 +903,7 @@
     {
       "id": "cube-07-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-07-facecolor-02-02.svg",
       "answer": "facecolor/cube-07-facecolor-02-01.svg",
       "choices": [
@@ -926,7 +926,7 @@
     {
       "id": "cube-07-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-07-facecolor-03-01.svg",
       "answer": "facecolor/cube-07-facecolor-03-02.svg",
       "choices": [
@@ -949,7 +949,7 @@
     {
       "id": "cube-07-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-07-facecolor-03-02.svg",
       "answer": "facecolor/cube-07-facecolor-03-01.svg",
       "choices": [
@@ -972,7 +972,7 @@
     {
       "id": "cube-08-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-08-facecolor-01-01.svg",
       "answer": "facecolor/cube-08-facecolor-01-02.svg",
       "choices": [
@@ -995,7 +995,7 @@
     {
       "id": "cube-08-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-08-facecolor-01-02.svg",
       "answer": "facecolor/cube-08-facecolor-01-01.svg",
       "choices": [
@@ -1018,7 +1018,7 @@
     {
       "id": "cube-08-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-08-facecolor-02-01.svg",
       "answer": "facecolor/cube-08-facecolor-02-02.svg",
       "choices": [
@@ -1041,7 +1041,7 @@
     {
       "id": "cube-08-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-08-facecolor-02-02.svg",
       "answer": "facecolor/cube-08-facecolor-02-01.svg",
       "choices": [
@@ -1064,7 +1064,7 @@
     {
       "id": "cube-08-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-08-facecolor-03-01.svg",
       "answer": "facecolor/cube-08-facecolor-03-02.svg",
       "choices": [
@@ -1087,7 +1087,7 @@
     {
       "id": "cube-08-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-08-facecolor-03-02.svg",
       "answer": "facecolor/cube-08-facecolor-03-01.svg",
       "choices": [
@@ -1110,7 +1110,7 @@
     {
       "id": "cube-09-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-09-facecolor-01-01.svg",
       "answer": "facecolor/cube-09-facecolor-01-02.svg",
       "choices": [
@@ -1133,7 +1133,7 @@
     {
       "id": "cube-09-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-09-facecolor-01-02.svg",
       "answer": "facecolor/cube-09-facecolor-01-01.svg",
       "choices": [
@@ -1156,7 +1156,7 @@
     {
       "id": "cube-09-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-09-facecolor-02-01.svg",
       "answer": "facecolor/cube-09-facecolor-02-02.svg",
       "choices": [
@@ -1179,7 +1179,7 @@
     {
       "id": "cube-09-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-09-facecolor-02-02.svg",
       "answer": "facecolor/cube-09-facecolor-02-01.svg",
       "choices": [
@@ -1202,7 +1202,7 @@
     {
       "id": "cube-09-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-09-facecolor-03-01.svg",
       "answer": "facecolor/cube-09-facecolor-03-02.svg",
       "choices": [
@@ -1225,7 +1225,7 @@
     {
       "id": "cube-09-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-09-facecolor-03-02.svg",
       "answer": "facecolor/cube-09-facecolor-03-01.svg",
       "choices": [
@@ -1248,7 +1248,7 @@
     {
       "id": "cube-10-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-10-facecolor-01-01.svg",
       "answer": "facecolor/cube-10-facecolor-01-02.svg",
       "choices": [
@@ -1271,7 +1271,7 @@
     {
       "id": "cube-10-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-10-facecolor-01-02.svg",
       "answer": "facecolor/cube-10-facecolor-01-01.svg",
       "choices": [
@@ -1294,7 +1294,7 @@
     {
       "id": "cube-10-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-10-facecolor-02-01.svg",
       "answer": "facecolor/cube-10-facecolor-02-02.svg",
       "choices": [
@@ -1317,7 +1317,7 @@
     {
       "id": "cube-10-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-10-facecolor-02-02.svg",
       "answer": "facecolor/cube-10-facecolor-02-01.svg",
       "choices": [
@@ -1340,7 +1340,7 @@
     {
       "id": "cube-10-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-10-facecolor-03-01.svg",
       "answer": "facecolor/cube-10-facecolor-03-02.svg",
       "choices": [
@@ -1363,7 +1363,7 @@
     {
       "id": "cube-10-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-10-facecolor-03-02.svg",
       "answer": "facecolor/cube-10-facecolor-03-01.svg",
       "choices": [
@@ -1386,7 +1386,7 @@
     {
       "id": "cube-11-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-11-facecolor-01-01.svg",
       "answer": "facecolor/cube-11-facecolor-01-02.svg",
       "choices": [
@@ -1409,7 +1409,7 @@
     {
       "id": "cube-11-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-11-facecolor-01-02.svg",
       "answer": "facecolor/cube-11-facecolor-01-01.svg",
       "choices": [
@@ -1432,7 +1432,7 @@
     {
       "id": "cube-11-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-11-facecolor-02-01.svg",
       "answer": "facecolor/cube-11-facecolor-02-02.svg",
       "choices": [
@@ -1455,7 +1455,7 @@
     {
       "id": "cube-11-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-11-facecolor-02-02.svg",
       "answer": "facecolor/cube-11-facecolor-02-01.svg",
       "choices": [
@@ -1478,7 +1478,7 @@
     {
       "id": "cube-11-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-11-facecolor-03-01.svg",
       "answer": "facecolor/cube-11-facecolor-03-02.svg",
       "choices": [
@@ -1501,7 +1501,7 @@
     {
       "id": "cube-11-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cube-11-facecolor-03-02.svg",
       "answer": "facecolor/cube-11-facecolor-03-01.svg",
       "choices": [
@@ -1524,7 +1524,7 @@
     {
       "id": "cuboid-01-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-01-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-01-01-facecolor-01-02.svg",
       "choices": [
@@ -1547,7 +1547,7 @@
     {
       "id": "cuboid-01-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-01-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-01-01-facecolor-01-01.svg",
       "choices": [
@@ -1570,7 +1570,7 @@
     {
       "id": "cuboid-01-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-01-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-01-01-facecolor-02-02.svg",
       "choices": [
@@ -1593,7 +1593,7 @@
     {
       "id": "cuboid-01-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-01-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-01-01-facecolor-02-01.svg",
       "choices": [
@@ -1616,7 +1616,7 @@
     {
       "id": "cuboid-01-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-01-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-01-01-facecolor-03-02.svg",
       "choices": [
@@ -1639,7 +1639,7 @@
     {
       "id": "cuboid-01-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-01-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-01-01-facecolor-03-01.svg",
       "choices": [
@@ -1662,7 +1662,7 @@
     {
       "id": "cuboid-02-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-02-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-02-01-facecolor-01-02.svg",
       "choices": [
@@ -1685,7 +1685,7 @@
     {
       "id": "cuboid-02-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-02-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-02-01-facecolor-01-01.svg",
       "choices": [
@@ -1708,7 +1708,7 @@
     {
       "id": "cuboid-02-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-02-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-02-01-facecolor-02-02.svg",
       "choices": [
@@ -1731,7 +1731,7 @@
     {
       "id": "cuboid-02-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-02-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-02-01-facecolor-02-01.svg",
       "choices": [
@@ -1754,7 +1754,7 @@
     {
       "id": "cuboid-02-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-02-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-02-01-facecolor-03-02.svg",
       "choices": [
@@ -1777,7 +1777,7 @@
     {
       "id": "cuboid-02-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-02-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-02-01-facecolor-03-01.svg",
       "choices": [
@@ -1800,7 +1800,7 @@
     {
       "id": "cuboid-03-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-03-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-03-01-facecolor-01-02.svg",
       "choices": [
@@ -1823,7 +1823,7 @@
     {
       "id": "cuboid-03-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-03-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-03-01-facecolor-01-01.svg",
       "choices": [
@@ -1846,7 +1846,7 @@
     {
       "id": "cuboid-03-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-03-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-03-01-facecolor-02-02.svg",
       "choices": [
@@ -1869,7 +1869,7 @@
     {
       "id": "cuboid-03-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-03-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-03-01-facecolor-02-01.svg",
       "choices": [
@@ -1892,7 +1892,7 @@
     {
       "id": "cuboid-03-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-03-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-03-01-facecolor-03-02.svg",
       "choices": [
@@ -1915,7 +1915,7 @@
     {
       "id": "cuboid-03-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-03-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-03-01-facecolor-03-01.svg",
       "choices": [
@@ -1938,7 +1938,7 @@
     {
       "id": "cuboid-04-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-04-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-04-01-facecolor-01-02.svg",
       "choices": [
@@ -1961,7 +1961,7 @@
     {
       "id": "cuboid-04-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-04-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-04-01-facecolor-01-01.svg",
       "choices": [
@@ -1984,7 +1984,7 @@
     {
       "id": "cuboid-04-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-04-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-04-01-facecolor-02-02.svg",
       "choices": [
@@ -2007,7 +2007,7 @@
     {
       "id": "cuboid-04-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-04-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-04-01-facecolor-02-01.svg",
       "choices": [
@@ -2030,7 +2030,7 @@
     {
       "id": "cuboid-04-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-04-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-04-01-facecolor-03-02.svg",
       "choices": [
@@ -2053,7 +2053,7 @@
     {
       "id": "cuboid-04-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-04-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-04-01-facecolor-03-01.svg",
       "choices": [
@@ -2076,7 +2076,7 @@
     {
       "id": "cuboid-05-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-05-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-05-01-facecolor-01-02.svg",
       "choices": [
@@ -2099,7 +2099,7 @@
     {
       "id": "cuboid-05-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-05-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-05-01-facecolor-01-01.svg",
       "choices": [
@@ -2122,7 +2122,7 @@
     {
       "id": "cuboid-05-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-05-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-05-01-facecolor-02-02.svg",
       "choices": [
@@ -2145,7 +2145,7 @@
     {
       "id": "cuboid-05-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-05-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-05-01-facecolor-02-01.svg",
       "choices": [
@@ -2168,7 +2168,7 @@
     {
       "id": "cuboid-05-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-05-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-05-01-facecolor-03-02.svg",
       "choices": [
@@ -2191,7 +2191,7 @@
     {
       "id": "cuboid-05-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-05-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-05-01-facecolor-03-01.svg",
       "choices": [
@@ -2214,7 +2214,7 @@
     {
       "id": "cuboid-06-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-06-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-06-01-facecolor-01-02.svg",
       "choices": [
@@ -2237,7 +2237,7 @@
     {
       "id": "cuboid-06-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-06-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-06-01-facecolor-01-01.svg",
       "choices": [
@@ -2260,7 +2260,7 @@
     {
       "id": "cuboid-06-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-06-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-06-01-facecolor-02-02.svg",
       "choices": [
@@ -2283,7 +2283,7 @@
     {
       "id": "cuboid-06-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-06-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-06-01-facecolor-02-01.svg",
       "choices": [
@@ -2306,7 +2306,7 @@
     {
       "id": "cuboid-06-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-06-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-06-01-facecolor-03-02.svg",
       "choices": [
@@ -2329,7 +2329,7 @@
     {
       "id": "cuboid-06-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-06-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-06-01-facecolor-03-01.svg",
       "choices": [
@@ -2352,7 +2352,7 @@
     {
       "id": "cuboid-07-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-07-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-07-01-facecolor-01-02.svg",
       "choices": [
@@ -2375,7 +2375,7 @@
     {
       "id": "cuboid-07-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-07-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-07-01-facecolor-01-01.svg",
       "choices": [
@@ -2398,7 +2398,7 @@
     {
       "id": "cuboid-07-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-07-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-07-01-facecolor-02-02.svg",
       "choices": [
@@ -2421,7 +2421,7 @@
     {
       "id": "cuboid-07-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-07-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-07-01-facecolor-02-01.svg",
       "choices": [
@@ -2444,7 +2444,7 @@
     {
       "id": "cuboid-07-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-07-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-07-01-facecolor-03-02.svg",
       "choices": [
@@ -2467,7 +2467,7 @@
     {
       "id": "cuboid-07-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-07-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-07-01-facecolor-03-01.svg",
       "choices": [
@@ -2490,7 +2490,7 @@
     {
       "id": "cuboid-08-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-08-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-08-01-facecolor-01-02.svg",
       "choices": [
@@ -2513,7 +2513,7 @@
     {
       "id": "cuboid-08-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-08-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-08-01-facecolor-01-01.svg",
       "choices": [
@@ -2536,7 +2536,7 @@
     {
       "id": "cuboid-08-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-08-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-08-01-facecolor-02-02.svg",
       "choices": [
@@ -2559,7 +2559,7 @@
     {
       "id": "cuboid-08-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-08-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-08-01-facecolor-02-01.svg",
       "choices": [
@@ -2582,7 +2582,7 @@
     {
       "id": "cuboid-08-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-08-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-08-01-facecolor-03-02.svg",
       "choices": [
@@ -2605,7 +2605,7 @@
     {
       "id": "cuboid-08-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-08-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-08-01-facecolor-03-01.svg",
       "choices": [
@@ -2628,7 +2628,7 @@
     {
       "id": "cuboid-09-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-09-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-09-01-facecolor-01-02.svg",
       "choices": [
@@ -2651,7 +2651,7 @@
     {
       "id": "cuboid-09-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-09-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-09-01-facecolor-01-01.svg",
       "choices": [
@@ -2674,7 +2674,7 @@
     {
       "id": "cuboid-09-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-09-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-09-01-facecolor-02-02.svg",
       "choices": [
@@ -2697,7 +2697,7 @@
     {
       "id": "cuboid-09-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-09-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-09-01-facecolor-02-01.svg",
       "choices": [
@@ -2720,7 +2720,7 @@
     {
       "id": "cuboid-09-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-09-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-09-01-facecolor-03-02.svg",
       "choices": [
@@ -2743,7 +2743,7 @@
     {
       "id": "cuboid-09-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-09-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-09-01-facecolor-03-01.svg",
       "choices": [
@@ -2766,7 +2766,7 @@
     {
       "id": "cuboid-10-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-10-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-10-01-facecolor-01-02.svg",
       "choices": [
@@ -2789,7 +2789,7 @@
     {
       "id": "cuboid-10-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-10-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-10-01-facecolor-01-01.svg",
       "choices": [
@@ -2812,7 +2812,7 @@
     {
       "id": "cuboid-10-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-10-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-10-01-facecolor-02-02.svg",
       "choices": [
@@ -2835,7 +2835,7 @@
     {
       "id": "cuboid-10-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-10-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-10-01-facecolor-02-01.svg",
       "choices": [
@@ -2858,7 +2858,7 @@
     {
       "id": "cuboid-10-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-10-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-10-01-facecolor-03-02.svg",
       "choices": [
@@ -2881,7 +2881,7 @@
     {
       "id": "cuboid-10-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-10-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-10-01-facecolor-03-01.svg",
       "choices": [
@@ -2904,7 +2904,7 @@
     {
       "id": "cuboid-11-01-facecolor-01-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-11-01-facecolor-01-01.svg",
       "answer": "facecolor/cuboid-11-01-facecolor-01-02.svg",
       "choices": [
@@ -2927,7 +2927,7 @@
     {
       "id": "cuboid-11-01-facecolor-01-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-11-01-facecolor-01-02.svg",
       "answer": "facecolor/cuboid-11-01-facecolor-01-01.svg",
       "choices": [
@@ -2950,7 +2950,7 @@
     {
       "id": "cuboid-11-01-facecolor-02-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-11-01-facecolor-02-01.svg",
       "answer": "facecolor/cuboid-11-01-facecolor-02-02.svg",
       "choices": [
@@ -2973,7 +2973,7 @@
     {
       "id": "cuboid-11-01-facecolor-02-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-11-01-facecolor-02-02.svg",
       "answer": "facecolor/cuboid-11-01-facecolor-02-01.svg",
       "choices": [
@@ -2996,7 +2996,7 @@
     {
       "id": "cuboid-11-01-facecolor-03-q1",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-11-01-facecolor-03-01.svg",
       "answer": "facecolor/cuboid-11-01-facecolor-03-02.svg",
       "choices": [
@@ -3019,7 +3019,7 @@
     {
       "id": "cuboid-11-01-facecolor-03-q2",
       "type": "facecolor",
-      "prompt": "색칠된 면과 마주보는 면을 고르세요",
+      "prompt": "색칠된 면과 평행한 면을 고르세요",
       "question": "facecolor/cuboid-11-01-facecolor-03-02.svg",
       "answer": "facecolor/cuboid-11-01-facecolor-03-01.svg",
       "choices": [

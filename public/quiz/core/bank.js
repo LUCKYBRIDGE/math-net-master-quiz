@@ -1,44 +1,63 @@
 export const buildWeightedQuestionBank = (banks, settings) => {
-  const distributeCounts = (total, weights) => {
-    const weightSum = weights.reduce((sum, w) => sum + w.weight, 0);
-    if (!weightSum) return weights.map(w => ({ key: w.key, count: 0 }));
-    const base = weights.map(w => {
-      const exact = (w.weight / weightSum) * total;
-      return { key: w.key, exact, count: Math.floor(exact) };
-    });
-    let remaining = total - base.reduce((sum, item) => sum + item.count, 0);
-    base.sort((a, b) => (b.exact - b.count) - (a.exact - a.count));
-    for (let i = 0; i < base.length && remaining > 0; i += 1) {
-      base[i].count += 1;
-      remaining -= 1;
+  const parseTypeKey = (key) => {
+    if (!key.includes('_')) return { shape: null, type: key };
+    const [shape, type] = key.split('_');
+    return { shape, type };
+  };
+
+  const getShapeKind = (assetPath) => {
+    if (!assetPath) return 'unknown';
+    if (assetPath.includes('cuboid-') || assetPath.includes('cuboid-bad')) return 'cuboid';
+    if (assetPath.includes('cube-') || assetPath.includes('cube-bad')) return 'cube';
+    return 'unknown';
+  };
+
+  const getQuestionShape = (question) => {
+    if (!question) return 'unknown';
+    if (Array.isArray(question.tags)) {
+      if (question.tags.includes('cube')) return 'cube';
+      if (question.tags.includes('cuboid')) return 'cuboid';
     }
-    return base.map(item => ({ key: item.key, count: item.count }));
+    const candidates = [
+      question.question,
+      question.answer,
+      ...(question.choices || [])
+    ].filter(Boolean);
+    for (const path of candidates) {
+      const shape = getShapeKind(path);
+      if (shape !== 'unknown') return shape;
+    }
+    return 'unknown';
   };
 
   const configs = Object.entries(settings.questionTypes || {}).map(([key, config]) => ({
     key,
     enabled: config.enabled,
-    weight: config.weight
+    count: Math.max(0, Number(config.count) || 0)
   }));
 
-  let enabled = configs.filter(item => item.enabled && item.weight > 0);
+  let enabled = configs.filter(item => item.enabled && item.count > 0);
   if (enabled.length === 0) {
-    enabled = [{ key: 'facecolor', enabled: true, weight: 100 }];
+    enabled = [
+      { key: 'cube_facecolor', enabled: true, count: 5 },
+      { key: 'cuboid_facecolor', enabled: true, count: 5 }
+    ];
   }
 
-  const total = settings.questionCount;
-  const counts = distributeCounts(total, enabled);
+  const totalRequested = enabled.reduce((sum, item) => sum + item.count, 0);
   const selected = [];
   const pools = {};
 
   enabled.forEach(item => {
-    const bank = banks[item.key];
+    const { shape, type } = parseTypeKey(item.key);
+    const bank = banks[type];
     if (!bank) return;
-    pools[item.key] = bank.questions.slice().sort(() => Math.random() - 0.5);
+    const filtered = shape ? bank.questions.filter((q) => getQuestionShape(q) === shape) : bank.questions;
+    pools[item.key] = filtered.slice().sort(() => Math.random() - 0.5);
   });
 
-  let remaining = total;
-  counts.forEach(({ key, count }) => {
+  let remaining = totalRequested;
+  enabled.forEach(({ key, count }) => {
     const pool = pools[key] || [];
     const take = Math.min(count, pool.length);
     selected.push(...pool.slice(0, take));
@@ -54,7 +73,12 @@ export const buildWeightedQuestionBank = (banks, settings) => {
   }
 
   if (remaining > 0 && !settings.avoidRepeat) {
-    const all = Object.values(banks).flatMap(bank => bank.questions);
+    const all = enabled.flatMap(item => {
+      const { shape, type } = parseTypeKey(item.key);
+      const bank = banks[type];
+      if (!bank) return [];
+      return shape ? bank.questions.filter((q) => getQuestionShape(q) === shape) : bank.questions;
+    });
     while (remaining > 0 && all.length > 0) {
       selected.push(all[Math.floor(Math.random() * all.length)]);
       remaining -= 1;

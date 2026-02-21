@@ -13,6 +13,10 @@ export const computeScore = (correct, timeMs, combo, settings) => {
   if (score.timeBonusEnabled && timeLimitSec > 0 && score.timeBonusPerSec > 0) {
     const remainingSec = Math.max(0, timeLimitSec - timeMs / 1000);
     timeBonus = remainingSec * score.timeBonusPerSec;
+    if (score.timeBonusMaxRatio && score.timeBonusMaxRatio > 0) {
+      const maxBonus = score.base * (score.timeBonusMaxRatio / 100);
+      timeBonus = Math.min(timeBonus, maxBonus);
+    }
   }
 
   const scoreDelta = Math.round(score.base + comboBonus + timeBonus);
