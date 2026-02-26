@@ -45,6 +45,19 @@ node scripts/jumpmap-check-split-repo-readiness.mjs --strict
 - 현재 단계(`R7` 준비/이관 중)에서는 `origin` 미설정, `TBD` 잔존이 정상이라 기본 모드에서 `WARN`이 나올 수 있음
 - 실제 push/CI 활성화 직전에는 `--strict`가 `PASS`가 되도록 맞추는 것을 권장
 
+빠른 로컬 preflight(권장, readiness + split apply + verify):
+
+```bash
+cd /Users/baekjiyun/Desktop/WAN/math-net-master-quiz
+node scripts/jumpmap-r7-preflight.mjs
+```
+
+예시 (browser E2E 포함):
+
+```bash
+node scripts/jumpmap-r7-preflight.mjs --with-browser-e2e --browser-e2e-timeout-ms 30000
+```
+
 ## 3) Standard Flow (Recommended)
 
 ### 3-1) Edit In Editor

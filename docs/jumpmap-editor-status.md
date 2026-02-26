@@ -3,6 +3,16 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) 로컬 preflight 래퍼 스크립트 추가(최신, 2026-02-26):
+  - `scripts/jumpmap-r7-preflight.mjs` 추가
+    - 실행 순서 고정:
+      1. `jumpmap-check-split-repo-readiness` (`--summary-lines`, 선택적 `--strict`)
+      2. `jumpmap-split-repos --apply --force-merge`
+      3. `jumpmap-verify-split` (기본 `--skip-smoke`, 선택적 browser E2E/full verify pass-through)
+  - 목적:
+    - `R7` 운영 이관 단계에서 반복 실행되는 로컬 점검 절차를 1개 엔트리포인트로 줄여 handoff/운영 누락 감소
+  - 연계 문서:
+    - `docs/repo-split-r7-release-checklist.md` Preconditions 섹션에 quick preflight 예시 추가
 - 레포 분리(R7 운영 이관) readiness handoff 3줄 요약 출력 옵션 추가(최신, 2026-02-26):
   - `scripts/jumpmap-check-split-repo-readiness.mjs`
     - `--summary-lines` 추가 (`[handoff-summary]` 블록으로 3줄 요약 출력)
