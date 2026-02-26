@@ -3,6 +3,1044 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) split 레포 최신 커밋 기준선/clean 상태 배치 동기화(최신, 2026-02-26):
+  - split 레포 최신 커밋(현재 기준선):
+    - `nolquiz-editor`: `36f0b6c` (`chore: stop mirroring monorepo status log`)
+    - `nolquiz-runtime`: `1df60f1` (`chore: refresh scaffold metadata`)
+  - 상태:
+    - 두 split 레포 모두 `main` 기준 clean (`git status --short --branch`)
+    - `origin` remote는 아직 미설정 (URL 미확정)
+  - 의미:
+    - `SPLIT_SCAFFOLD.md` 타임스탬프 churn 억제 + editor status 로그 미러링 중단 이후, monorepo 기준선 기록과 split 레포 clean 상태를 함께 관리 가능한 상태로 정리
+- 레포 분리(R7 운영 편의) churn 억제 후 browser E2E 기준선 재확인(최신, 2026-02-26):
+  - 배경:
+    - `split scaffold` 타임스탬프 churn 억제 + `nolquiz-editor`의 monorepo status 로그 미러링 중단 후에도 검증 기준선이 유지되는지 재확인
+  - 검증:
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000`
+    - 결과: `pass=38, fail=0`
+    - browser E2E: `cases=4` PASS (legacy default / direct fallback query / compat editor query auto-recovery / auto-start test mode + quiz panel roundtrip)
+  - 기대 효과:
+    - split repo churn 완화 변경이 runtime compat 경로/브라우저 E2E 동작에 영향을 주지 않음을 기준선으로 고정
+- 레포 분리(R7 운영 편의) editor status 로그 split 동기화 churn 억제 2차(최신, 2026-02-26):
+  - `scripts/jumpmap-split-repos.mjs`
+    - `EDITOR_PATHS`에서 `docs/jumpmap-editor-status.md` 제거 (monorepo status 로그는 split editor에 더 이상 자동 복제하지 않음)
+    - `EDITOR_PRUNE_PATHS` 추가로 `split-repos --apply` 시 split editor의 stale `docs/jumpmap-editor-status.md` 1회 정리
+    - required-path verification에 `editor forbidden absent` 검사 추가
+  - 의도/효과:
+    - monorepo `docs/jumpmap-editor-status.md` 갱신 후 `split-repos --apply`를 실행해도 `nolquiz-editor`가 status 로그 복제 때문에 반복적으로 dirty 되는 churn 제거
+    - `SPLIT_SCAFFOLD.md` 타임스탬프 churn 억제 1차와 결합하면, 실제 editor scaffold 변경이 없을 때 split 레포 clean 유지 가능성 증가
+  - 검증(이 턴 기준):
+    - `node --check scripts/jumpmap-split-repos.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - split 레포 상태 확인 (`nolquiz-editor`의 `docs/jumpmap-editor-status.md` 자동 삭제/dirty 여부)
+  - split 레포 후속 정리(1회):
+    - `nolquiz-editor`에서 stale status 로그 제거/스캐폴드 목록 갱신 커밋 생성: `36f0b6c` (`chore: stop mirroring monorepo status log`)
+- 레포 분리(R7 운영 편의) split scaffold 타임스탬프 churn 억제 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-split-repos.mjs`
+    - `writeSplitReadme(...)`에서 `SPLIT_SCAFFOLD.md` 비교 시 `생성 시각` 라인을 정규화한 뒤 비교
+    - 결과: 내용이 같고 타임스탬프만 달라진 경우 파일 재쓰기 생략
+  - 의도/효과:
+    - `split-repos --apply`를 monorepo 문서 동기화 후 반복 실행해도, 실제 scaffold 내용 변화가 없으면 `SPLIT_SCAFFOLD.md`만으로 split 레포가 dirty 되는 churn 감소
+    - 특히 `nolquiz-runtime`의 불필요한 후속 `refresh scaffold metadata` 커밋 빈도 감소
+  - 검증(이 턴 기준):
+    - `node --check scripts/jumpmap-split-repos.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - split 레포 상태 확인 (`SPLIT_SCAFFOLD.md` dirty 여부)
+- 레포 분리(R7 실작업) split 레포 remote bootstrap/push 템플릿 문서화 1차(최신, 2026-02-26):
+  - `nolquiz-editor`
+    - `docs/repo-operations.md`에 remote bootstrap / first push 명령 템플릿 추가
+    - 최신 커밋: `e3c23be` (`docs: add remote bootstrap and push templates`)
+  - `nolquiz-runtime`
+    - `docs/repo-operations.md`에 remote bootstrap / first push 명령 템플릿 추가
+    - 최신 커밋: `458fbf6` (`docs: add remote bootstrap and push templates`)
+  - 상태:
+    - 두 split 레포 모두 현재 `origin` remote 미설정 (URL 미확정, `TBD` 유지)
+    - URL만 확정되면 문서 템플릿으로 `remote add/set-url` + `push -u origin main` 즉시 실행 가능
+  - 검증(이 턴 기준):
+    - split 레포 git status/log/remote 확인
+    - monorepo 문서 동기화 후 `split-repos` / `verify-split --skip-smoke` 재검증 (아래 최신 항목 참조)
+- 레포 분리(R7 실작업) split 레포 후속 동기화 커밋 정리 1차(최신, 2026-02-26):
+  - `nolquiz-editor`
+    - 후속 커밋 생성: `034ed0f` (`chore: sync scaffold metadata and status log`)
+    - 포함: `SPLIT_SCAFFOLD.md` 생성시각 갱신 + `docs/jumpmap-editor-status.md` 동기화
+  - `nolquiz-runtime`
+    - 후속 커밋 생성: `15b4692` (`chore: refresh scaffold metadata`)
+    - 포함: `SPLIT_SCAFFOLD.md` 생성시각 갱신
+  - 결과:
+    - 두 split 레포 작업트리 clean 상태 재확보(`main`)
+    - `R7` 운영 이관 실작업 1차(초기 커밋 + 운영 메모 + 후속 동기화 커밋) 정리 완료
+  - 검증(이 턴 기준):
+    - split 레포 git status/log 확인
+    - monorepo 문서 동기화 후 `split-repos` / `verify-split --skip-smoke` 재검증 (아래 최신 항목 참조)
+- 레포 분리(R7 실작업) split 레포 초기 커밋 + 운영 메모 추가 1차(최신, 2026-02-26):
+  - `nolquiz-editor`
+    - `docs/repo-operations.md` 추가 (remote/publish 운영 메모)
+    - `README.md`에 운영 메모 링크 추가
+    - 초기 커밋 생성: `f87c122` (`chore: initialize nolquiz-editor scaffold`)
+  - `nolquiz-runtime`
+    - `docs/repo-operations.md` 추가 (remote/deploy 운영 메모)
+    - `README.md`에 운영 메모 링크 추가
+    - 초기 커밋 생성: `033d6b4` (`chore: initialize nolquiz-runtime scaffold`)
+  - 공통 상태:
+    - 두 레포 모두 `main` 기준 초기 커밋 완료
+    - `origin` remote는 아직 미설정 (`docs/repo-operations.md`의 `TBD` 항목으로 후속 설정 예정)
+  - 목적:
+    - `R7` 운영 이관 단계에서 split 레포를 “스캐폴드만 존재” 상태에서 “초기 커밋 + 운영 메모 포함” 상태로 승격
+  - 검증(이 턴 기준):
+    - split 레포 git 상태/로그 확인 (`main`, latest commit hash)
+    - monorepo 문서 동기화 후 `split-repos` / `verify-split` 재검증 (아래 최신 항목 참조)
+- 레포 분리(R7 준비) `verify-split` CI 초안 추가 1차(최신, 2026-02-26):
+  - `.github/workflows/repo-split-verify.yml` 추가
+    - `push(main)` / `pull_request`: `verify-fast` (`split-repos --apply --force-merge` + `verify-split --skip-smoke`)
+    - `workflow_dispatch`: 입력값으로 browser E2E 선택 실행
+      - `with_browser_e2e=true`
+      - `browser_e2e_timeout_ms`
+    - browser E2E job에서 `playwright` + `chromium` 임시 설치 후 `verify-split --skip-smoke --with-browser-e2e` 실행
+  - `docs/repo-split-r7-release-checklist.md`
+    - `3-6) CI` 섹션 추가 (워크플로 경로, 기본/수동 트리거 동작, timeout 입력)
+  - `docs/repo-split-r6-handoff.md`
+    - `R7` 시작 추천 항목에 CI 워크플로 사용 경로 추가
+  - 목적:
+    - `R7` 운영 이관 단계에서 fast verify를 기본 자동화하고, browser E2E는 수동 트리거로 유지해 비용/시간을 제어
+  - 검증:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000`
+- 레포 분리(R7 준비) 릴리즈/운영 플로우 체크리스트 표준화 1차(최신, 2026-02-26):
+  - `docs/repo-split-r7-release-checklist.md` 추가
+    - 표준 절차 고정:
+      - `edit -> publish -> split apply -> verify`
+    - `R6` 기준선 수치(`24/24`, `17/17`, `pass=37/38/66`)를 운영 체크리스트에 명시
+    - 실패 시 짧은 triage( publish / forbidden path / compat sync / browser E2E ) 추가
+    - `R7` handoff에 포함할 최소 정보(검증 명령, pass/fail, publish 경로, 리스크) 명시
+  - `docs/repo-split-r6-handoff.md`
+    - `R7` 시작 추천 항목에서 위 체크리스트 문서를 표준 플로우로 참조하도록 갱신
+  - 목적:
+    - `R6` 이후 운영 반영 단계에서 publish 누락/검증 누락을 줄이고, 다음 스레드에서도 동일 절차로 실행 가능하게 고정
+  - 검증:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000`
+- 레포 분리(R6) handoff 문서 고정(최신, 2026-02-26):
+  - `docs/repo-split-r6-handoff.md` 추가
+    - `R6` 완료 상태(컷오버/auto-recovery/browser E2E 기준) 요약
+    - 검증 기준선(`verify-split --skip-smoke`, `--with-browser-e2e`, headed 포함) 고정
+    - 운영 규칙(editor -> publish -> split apply -> verify) 정리
+    - `R7` 시작 추천 작업(운영 이관/CI/릴리즈 플로우) 정리
+  - 목적:
+    - 스레드/세션 전환 시 `R6` 완료 기준과 다음 단계 우선순위를 짧은 문서 1개로 이어받기 쉽게 만들기
+  - 검증:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000`
+- 레포 분리(R6) 종료 기록 + 다음 단계 이관 기준 고정(최신, 2026-02-26):
+  - `docs/jumpmap-editor-phase6-checklist.md`
+    - `0-3` 남은 수동 확인 항목 정리 완료
+      - `운영 시나리오 1회 수동 확인`은 `필요 시` 조건 항목으로 분류하고, 이번 `R6` 종료 기준에서는 waive 처리
+      - 근거: headed browser E2E(`cases=4`) + `legacy` host 패널 UX Playwright E2E assert(telemetry/fallback UI)
+    - `0-4` 종료 기준 섹션에 `R6 종료 준비 기준 충족(2026-02-26)` 기록 추가
+  - 현재 `R6` 종료 기준선(유지):
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` → `pass=37, fail=0`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000` → `pass=38, fail=0`
+    - `node scripts/jumpmap-verify-split.mjs --with-browser-e2e` → `pass=66, fail=0`
+    - `node scripts/jumpmap-verify-split.mjs --with-browser-e2e --browser-e2e-headed --browser-e2e-timeout-ms 30000` → `pass=66, fail=0`
+  - 다음 단계 이관 메모(`R7`/운영 이관):
+    - 실제 운영 동선 spot-check(런처 → 점프맵 → legacy/compat) 1회 권장
+    - 장시간/특정 preset/다인모드 회귀는 별도 운영 검증 범위로 유지
+  - 검증:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+- 레포 분리(R6) legacy host 패널 UX 자동검증(E2E) 보강 및 수동 항목 축소(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-legacy-compat-e2e.mjs`
+    - `legacy` host 패널 UI assertion 추가:
+      - `compat-event-row` 텍스트 표시
+      - `compat-events-row`(debug) 표시 + recent events 리스트 존재
+      - `fallback-row` 표시 + `fallback-link`가 `jumpmap-runtime/legacy/compat/` 타깃으로 수렴하는지 확인
+      - `legacyCompatTarget=0` 요청 시 `target-row`/`fallback-link`가 `jumpmap-runtime/legacy/compat/` 타깃으로 수렴하는지 확인
+  - `docs/jumpmap-editor-phase6-checklist.md`
+    - `0-3`의 `legacy host 패널 UX 확인` 항목을 Playwright E2E 대체 검증으로 체크 완료 처리
+    - 남은 수동 항목은 `운영 시나리오 1회 수동 확인(필요 시)` 1개로 축소
+  - 검증:
+    - `node scripts/jumpmap-verify-legacy-compat-e2e.mjs --runtime-dir ../nolquiz-runtime`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+- 레포 분리(R6) headed browser E2E 검증 1회 실행 확인(최신, 2026-02-26):
+  - `node scripts/jumpmap-verify-split.mjs --with-browser-e2e --browser-e2e-headed --browser-e2e-timeout-ms 30000` 실행
+  - 결과:
+    - `legacy compat browser e2e` PASS (`cases=4`)
+    - `local route smoke` PASS 포함
+    - 최종 `pass=66, fail=0`
+  - `docs/jumpmap-editor-phase6-checklist.md`
+    - `0-3`의 headed browser E2E 항목 체크 완료 처리
+    - `0-2` 최신 자동검증 기준선에 headed 실행 결과 추가
+  - 효과:
+    - `R6 종료 준비`의 최우선 수동 항목(헤디드 브라우저 E2E 실행)을 완료하여 잔여 수동 항목 범위를 UX 확인/운영 시나리오 점검으로 축소
+- 레포 분리(R6) 종료 준비 체크리스트 정리 1차(최신, 2026-02-26):
+  - `docs/jumpmap-editor-phase6-checklist.md`
+    - 상단에 `R6 종료 준비 상태` 섹션 추가 (`0)` 구간)
+    - 자동검증으로 완료된 항목(컷오버/auto-recovery/helper·inject·pipeline/E2E/hidden dependency 계약)과 남은 수동 확인 항목을 분리 기록
+    - 최신 자동검증 기준선 고정:
+      - `verify-split --skip-smoke` (`pass=37, fail=0`)
+      - `verify-split --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000` (`pass=38, fail=0`)
+      - `verify-split --with-browser-e2e` (`pass=66, fail=0`)
+  - 효과:
+    - `R6` 종료 전 필요한 남은 수동 확인 항목만 명확히 추적 가능
+    - 기존 Phase6 수동 점검표를 유지하면서 분리 컷오버 종료 기준을 같은 문서에서 관리 가능
+  - 검증:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+- 레포 분리(R6) legacy compat 동적 의존 계약(snapshot) 감사 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-audit-legacy-compat-assets.mjs`
+    - 정적 참조 감사 결과와 별도로 `dynamicDependencyContracts` 섹션 추가 (snapshot `version: 2`)
+    - `public/quiz/data`, `public/quiz/nets`를 동적 의존 계약 디렉터리로 명시 inventory/snapshot화
+    - `_backup-*`, `.DS_Store`는 계약 inventory에서 제외 (노이즈/임시 백업 제외)
+    - summary에 `dynamicDependencyContractCount`, `dynamicDependencyFileCount`, `dynamicDependencyMissingDirCount` 추가
+  - `docs/contracts/legacy-compat-asset-audit.json`
+    - 동적 의존 계약 snapshot 갱신 (`contracts=2`, `files=489`, `missingDirs=0`)
+  - 효과:
+    - 기존 정적 참조 감사가 놓치는 `quiz/data`, `quiz/nets` hidden dependency를 계약 레벨에서 명시적으로 추적 가능
+    - sync/split 검증과 함께 사용할 때 동적 의존 누락 회귀를 더 빨리 식별 가능
+  - 검증:
+    - `node --check scripts/jumpmap-audit-legacy-compat-assets.mjs`
+    - `node scripts/jumpmap-audit-legacy-compat-assets.mjs --write`
+    - `node scripts/jumpmap-audit-legacy-compat-assets.mjs --check`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (PASS 유지)
+- 레포 분리(R6) verify-split 브라우저 E2E 디버그 옵션 pass-through 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-split.mjs`
+    - `--browser-e2e-headed` 추가 (`--with-browser-e2e`와 함께 사용 시 E2E 스크립트에 `--headed` 전달)
+    - `--browser-e2e-timeout-ms <ms>` 추가 (`--with-browser-e2e`와 함께 사용 시 E2E 스크립트에 `--timeout-ms` 전달)
+    - 기본값은 기존과 동일(브라우저 E2E 미실행 / headless / E2E 기본 timeout 사용)
+  - 효과:
+    - `verify-split` 단일 엔트리포인트에서 browser E2E 디버깅(헤드드 실행, timeout 완화) 제어 가능
+  - 검증:
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e --browser-e2e-timeout-ms 30000`
+- 레포 분리(R6) legacy compat 퀴즈 동적 자산(hidden dependency) 보강 + E2E 상호작용 복구 1차(최신, 2026-02-26):
+  - E2E 상호작용 검증 중 `quiz_gateway_error`를 재현/확인
+    - 원인: runtime compat canary asset sync(`jumpmap-sync-runtime-legacy-compat-assets`)가 동적 의존인 `quiz/data`, `quiz/nets`를 복제하지 않아 `ensureQuizResources()`가 실패
+  - `scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs`
+    - `COMPAT_PUBLIC_DIR_REL_PATHS`에 `quiz/data`, `quiz/nets` 추가
+    - `quiz/nets` 백업 디렉터리 복제를 피하도록 `_backup-*` 디렉터리 skip 추가
+  - `scripts/jumpmap-split-repos.mjs`, `scripts/jumpmap-verify-split.mjs`
+    - runtime required/smoke에 대표 경로 추가:
+      - `compat/quiz/data/quiz-settings.default.json`
+      - `compat/quiz/nets/cube-01.svg`
+  - `scripts/jumpmap-verify-legacy-compat-e2e.mjs`
+    - 상호작용 케이스(`auto-start test mode → restart → quiz panel roundtrip`)를 유지한 상태에서 재검증 PASS
+  - 검증:
+    - `node scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs`
+    - `node scripts/jumpmap-verify-legacy-compat-e2e.mjs --runtime-dir ../nolquiz-runtime` (`cases=4`)
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e` (PASS 유지)
+- 레포 분리(R6) legacy compat 브라우저 E2E 상호작용 검증 2차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-legacy-compat-e2e.mjs`
+    - iframe 내부 compat 문서의 실제 test mode/quiz UI 상호작용 검증 케이스 추가
+    - 추가 검증 범위(1 케이스):
+      - `legacy` 기본 경로에서 auto-start test mode 진입 확인 (`#test-overlay`, `.test-view`)
+      - `#test-restart` 클릭 후 start guide 재표시로 재시작 경로 확인
+      - 퀴즈 패널 라운드트립 확인 (열기 → 보기 선택지 렌더 → 답안 제출 → 결과/피드백 → 맵으로 복귀)
+    - 결과적으로 browser E2E 케이스 수 `3 -> 4`로 확대
+  - 검증:
+    - `node --check scripts/jumpmap-verify-legacy-compat-e2e.mjs`
+    - `node scripts/jumpmap-verify-legacy-compat-e2e.mjs --runtime-dir ../nolquiz-runtime` (`cases=4`, local `playwright` + `chromium` 설치 후)
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e` (PASS 유지)
+- 레포 분리(R6) verify-split 선택형 브라우저 E2E 옵션 통합 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-split.mjs`
+    - `--with-browser-e2e` 옵션 추가 (기본값 off)
+    - 켜면 `scripts/jumpmap-verify-legacy-compat-e2e.mjs`를 split runtime(`nolquiz-runtime`) 대상으로 추가 실행
+    - 기본 `verify-split` 실행시간/의존성(Playwright 미설치 환경) 영향 없이, 필요 시 브라우저 E2E까지 한 번에 확인 가능
+  - 효과:
+    - CI/로컬에서 상황에 따라 `route smoke + helper/inject/pipeline`만 빠르게 돌리거나,
+    - `legacy compat` 브라우저 E2E까지 포함한 확장 검증을 같은 엔트리포인트에서 실행 가능
+  - 검증:
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke --with-browser-e2e` (local `playwright` + `chromium` 설치 후)
+- 레포 분리(R6) legacy compat 브라우저 E2E 자동검증 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-legacy-compat-e2e.mjs` 추가
+    - split runtime(`nolquiz-runtime`)에서 `scripts/jumpmap-local-serve.mjs`로 로컬 서버 기동 후 Playwright(Chromium) 헤드리스 검증 수행
+    - 검증 범위(`3` 케이스):
+      - `legacy` 기본 경로가 iframe 내부에서 runtime-owned compat로 로드되는지
+      - `legacyCompatTarget=0` direct fallback 요청이 split runtime에서 compat auto-recovery되는지
+      - `compat` 직접 경로의 `legacyCompatSource=editor&legacyCompatAssetBase=editor` 요청이 runtime-owned로 auto-recovery되는지
+    - host panel(`compat-mode-row`, telemetry event)와 iframe/compat 문서의 runtime compat marker(`__JUMPMAP_RUNTIME_LEGACY_COMPAT_TARGET__`) / runtime base href를 함께 확인
+  - `scripts/jumpmap-split-repos.mjs`
+    - editor split에 E2E 검증 스크립트 포함/required 추가
+  - `scripts/jumpmap-verify-split.mjs`
+    - editor syntax 대상에 E2E 검증 스크립트 추가 (기본 verify 체인의 route/helper/inject 검증은 그대로 유지)
+  - 검증:
+    - `node --check scripts/jumpmap-verify-legacy-compat-e2e.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-legacy-compat-e2e.mjs --runtime-dir ../nolquiz-runtime` (`cases=3`, local `playwright` + `chromium` 설치 후)
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (PASS 유지)
+- 레포 분리(R6) legacy compat pipeline 자동검증 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-legacy-compat-pipeline.mjs` 추가
+    - split runtime(`nolquiz-runtime`)의 `legacy/app.js`, `compat/app.js` helper를 Node에서 import(임시 `.mjs` 복사본 방식)
+    - 검증 범위(`6` 케이스):
+      - legacy host target mode/fallback probe 해석
+      - compat source/asset-base 해석 + editor fallback auto-recovery
+      - runtime-owned source snapshot + `injectCompatHead(...)` 변환 조합(pipeline) 검증
+  - `scripts/jumpmap-verify-split.mjs`
+    - editor syntax 대상에 `jumpmap-verify-legacy-compat-pipeline.mjs` 추가
+    - `legacy compat pipeline check` 단계 추가 (split runtime 대상 실행)
+  - `scripts/jumpmap-split-repos.mjs`
+    - editor split에 pipeline 검증 스크립트 포함/required 추가
+  - 효과:
+    - helper 단위 검증(fallback/inject)에 더해, legacy host → compat → inject의 핵심 조합 경로를 split runtime 복사본 기준으로 자동 검증 가능
+  - 검증:
+    - `node --check scripts/jumpmap-verify-legacy-compat-pipeline.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-legacy-compat-pipeline.mjs --runtime-dir ../nolquiz-runtime` (`cases=6`)
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=36, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=62, fail=0`, local route smoke 포함)
+- 레포 분리(R6) legacy compat inject 로직 자동검증 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - `injectCompatHead` export 추가 (split runtime 복사본 helper 검증용)
+  - `scripts/jumpmap-verify-legacy-compat-inject-logic.mjs` 추가
+    - split runtime(`nolquiz-runtime`)의 `compat/app.js`를 Node에서 import(임시 `.mjs` 복사본 방식)
+    - runtime-owned source snapshot HTML + `injectCompatHead(...)` 변환 결과를 `5`개 케이스로 검증
+    - 검증 범위:
+      - marker/base/runtime script 주입
+      - runtime-owned source snapshot inject 호환성
+      - `<head>` 존재/미존재 fallback wrapper 경로
+  - `scripts/jumpmap-verify-split.mjs`
+    - editor syntax 대상에 새 inject-logic 검증 스크립트 추가
+    - monorepo 단계에 `legacy compat inject logic check` 추가 (split runtime 대상 실행)
+  - `scripts/jumpmap-split-repos.mjs`
+    - editor split에 새 inject-logic 검증 스크립트 포함/required 추가
+  - 효과:
+    - helper fallback 판단 자동검증에 더해, `compat`의 HTML inject 변환 핵심 로직까지 split runtime 복사본 기준으로 자동 검증 가능
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node --check scripts/jumpmap-verify-legacy-compat-inject-logic.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-legacy-compat-inject-logic.mjs --runtime-dir ../nolquiz-runtime` (`cases=5`)
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=34, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=60, fail=0`, local route smoke 포함)
+- 레포 분리(R6) fallback logic 자동검증 warning 정리 + fallback 정책 문서화 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-legacy-compat-fallback-logic.mjs`
+    - split runtime 브라우저 모듈 import 시 `.js` 직접 import 대신 임시 `.mjs` 복사본 import로 변경
+    - 효과: `MODULE_TYPELESS_PACKAGE_JSON` warning 없이 fallback logic 자동검증 실행 가능
+  - `docs/contracts/legacy-compat-runtime-owned-cutover-plan.md`
+    - 컷오버 후 fallback 정책 섹션 추가
+    - `legacyCompatTarget=0`, `legacyCompatSource=editor`, `legacyCompatAssetBase=editor`를 split runtime 기준 dev/monorepo 호환용으로 명시
+    - split runtime에서는 runtime-owned compat로 auto-recovery 유지 정책 명시
+  - 검증:
+    - `node --check scripts/jumpmap-verify-legacy-compat-fallback-logic.mjs`
+    - `node scripts/jumpmap-verify-legacy-compat-fallback-logic.mjs --runtime-dir ../nolquiz-runtime` (warning 없이 `cases=9`)
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=31, fail=0`)
+- 레포 분리(R6) legacy compat fallback 로직 자동검증 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/app.js`
+    - Node import-safe를 위해 URL helper(`fallbackHref`) 적용
+    - pure helper `applyLegacyDirectFallbackProbe(...)` 추가/사용
+    - browser auto-start를 DOM 존재 조건으로 guard + helper exports 추가
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - Node import-safe URL helper(`fallbackHref`) 적용
+    - pure helper `applyEditorFallbackAvailabilityProbe(...)` 추가/사용
+    - browser auto-start guard + helper exports 추가
+  - `scripts/jumpmap-verify-legacy-compat-fallback-logic.mjs` 추가
+    - split runtime 복사본(`nolquiz-runtime`)의 `legacy/app.js`, `compat/app.js`를 Node에서 import
+    - fallback mode parsing/URL builder/editor-path auto-recovery helper 동작을 `9`개 케이스로 검증
+  - `scripts/jumpmap-verify-split.mjs`
+    - editor syntax 대상에 새 검증 스크립트 추가
+    - monorepo 단계에 `legacy compat fallback logic check` 추가 (split runtime 복사본 대상 실행)
+  - `scripts/jumpmap-split-repos.mjs`
+    - editor split에 새 검증 스크립트 포함/required 추가
+  - 효과:
+    - 수동 브라우저 검증 전에도 fallback 판단 로직의 핵심 분기(특히 split runtime에서의 editor fallback 자동 복귀)를 자동 검증 가능
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node --check scripts/jumpmap-verify-legacy-compat-fallback-logic.mjs`
+    - `node scripts/jumpmap-verify-legacy-compat-fallback-logic.mjs --runtime-dir ../nolquiz-runtime`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=31, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=57, fail=0`, local route smoke 포함)
+    - 참고: Node import 시 `MODULE_TYPELESS_PACKAGE_JSON` warning 출력(동작 영향 없음)
+- 레포 분리(R6) runtime split 컷오버 후 fallback 표면 정리 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/index.html`
+    - host panel에 `compat-mode-row` 추가 (요청 모드/실제 적용 모드 표시용)
+  - `public/jumpmap-runtime/legacy/app.js`
+    - compat telemetry 요약(`urls-ready`)에 requested/effective 모드 mismatch 표시 강화
+    - `editor-path-unavailable-fallback` 이벤트 요약 및 status 반영
+    - direct fallback(`legacyCompatTarget=0`)이 runtime split에서 불가할 때 compat auto-fallback 상태/안내 문구를 더 명확히 표시
+    - compat panel 문구를 “direct fallback은 `/jumpmap-editor` 존재 시(dev-only)”로 정리
+  - `scripts/jumpmap-verify-split.mjs`
+    - local route smoke에 debug query 경로 추가:
+      - `/jumpmap-runtime/legacy/?legacyCompatTarget=0&legacyCompatDebug=1`
+      - `/jumpmap-runtime/legacy/compat/?legacyCompatSource=editor&legacyCompatAssetBase=editor&legacyCompatDebug=1`
+  - 효과:
+    - runtime split 컷오버 이후 `editor fallback` 요청이 자동 복귀될 때 host panel/telemetry에서 원인과 적용 모드를 더 쉽게 확인 가능
+    - debug query 경로 회귀가 split smoke에서 자동 감지됨
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=30, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=56, fail=0`, local route smoke 포함)
+- 레포 분리(R6) runtime split용 editor fallback 안전화 1차 (자동 감지 후 runtime-owned로 복귀, 최신 2026-02-26):
+  - `public/jumpmap-runtime/legacy/app.js`
+    - `legacyCompatTarget=0` direct fallback 요청 시 `../../jumpmap-editor/`를 probe(fetch) 후
+      - 존재하면 기존 direct fallback 유지 (monorepo/dev 호환)
+      - 부재(예: split runtime)면 compat로 자동 복귀(`compat-auto-fallback`)
+    - compat panel 안내 문구를 “direct fallback은 `/jumpmap-editor` 존재 시(dev-only)”로 보정
+    - compat telemetry 요약에 `editor-path-unavailable-fallback` 이벤트 표시 지원
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - `legacyCompatSource=editor` 또는 `legacyCompatAssetBase=editor` 요청 시 `../../jumpmap-editor/index.html` probe(fetch)
+      - 경로 부재면 해당 모드만 `runtime-owned`로 자동 대체
+      - `editor-path-unavailable-fallback` telemetry 이벤트 전송
+    - 목적: runtime split에서 남아있는 editor fallback query가 즉시 실패하지 않도록 안전 복귀
+  - 효과:
+    - monorepo/dev에서는 editor fallback 유지
+    - `nolquiz-runtime` split에서는 editor 경로 부재를 감지하고 runtime-owned compat로 자동 복귀
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=30, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=54, fail=0`, local route smoke 포함)
+- 레포 분리(R6) runtime split에서 `public/jumpmap-editor` 제거 컷오버 1차 + prune/forbidden 검증 추가(최신, 2026-02-26):
+  - `scripts/jumpmap-split-repos.mjs`
+    - runtime 복제 목록(`RUNTIME_PATHS`)에서 `public/jumpmap-editor` 제거
+    - runtime required 경로에서 `public/jumpmap-editor/index.html` 제거
+    - `RUNTIME_PRUNE_PATHS = ['public/jumpmap-editor']` 추가
+    - `--apply` 시 runtime 타깃에 남아 있던 stale `public/jumpmap-editor`를 명시적으로 제거(prune)
+    - required 검증에 `runtime forbidden absent` 체크 추가
+  - `scripts/jumpmap-verify-split.mjs`
+    - runtime required 목록에서 `public/jumpmap-editor/index.html` 제거
+    - `RUNTIME_FORBIDDEN = ['public/jumpmap-editor']` 추가
+    - required paths 섹션에 `runtime forbidden absent 1/1` 검증 추가
+    - local route smoke에서 기존 `runtime /jumpmap-editor/` 200 확인 제거
+    - 대신 `runtime /jumpmap-editor/ (removed)` 비-2xx(현재 404) 음수 smoke 검증 추가
+  - 효과:
+    - `nolquiz-runtime` split 결과물에서 `public/jumpmap-editor` 물리 복제가 제거됨
+    - 이전 스캐폴드에 남아 있던 stale 경로도 `split-repos --apply`로 자동 정리됨
+    - runtime split 검증 기준이 runtime-owned compat 자산 기준으로 정렬됨
+  - 검증:
+    - `node --check scripts/jumpmap-split-repos.mjs`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+      - runtime files `8175`, bytes `74.85 MB`
+      - runtime required `22/22`, runtime forbidden absent `1/1`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=30, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=54, fail=0`, local route smoke 포함, `runtime /jumpmap-editor/` = `404`)
+- 레포 분리(R6) compat 기본값을 runtime-owned source+asset-base로 전환 + editor 명시 fallback 유지(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - `legacyCompatSource` 기본값: `editor` -> `runtime-owned`
+    - `legacyCompatAssetBase` 기본값: `editor` -> `runtime-owned`
+    - 명시 fallback query 유지:
+      - `legacyCompatSource=editor`
+      - `legacyCompatAssetBase=editor`
+      - (`0|false|off|no` 별칭 포함)
+  - `scripts/jumpmap-verify-split.mjs`
+    - local route smoke에 compat editor 명시 fallback query 경로 추가:
+      - `/jumpmap-runtime/legacy/compat/?legacyCompatSource=editor&legacyCompatAssetBase=editor`
+  - 효과:
+    - compat 기본 경로가 runtime-owned canary source/asset-base를 사용하도록 전환됨
+    - query로 기존 editor 기반 compat 모드로 즉시 롤백 가능
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=29, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=53, fail=0`, local route smoke 포함)
+- 레포 분리(R6) compat runtime-owned 최소 자산 세트 실제 복제 + sync/check 자동화 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs` 추가
+    - `compat` canary mirror(`public/jumpmap-runtime/legacy/compat`)로 최소 자산 세트 동기화:
+      - `runtime-owned/` 아래 핵심 `jumpmap-editor` 파일 + `textures/`
+      - `compat/quiz/core/*`, `compat/shared/*`, `compat/quiz_background/Geumgangjeondo.jpg`
+      - `compat/quiz_plate/*`, `compat/quiz_sejong/*`
+    - `--check`, `--dry-run` 지원
+    - 주의: `runtime-owned/index.html`은 별도 source snapshot으로 유지(이 스크립트가 덮어쓰지 않음)
+  - `scripts/jumpmap-verify-split.mjs`
+    - `legacy compat canary asset sync check` 단계 추가 (monorepo 기준 `--check`)
+    - local route smoke에 대표 canary 미러 자산 경로 추가:
+      - `runtime-owned/editor.js`
+      - `runtime-owned/textures/hanji.svg`
+      - `compat/quiz/core/engine.js`
+      - `compat/shared/local-game-records.js`
+  - `scripts/jumpmap-split-repos.mjs`
+    - editor split에 새 sync 스크립트 포함
+    - runtime required 경로에 대표 canary 미러 자산 경로 추가
+  - 효과:
+    - `legacyCompatSource=runtimeOwned&legacyCompatAssetBase=runtimeOwned` canary가 참조할 최소 자산 세트가 실제로 runtime compat 경로에 존재
+    - split 검증 체인에서 canary 자산 미러 드리프트/누락 자동 감지 가능
+  - 검증:
+    - `node --check scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs`
+    - `node scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs --dry-run` (plan `122 files`)
+    - `node scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs`
+    - `node scripts/jumpmap-sync-runtime-legacy-compat-assets.mjs --check`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=27, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=50, fail=0`, local route smoke 포함)
+- 레포 분리(R6) compat runtime-owned asset-base canary 분기 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - query flag `legacyCompatAssetBase=runtimeOwned` 지원 추가
+    - compat injected `<base href>` / `__JUMPMAP_EDITOR_RUNTIME_BASE_HREF__`를 runtime-owned source 경로(`./runtime-owned/`)로 전환하는 canary 분기 도입
+    - `legacyCompatSource=runtimeOwned`와 조합 가능 (source-only / source+asset-base canary 분리 검증)
+    - telemetry(`urls-ready`, `fetch-start`, `fetch-ok`)에 `assetBaseMode` 포함
+  - `public/jumpmap-runtime/legacy/app.js`
+    - host compat telemetry 요약에 `sourceMode` / `assetBaseMode` 표시 보강 (수동 검증 관측성 개선)
+  - `scripts/jumpmap-verify-split.mjs`
+    - local route smoke에 canary query 경로 추가:
+      - `/jumpmap-runtime/legacy/compat/?legacyCompatSource=runtimeOwned&legacyCompatAssetBase=runtimeOwned`
+  - 효과:
+    - 다음 단계에서 runtime-owned 자산 복제 후 "asset base 전환"을 query flag로 독립 검증할 수 있는 경로 확보
+    - 기본 compat 동선은 유지, fallback(`legacyCompatTarget=0`)도 그대로 유지
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=25, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=44, fail=0`, local route smoke 포함)
+- 레포 분리(R6) compat runtime-owned source canary 분기 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - query flag `legacyCompatSource=runtimeOwned` 지원 추가
+    - compat target이 `jumpmap-editor/index.html` 대신 runtime 내부 source snapshot(`./runtime-owned/index.html`)를 fetch하는 canary 분기 도입
+    - 현재 단계에서는 자산 base(`<base href>`)는 기존 `../../jumpmap-editor/` 유지 (동작 리스크 최소화)
+    - 효과: "HTML source fetch 경로"를 먼저 runtime 내부로 이동시켜 다음 단계(자산까지 runtime-owned화) 전환 리스크를 분리
+  - `public/jumpmap-runtime/legacy/compat/runtime-owned/index.html` 추가
+    - `public/jumpmap-editor/index.html` 기반 seed snapshot (canary source)
+    - snapshot marker comment 추가
+  - `scripts/jumpmap-split-repos.mjs`, `scripts/jumpmap-verify-split.mjs`
+    - runtime required 경로에 `public/jumpmap-runtime/legacy/compat/runtime-owned/index.html` 추가
+    - local route smoke에 다음 경로 추가:
+      - `/jumpmap-runtime/legacy/compat/?legacyCompatSource=runtimeOwned`
+      - `/jumpmap-runtime/legacy/compat/runtime-owned/`
+  - 효과:
+    - compat canary의 HTML source를 runtime 내부 경로로 실험할 수 있는 단계 도달
+    - 기본 compat 동선은 그대로 유지되고, source-only canary를 query flag로 분리 가능
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node --check scripts/jumpmap-split-repos.mjs`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=25, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=43, fail=0`, local route smoke 포함)
+- 레포 분리(R6) compat runtime-owned 최소 의존 세트 설계/복제 목록 문서화 1차(최신, 2026-02-26):
+  - `docs/contracts/legacy-compat-runtime-owned-cutover-plan.md` 추가
+    - `docs/contracts/legacy-compat-asset-audit.json` snapshot 기준으로 compat 의존 자산을 컷오버 관점에서 분류:
+      - 이미 runtime-owned 유지 대상 (`public/quiz`, `public/shared`, `public/quiz_background`)
+      - editor path 결합 파일 이관 후보 1차 (`public/jumpmap-editor/*` 11개)
+      - prefix hint 기반 디렉터리 이관 후보 (`public/jumpmap-editor/textures`, `public/quiz_plate`, `public/quiz_sejong`)
+    - 다음 컷오버 단계(compat fetch 대상 runtime-owned index 전환 → runtime split에서 `public/jumpmap-editor` 제거) 구현 순서 제시
+  - 효과:
+    - 다음 작업에서 "무엇을 먼저 옮길지"를 snapshot 기반으로 고정해 스레드 handoff 시 컨텍스트 손실 감소
+    - `public/jumpmap-editor` 제거 전 최소 복제 목록의 기준선 확보
+  - 검증:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=25, fail=0`)
+- 레포 분리(R6) compat 의존 자산 인벤토리 감사 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-audit-legacy-compat-assets.mjs` 추가
+    - `public/jumpmap-editor/index.html` 기준 HTML/JS/CSS 로컬 참조를 정적 재귀 스캔해 compat 의존 자산 inventory snapshot 생성/검증
+    - `--write`, `--check` 지원
+    - 목적: `public/jumpmap-editor` 제거 전, compat 경로가 실제로 기대하는 자산 범위(특히 `public/quiz`, `public/shared`)를 수치/목록으로 고정
+  - `docs/contracts/legacy-compat-asset-audit.json` 추가 (snapshot)
+    - 1차 요약: `html=9`, `js=16`, `css=0`, `prefixHints=6`, `uniqueTargets=19`, `missing=0`
+    - top-level buckets:
+      - `public/jumpmap-editor=11`
+      - `public/quiz=5`
+      - `public/shared=2`
+      - `public/quiz_background=1`
+  - `scripts/jumpmap-split-repos.mjs`, `scripts/jumpmap-verify-split.mjs`
+    - editor split 복제/required/syntax 대상에 새 감사 스크립트 + snapshot 포함
+    - `verify-split`에 `legacy compat asset audit` 단계 추가
+    - 주의: 이 snapshot은 runtime-owned compat 의존까지 포함하므로 `verify-split`에서는 split editor가 아니라 monorepo(`projectRoot`) 기준으로 `--check` 수행
+  - 효과:
+    - 다음 단계(runtime-owned 최소 의존 세트 설계/이관)에서 제거 후보와 유지 후보를 정량적으로 추적 가능
+    - split 검증 체인에서 snapshot 드리프트 자동 감지 가능
+  - 검증:
+    - `node --check scripts/jumpmap-audit-legacy-compat-assets.mjs`
+    - `node scripts/jumpmap-audit-legacy-compat-assets.mjs --write`
+    - `node scripts/jumpmap-audit-legacy-compat-assets.mjs --check`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=25, fail=0`)
+- 레포 분리(R6) 런타임 legacy host compat 기본 전환 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/app.js`
+    - legacy host 기본 target을 direct editor → compat target으로 전환 (`legacyCompatTarget` 미지정 시 compat 사용)
+    - `legacyCompatTarget=0|false|no|off`일 때 direct editor fallback 강제
+    - `legacyCompatTarget=1`은 compat 명시 사용으로 유지
+    - host 상태 문구/telemetry 안내에 fallback query (`legacyCompatTarget=0`) 힌트 반영
+  - `scripts/jumpmap-verify-split.mjs`
+    - local route smoke에 fallback query 경로 추가:
+      - `/jumpmap-runtime/legacy/?legacyCompatTarget=0`
+  - 효과:
+    - 기본 사용자 동선을 runtime-owned compat host/target 경로로 전환 (컷오버 1차)
+    - direct editor target은 query 기반 fallback으로 즉시 우회 가능
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=23, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=39, fail=0`, local route smoke 포함)
+- 레포 분리(R6) compat canary 수동검증 진단 로깅 보강 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/index.html`, `public/jumpmap-runtime/legacy/app.js`
+    - compat canary 선택 시 host panel에 `compat event` 상태 줄 추가
+    - `legacyCompatDebug=1` query flag로 recent compat events 리스트 표시(기본은 최신 이벤트 1줄만 표시)
+    - 목적: 수동 canary 검증 중 "fetch 실패 / inject 실패 / editor window error" 단계 식별을 빠르게 하기 위함
+  - `public/jumpmap-runtime/legacy/compat/app.js`
+    - parent(host iframe)로 단계별 telemetry `postMessage` 전송 추가:
+      - `start`, `urls-ready`, `fetch-start`, `fetch-ok`, `inject-ready`, `fetch-error`, `inject-apply-failed`
+    - editor HTML에 주입되는 compat head script에 telemetry 추가:
+      - `compat-head-injected`, `compat-dom-content-loaded`, `compat-window-load`
+      - `compat-window-error`, `compat-unhandledrejection`
+    - 효과:
+      - runtime host UI에서 compat canary의 진행 단계/오류 지점을 바로 확인 가능
+      - 다음 단계의 수동 canary 검증(브라우저) 결과 수집 품질 개선
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=23, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=38, fail=0`, local route smoke 포함)
+- 레포 분리(R6) compat canary query smoke 검증 보강 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-verify-split.mjs`
+    - local route smoke에 `legacyCompatTarget=1` query 경로 추가:
+      - `/jumpmap-runtime/legacy/?legacyCompatTarget=1`
+      - `/jumpmap-runtime/legacy/compat/?legacyCompatTarget=1`
+    - 레거시/compat host HTML에 대한 최소 마커(`legacy-frame`, `status-text`, `src="./app.js"`) 검증 추가
+    - 목적: canary opt-in URL이 split runtime 로컬 서버에서 200 응답 + 기대 호스트 문서 구조를 유지하는지 자동 확인
+  - 효과:
+    - 기존 smoke가 놓치던 canary query 경로를 검증 체인에 포함
+    - 수동 브라우저 검증 전, 경로/정적 호스트 문서 회귀를 자동으로 빠르게 감지 가능
+  - 검증:
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=23, fail=0`)
+    - `node scripts/jumpmap-verify-split.mjs` (`pass=38, fail=0`, local route smoke 포함)
+- 레포 분리(R6) 런타임 레거시 compat target canary 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/compat/index.html`, `public/jumpmap-runtime/legacy/compat/app.js` 추가
+    - runtime-owned canary compat target 경로 도입: `/jumpmap-runtime/legacy/compat/`
+    - `jumpmap-editor/index.html`를 fetch 후 `<base href="../../jumpmap-editor/">` + runtime compat marker/asset base 힌트를 주입해 호환 로드
+    - 목적: `jumpmap-editor` HTML을 runtime 경로에서 실행 가능한지 canary 검증
+  - `public/jumpmap-runtime/legacy/app.js`
+    - query flag `legacyCompatTarget=1`일 때 canary compat target iframe 로드
+    - 기본값은 기존 direct editor target 유지(안전 기본값)
+  - `scripts/jumpmap-split-repos.mjs`, `scripts/jumpmap-verify-split.mjs`
+    - runtime required/syntax/smoke 검증에 `legacy/compat` 경로 추가
+  - 효과:
+    - 기본 사용자 동선을 바꾸지 않고 compat target canary를 선택적으로 검증 가능
+    - 다음 단계(기본 target 전환) 전에 runtime-owned target 실행 가능성 실험 기반 확보
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node --check public/jumpmap-runtime/legacy/compat/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=23, fail=0`)
+- 레포 분리(R6) 테스트 런타임 URL 결합 base-aware 전환 1차(최신, 2026-02-26):
+  - `public/jumpmap-editor/test-runtime.js`
+    - `window.location.href` 기반 상대 URL 결합 5개를 `resolveEditorRuntimeAssetUrl(...)` helper로 치환
+    - helper는 우선순위로 base를 결정:
+      - `window.__JUMPMAP_EDITOR_RUNTIME_BASE_HREF__` (옵션)
+      - 로드된 `test-runtime.js` script src 기준 디렉터리
+      - `document.baseURI`
+    - 효과: compat target/iframe 호스트 경로에서도 자산 URL 계산이 page URL에 덜 의존하도록 정리
+  - `docs/contracts/legacy-play-path-audit.json` snapshot 갱신
+    - 감사 결과: `scripts=8`, `findings=0`, `kinds={}` (이전 blocker `10`건 제거)
+  - 효과:
+    - `runtime-owned compat target` 전환을 막던 1차 경로 결합 blocker(감사 기준)를 제거
+    - 다음 단계에서 canary compat target 전환 실험 가능성 증가
+  - 검증:
+    - `node --check public/jumpmap-editor/test-runtime.js`
+    - `node scripts/jumpmap-audit-legacy-play-paths.mjs --write`
+    - `node scripts/jumpmap-audit-legacy-play-paths.mjs --check`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=22, fail=0`)
+- 레포 분리(R6) 레거시 플레이 경로 결합 감사 자동화 1차(최신, 2026-02-26):
+  - 배경(컷오버 blocker 확인):
+    - `runtime-owned compat target` 기본 전환 검토 중, `public/jumpmap-editor/test-runtime.js`에 `new URL(..., window.location.href)` 기반 상대경로 계산이 다수 존재해 즉시 전환 리스크 확인
+    - 현재 단계에서는 안전한 전환을 위해 경로 결합 지점 snapshot/검증 자동화를 먼저 추가
+  - `scripts/jumpmap-audit-legacy-play-paths.mjs` 추가
+    - `public/jumpmap-editor/index.html`의 로드 스크립트 목록 추출
+    - 스크립트 내 `window.location.href` / `relative new URL(..., window.location.href)` 사용 라인 감사
+    - `--write` snapshot 생성, `--check` snapshot 비교(불일치 시 exit 1)
+  - `docs/contracts/legacy-play-path-audit.json` 추가
+    - 현재 기준 snapshot 고정 (`scripts=8`, `findings=10`)
+    - 발견 유형:
+      - `relative-new-url-window-location = 5`
+      - `window-location-href = 5`
+  - `scripts/jumpmap-split-repos.mjs`, `scripts/jumpmap-verify-split.mjs`
+    - editor 복제/required 대상에 감사 스크립트 + snapshot 파일 포함
+    - verify에 `legacy play path audit` 단계 추가(`--check`)
+  - 효과:
+    - compat target 전환 전에 경로 결합 증가/변경을 자동 감지할 수 있어 다음 단계 리스크 감소
+    - 컨텍스트(hand-off)에서 "왜 바로 target 전환이 어려운지" 근거를 코드/스냅샷으로 유지
+  - 검증:
+    - `node --check scripts/jumpmap-audit-legacy-play-paths.mjs`
+    - `node scripts/jumpmap-audit-legacy-play-paths.mjs --write`
+    - `node scripts/jumpmap-audit-legacy-play-paths.mjs --check`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=22, fail=0`)
+- 레포 분리(R6) 런타임 레거시 iframe 호스트 전환 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/index.html`, `public/jumpmap-runtime/legacy/app.js`
+    - 기존 `window.location.replace(...)` 직접 리다이렉트 방식 제거
+    - runtime 경로(`/jumpmap-runtime/legacy/`)에 머무르는 iframe 호스트 방식으로 전환
+    - 내부 iframe target은 현재 단계에서 `../../jumpmap-editor/?launchMode=play...`를 사용 (호환 유지)
+    - 로드 상태/타깃 URL/새 탭 fallback 링크를 호스트 UI에서 제공
+  - 효과:
+    - 사용자 URL/진입 경로를 runtime 내부에 고정해 향후 레거시 구현 대체 시 호출자 수정 최소화
+    - `jumpmap-editor` 의존이 “페이지 이동”에서 “호스트 내부 iframe 의존”으로 축소
+  - 검증:
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=20, fail=0`)
+- 레포 분리(R6) 레거시 물리 유틸 동기화 자동검증 1차(최신, 2026-02-26):
+  - `scripts/jumpmap-sync-runtime-legacy-physics.mjs` 추가
+    - source=`public/jumpmap-editor/test-physics-utils.js`
+    - target=`public/shared/legacy/test-physics-utils.js` (또는 `--runtime-repo <dir>` 대상)
+    - `--check` 모드에서 source/target 내용/해시 일치 여부 검증 (불일치 시 exit 1)
+    - sync 모드에서 target 자동 갱신
+  - `scripts/jumpmap-split-repos.mjs`
+    - editor 스캐폴드 복제/required 대상에 `scripts/jumpmap-sync-runtime-legacy-physics.mjs` 포함
+  - `scripts/jumpmap-verify-split.mjs`
+    - editor syntax 검증 대상에 동기화 스크립트 추가
+    - `legacy physics sync check` 단계 추가:
+      - editor 레포에서 `--runtime-repo <runtimeDir> --check` 실행해 runtime shared 복제본 드리프트 자동 검출
+  - 효과:
+    - runtime shared 레거시 물리 유틸 스냅샷 드리프트를 split 검증에서 자동 감지 가능
+    - 수동 복제 누락으로 인한 네이티브 디버그/비교 경로 회귀 리스크 감소
+  - 검증:
+    - `node --check scripts/jumpmap-sync-runtime-legacy-physics.mjs`
+    - `node scripts/jumpmap-sync-runtime-legacy-physics.mjs --check`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=20, fail=0`)
+- 레포 분리(R6) 레거시 물리 유틸 shared 복제 경로 1차(최신, 2026-02-26):
+  - `public/shared/legacy/test-physics-utils.js` 추가
+    - 소스: `public/jumpmap-editor/test-physics-utils.js` 스냅샷 복제
+    - 목적: runtime 네이티브 프리뷰/브리지 비교 경로의 editor 직접 경로 의존 축소
+  - `public/jumpmap-runtime/app.js`
+    - legacy 물리 유틸 preload 경로를 `../jumpmap-editor/test-physics-utils.js`에서 `../shared/legacy/test-physics-utils.js`로 변경
+    - preload 성공 로그를 shared 경로 기준으로 명시
+  - `scripts/jumpmap-verify-split.mjs`
+    - runtime syntax 검증 대상에 `public/shared/legacy/test-physics-utils.js` 추가
+  - 효과:
+    - `runtimeImpl=native`에서 legacy 물리 유틸이 필요한 디버그/비교 모드도 runtime `public/shared`만으로 선행 준비 가능
+    - runtime의 `public/jumpmap-editor` 의존 범위를 레거시 플레이 본체 쪽으로 더 축소
+  - 검증:
+    - `node --check public/jumpmap-runtime/app.js`
+    - `node --check public/shared/legacy/test-physics-utils.js`
+    - `node --check scripts/jumpmap-verify-split.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=18, fail=0`)
+- 레포 분리(R6) 런타임 레거시 진입 경로 래퍼 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/legacy/index.html`, `public/jumpmap-runtime/legacy/app.js` 추가
+    - 런타임 내부 고정 경로(`/jumpmap-runtime/legacy/`)를 통해 레거시 플레이 진입
+    - 현재 단계에서는 내부에서 `jumpmap-editor` 레거시 플레이로 즉시 리다이렉트(호환 래퍼)
+    - 목적: 호출자(런처/런타임 셸)에서 `jumpmap-editor` 직접 경로 의존 제거
+  - `public/shared/jumpmap-runtime-launcher.js`
+    - `buildJumpmapRuntimeLegacyPlayUrl(...)` 추가(기본 target=`../jumpmap-runtime/legacy/`)
+    - 기존 `buildLegacyJumpmapEditorPlayUrl(...)`는 호환 alias로 유지
+  - `public/jumpmap-runtime/app.js`
+    - 레거시 플레이 target URL 생성을 editor 직결 helper 대신 runtime 래퍼 helper로 전환
+  - `scripts/jumpmap-split-repos.mjs`, `scripts/jumpmap-verify-split.mjs`
+    - runtime required path에 `public/jumpmap-runtime/legacy/*` 추가
+    - verify runtime syntax 체크에 `public/shared/jumpmap-runtime-launcher.js`, `public/jumpmap-runtime/legacy/app.js` 추가
+    - route smoke 항목에 `runtime /jumpmap-runtime/legacy/` 추가
+  - 효과:
+    - 런타임 호출 경로를 `jumpmap-runtime` 내부로 수렴시켜 향후 레거시 구현 대체/제거 시 수정 범위 축소
+    - runtime split 검증에 새 래퍼 경로를 포함해 컷오버 준비도 향상
+  - 검증:
+    - `node --check public/shared/jumpmap-runtime-launcher.js`
+    - `node --check public/jumpmap-runtime/app.js`
+    - `node --check public/jumpmap-runtime/legacy/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=17, fail=0`)
+- 레포 분리(R6) 네이티브 shared 물리 경로 우선화 1차(최신, 2026-02-26):
+  - `public/jumpmap-runtime/app.js`
+    - 네이티브 런타임 진입 시 물리 의존 상태(`shared/legacy`)를 먼저 기록하도록 보강
+    - shared 물리 브리지 + shared geometry가 준비된 경우 `test-physics-utils.js` preload를 기본 생략
+    - legacy 유틸 preload가 필요한 경우(브리지 비교/적용 검증 등)만 조건부 로드
+    - legacy 유틸 로드 실패 시 즉시 중단 대신 shared 경로로 계속 시도하도록 완화
+    - 최종 물리/지오메트리 의존 준비 실패는 명시적 오류로 차단(원인 로그 강화)
+  - 효과:
+    - `runtimeImpl=native` 사용자 플레이/프리뷰 경로에서 `public/jumpmap-editor/test-physics-utils.js` 직접 의존을 완화
+    - runtime 레포 컷오버 전 임시 호환 브리지 범위를 축소하는 준비 단계
+  - 검증:
+    - `node --check public/jumpmap-runtime/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=15, fail=0`)
+- 레포 분리(R6) 네이티브 실플레이 1차 진입 경로 추가(최신, 2026-02-25):
+  - `public/jumpmap-runtime/index.html`
+    - `body.play-mode` 전용 레이아웃 추가(검증 패널 숨김, 캔버스 풀스크린 표시)
+    - 네이티브 조작 버튼(`왼쪽/오른쪽/점프`) UI 추가
+  - `public/jumpmap-runtime/native-runtime.js`
+    - 포인터 기반 조작 입력(hold/release) 지원
+    - 키보드 + 터치 입력 병합 처리 및 blur 시 입력 해제 처리
+  - `public/jumpmap-runtime/app.js`
+    - native 플레이 모드에서 기본 동작을 `레거시 자동 전환`이 아니라 `네이티브 유지`로 변경
+    - 필요 시 `nativeFallbackLegacy=1`로 레거시 자동 전환 가능
+    - 네이티브 조작 버튼 DOM을 bootstrap 의존성으로 연결
+  - `public/jumpmap-play/app.js`
+    - `runtimeImpl=native` 선택 시 `nativeStay=1` 기본 주입(중간 리다이렉트 방지)
+  - 검증:
+    - `node --check public/jumpmap-runtime/app.js`
+    - `node --check public/jumpmap-runtime/native-runtime.js`
+    - `node --check public/jumpmap-play/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=15, fail=0`)
+- 레포 분리(R5) 런타임 플레이 UI 분기 정리 2차(최신, 2026-02-25):
+  - `public/jumpmap-runtime/app.js`
+    - `launchMode=play&fromLauncher=1` + `runtimeImpl=legacy` 기본 진입에서 `runtime-play-clean` 클래스 적용
+    - 검증 UI 노출은 `runtimeDebug`, `runtimeDebugUi`, `runtimeShellDebug` 파라미터로만 허용
+  - `public/jumpmap-runtime/index.html`
+    - `runtime-play-clean`일 때 검증 패널(요약/로그/구현체 선택/액션) 기본 숨김
+  - `public/jumpmap-play/app.js`
+    - 점프맵 런타임 전환 시 디버그/검증 파라미터 pass-through 지원
+  - `public/jumpmap-editor/editor.js`
+    - play 런치 진입 시 `html.jumpmap-play-launch` 클래스도 함께 적용(플레이 전용 CSS 분기 안정화)
+  - 검증:
+    - `node --check public/jumpmap-runtime/app.js`
+    - `node --check public/jumpmap-play/app.js`
+    - `node --check public/jumpmap-editor/editor.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=15, fail=0`)
+- 레포 분리(R5) 사용자 플레이 기본 진입 경로 전환 1차(최신, 2026-02-25):
+  - `public/jumpmap-play/app.js`
+    - 기본 런타임 구현체를 `native` 검증 경로가 아닌 `legacy` 사용자 플레이 경로로 전환
+    - `legacy` 기본 진입 시 `runtimeRedirectDelayMs=0` 적용으로 런타임 셸 체류 최소화
+    - 검증이 필요할 때만 `?runtimeImpl=native`로 기존 네이티브 프리플라이트 경로 사용 가능
+  - 검증:
+    - `node --check public/jumpmap-play/app.js`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - `node scripts/jumpmap-verify-split.mjs --skip-smoke` (`pass=15, fail=0`)
+- 레포 분리(R4) 분리 검증 자동화 3차(최신, 2026-02-25):
+  - `scripts/jumpmap-verify-split.mjs` 보강:
+    - 로컬 라우트 스모크 단계의 `listen` 권한 오류(`EPERM`/`EACCES`)를 자동 감지해 검증 `skip(pass)` 처리
+    - 샌드박스/CI처럼 소켓 바인딩이 제한된 환경에서도 전체 검증 실패 없이 핵심 검증(필수 경로/구문/publish dry-run) 지속
+  - 결과:
+    - monorepo 실행: `pass=16, fail=0` (local route smoke는 권한 제한 안내 후 skip)
+    - split 반영: `node scripts/jumpmap-split-repos.mjs --apply --force-merge`로 editor/runtime 동기화 재적용
+- 레포 분리(R4) 분리 검증 자동화 2차(최신, 2026-02-25):
+  - `scripts/jumpmap-verify-split.mjs` 추가
+    - runtime/editor 분리 경로 존재 확인
+    - 필수 파일 체크(runtime `10`, editor `6`)
+    - 핵심 엔트리 `node --check` 구문 검증
+    - editor -> runtime 맵 publish `--dry-run` 검증
+  - `scripts/jumpmap-split-repos.mjs` 갱신:
+    - editor 복제 대상에 `scripts/jumpmap-verify-split.mjs` 포함
+  - 검증:
+    - monorepo에서 `node scripts/jumpmap-verify-split.mjs` 통과
+    - editor 레포에서 `node scripts/jumpmap-verify-split.mjs` 통과
+    - 결과: `pass=15, fail=0`
+- 레포 분리(R4) 로컬 실행/부트스트랩 정리 1차(최신, 2026-02-25):
+  - `scripts/jumpmap-local-serve.mjs` 개선:
+    - `runtime-map` 엔드포인트가 아래 후보를 순차 사용하도록 변경
+      - `save_map/jumpmap-01.json`
+      - `public/shared/maps/jumpmap-01.json`
+    - 효과: runtime/editor 분리 후에도 동일 서버 스크립트로 로컬 실행 가능
+  - 분리 스캐폴드 재적용:
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+    - required-path 검증 통과(runtime `10/10`, editor `6/6`)
+  - 독립 개발 준비:
+    - `/Users/baekjiyun/Desktop/WAN/nolquiz-runtime`에 `.git`, `.gitignore`, `README.md` 초기화
+    - `/Users/baekjiyun/Desktop/WAN/nolquiz-editor`에 `.git`, `.gitignore`, `README.md` 초기화
+  - 런타임 맵 publish 경로 점검:
+    - `node scripts/jumpmap-publish-runtime-map.mjs --runtime-repo ../nolquiz-runtime --dry-run`
+    - 대상 경로: `../nolquiz-runtime/public/shared/maps/jumpmap-01.json`
+- 레포 분리(R3) 스캐폴드 생성 + 필수 경로 검증 자동화(최신, 2026-02-25):
+  - `scripts/jumpmap-split-repos.mjs`로 분리 스캐폴드를 실제 생성:
+    - runtime: `/Users/baekjiyun/Desktop/WAN/nolquiz-runtime`
+    - editor: `/Users/baekjiyun/Desktop/WAN/nolquiz-editor`
+  - 스크립트 보강:
+    - `--no-verify` 옵션 추가(기본은 apply 후 검증 수행)
+    - runtime/editor 필수 엔트리 경로 자동 검증 추가
+    - runtime 복제 대상에 `scripts/jumpmap-local-serve.mjs` 포함(분리 후 즉시 로컬 실행 가능)
+  - 검증 결과:
+    - runtime required `10/10`
+    - editor required `6/6`
+  - 검증:
+    - `node --check scripts/jumpmap-split-repos.mjs`
+    - `node scripts/jumpmap-split-repos.mjs --apply --force-merge`
+- 레포 분리(R2) publish 경로 고정 1차(최신, 2026-02-24):
+  - `scripts/jumpmap-publish-runtime-map.mjs` 확장
+  - 지원 옵션:
+    - `--runtime-repo <dir>`: 외부 runtime 레포 대상 publish
+    - `--target <file>`: 대상 파일 직접 지정
+    - `--source <file>`, `--map-name <name>`, `--dry-run`, `--no-backup`
+  - 안정화:
+    - publish 전 소스 JSON 파싱/검증
+    - 대상 존재 시 자동 백업(`.bak-YYYYMMDD-HHMMSS`) 생성
+    - 결과 요약 로그 출력(v2/맵크기/오브젝트/히트박스/배경 사용 여부)
+  - 검증:
+    - `node --check scripts/jumpmap-publish-runtime-map.mjs`
+    - `node scripts/jumpmap-publish-runtime-map.mjs --dry-run`
+    - `node scripts/jumpmap-publish-runtime-map.mjs`
+- 레포 분리(R2) 런타임 맵 로더 경로 유연화 1차(최신, 2026-02-24):
+  - `public/shared/jumpmap-runtime-launcher.js`
+  - 런타임 맵 후보 경로에 query 기반 오버라이드 지원:
+    - `runtimeMapUrl`(또는 `mapUrl`): 절대/상대 URL 직접 지정
+    - `runtimeMapName`(또는 `mapName`): `public/shared/maps/<name>.json` 대상 지정
+  - 보안/안정성:
+    - `runtimeMapName`은 파일명 패턴(`A-Z a-z 0-9 . _ - + .json`)만 허용
+    - 중복 후보 URL는 자동 제거
+  - 효과:
+    - 분리 후 runtime 레포에서 맵 전환/검증 시 URL 수정만으로 운영 맵 교체 가능
+    - 기본 경로(`../shared/maps/jumpmap-01.json`)와 fallback(` /__jumpmap/runtime-map.json`)은 유지
+- 런타임 분리(R1) 네이티브 프리뷰 렌더 정합성 3차(최신, 2026-02-24):
+  - `public/jumpmap-runtime/native-runtime.js`
+  - 네이티브 프리뷰 렌더 루프에서 `crop`이 없는 오브젝트를 건너뛰던 분기 제거.
+    - 기존: `crop.w/h <= 0`이면 `continue` → no-crop 오브젝트(예: `plate_grass*`, `plate_stand*`) 누락.
+    - 변경: no-crop 오브젝트는 소스 사각형을 이미지 원본 전체(`naturalWidth/Height`)로 사용해 렌더.
+  - 카메라 가시성/컬링 기준도 동일 draw 크기(no-crop 기준)로 계산하도록 정렬.
+  - 효과:
+    - 네이티브 프리플라이트 프리뷰에서 오브젝트 누락(106 중 55개만 렌더) 현상 완화.
+    - 테스트모드/레거시 플레이와 네이티브 프리뷰 간 시각 차이 축소.
+- 런타임 분리(R1) 플레이 동선 안정화 2차(최신, 2026-02-24):
+  - `public/jumpmap-runtime/app.js`
+  - `launchMode=play` + `fromLauncher=1` 경로에서는 `resolve bridge validate preset`을 기본값으로 켜지 않도록 분기 추가.
+    - 효과: 브리지 비교/적용 카운터가 플레이 진입 시 프레임마다 증가하는 현상 완화.
+    - 필요 시 URL 파라미터(`resolveBridgeValidate=1` 등)로 명시적으로 활성화 가능.
+  - `runtimeImpl=native` + `nativePlay=1` 플레이 진입 시:
+    - 기본값은 native 프리플라이트 후 레거시 플레이로 자동 연결(사용자 플레이 동선 우선).
+    - `nativeStay=1` 또는 `nativeShellOnly=1`일 때만 네이티브 검증 화면 유지.
+  - 기대 효과:
+    - “네이티브 검증 화면에서 수동 비교 버튼을 눌러야만 플레이되는” 체류 문제를 완화.
+    - 분리 작업 중에도 사용자 플레이 진입 동선을 안정적으로 유지.
+- 런타임 분리(R1) 플레이 진입 안정화 1차(최신, 2026-02-24):
+  - `public/jumpmap-runtime/app.js`
+  - `runtimeImpl=native` + `launchMode=play` + `fromLauncher=1` 조합에서
+    런타임 검증 패널에 멈추지 않고 legacy 플레이로 자동 연결되도록 분기 추가.
+  - `nativeShellOnly=1`이 있으면 기존처럼 수동 비교 실행 대기 유지.
+  - `public/shared/jumpmap-runtime-launcher.js`
+  - legacy 플레이 URL에 `autoRestartTest=1` 추가.
+  - `public/jumpmap-editor/editor.js`
+  - 자동 시작 진입 시 `enterTestMode` 다음 프레임에 `restartTestMode`를 1회 수행해,
+    수동 `다시시작`과 동일한 초기화 경로를 강제하도록 보정.
+  - 기대 효과:
+    - “첫 진입 화면과 다시시작 후 화면이 달라지는” 초기화 차이를 축소.
+    - 분리 단계 런타임에서도 사용자 플레이 진입 동선 유지.
+- 런타임 분리(R1) 물리 브리지 이관 3차(최신, 2026-02-24):
+  - `public/shared/jumpmap-runtime-physics.js`
+  - `stepPlayerState`에 shared 실행 경로 추가:
+    - `window.__JUMPMAP_RUNTIME_USE_SHARED_STEP === true` 이면 shared 스텝 경로 사용
+    - legacy `stepPlayerState`가 없는 환경에서는 shared 스텝 경로 자동 사용
+    - shared 경로 실패 시 legacy 스텝으로 자동 fallback (legacy 존재 시)
+  - 브리지 상태 정보 보강:
+    - `sharedStepPlayerStatePresent`
+    - `legacyStepPlayerStatePresent`
+    - `stepPlayerStateSource` (`shared` / `legacy` / `none`)
+  - 검증:
+    - `node --check public/shared/jumpmap-runtime-physics.js`
+    - `node --check public/shared/jumpmap-runtime-physics-adapter.js`
+    - `node --check public/jumpmap-runtime/native-runtime.js`
+    - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+- 런타임 분리(R1) 물리 브리지 이관 2차(최신, 2026-02-24):
+  - `public/shared/jumpmap-runtime-physics.js`
+  - `resolveHorizontal/resolveVertical`가 legacy 래퍼가 아닌 shared 구현을 사용하도록 전환.
+  - preflight 단계의 legacy 물리 호출 제거:
+    - `detectGroundSupport`
+    - `estimateGroundSlope`
+    - `normalizeFlatZonesForPhysics`
+    - `isPlayerFootInFlatZone`
+  - 현재 `callLegacy(...)`는 비교용(`resolveHorizontal/resolveVertical`)과 최종 `stepPlayerState` 경로에만 남음.
+  - 검증:
+    - `node --check public/shared/jumpmap-runtime-physics.js`
+    - `node --check public/shared/jumpmap-runtime-physics-adapter.js`
+    - `node --check public/jumpmap-runtime/app.js`
+    - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+- 테스트모드 렌더 최적화 + 배경 경로 저장/불러오기 호환 보강(최신, 2026-02-22):
+  - 렉/버벅임 완화:
+    - `public/jumpmap-editor/test-runtime.js`
+    - 테스트모드 각 분할 화면의 오브젝트 렌더에 `오프스크린 컬링` 추가.
+    - 화면 밖(카메라 뷰 + 여유 마진) 오브젝트는 DOM `display:none`으로 숨겨, 다인모드에서 렌더 비용 감소.
+    - 충돌 계산 캐시는 유지(기능/판정 변경 없음), 렌더 비용만 줄이는 방식.
+  - 저장맵 배경 복원 안정화:
+    - `public/jumpmap-editor/editor.js`
+      - 불러오기 시 루트 절대경로(`/quiz_background/...`)를 에디터 상대경로로 자동 보정.
+    - `public/jumpmap-editor/map-io-utils.js`
+      - 저장 시에도 배경 이미지 경로를 portable(상대경로) 형태로 정규화해 재발 방지.
+    - 효과: 금강전도 배경이 저장맵 재불러오기/환경 변경(로컬/배포 경로)에서도 더 안정적으로 복원됨.
+  - 검증:
+    - `node --check public/jumpmap-editor/test-runtime.js`
+    - `node --check public/jumpmap-editor/map-io-utils.js`
+    - `node --check public/jumpmap-editor/editor.js`
+    - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+- 모드 규칙 어댑터 경계 1차 구현(최신, 2026-02-21):
+  - 배경: 퀴즈코어를 점프맵 외 게임 모드에도 재사용하기 위해, 런타임 규칙(게이지/보상)을 분리할 필요가 있었음.
+  - 변경:
+    - `public/jumpmap-editor/game-rule-adapter.js` 추가
+      - `jumpmap` 기본 규칙(이동/점프 소모, 정답 보상, 오답 0 보상, 오답 딜레이) 제공
+    - `public/jumpmap-editor/integration-bridge.js` 확장
+      - 어댑터 주입 지원(`modeId`, `ruleOptions`)
+      - 브리지 계약 누락 이벤트 `drop + warn + counter(bridgeDroppedEvents)` 추가
+      - 공용 이벤트 `resource:changed`, `resource:empty` 추가
+      - 호환 API(`getGauge/setGauge/consumeGauge/refillGauge`) 유지
+    - `public/jumpmap-editor/index.html`
+      - `game-rule-adapter.js` 스크립트 로드 추가
+    - `public/jumpmap-editor/editor.js`
+      - 브리지 생성 시 `modeId: jumpmap`, `ruleOptions` 기본값 주입
+  - 호환성:
+    - 맵 저장 스키마(`version:2`) 변경 없음
+    - 기존 저장 맵 재사용 경로 영향 없음
+  - 검증:
+    - `node --check public/jumpmap-editor/game-rule-adapter.js`
+    - `node --check public/jumpmap-editor/integration-bridge.js`
+    - `node --check public/jumpmap-editor/editor.js`
+    - `node --check public/jumpmap-editor/test-runtime.js`
+    - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+- 퀴즈코어 다중 게임 재사용 관점 보강(최신, 2026-02-21):
+  - 배경: 퀴즈코어가 점프맵 외 다른 게임 모드와도 연결될 예정이므로, 계획 문서가 점프맵 전용 규칙에 과도 고정되지 않도록 보강 필요.
+  - 반영:
+    - `docs/jumpmap-runtime-quiz-plan.md`
+      - `game-rule-adapter` 모듈 경계 추가
+      - 브리지 확장 필드(`resourceKey`, `resourceDelta`, `ruleSetId`) 명시
+      - 모드 어댑터 확장 단계(`Phase G`) 추가
+    - `docs/jumpmap-runtime-quiz-checklist.md`
+      - 모드 어댑터 로드 확인/타 게임 목업 확장성 점검 섹션 추가
+    - `docs/skills/jumpmap-runtime-quiz/SKILL.md`
+      - 퀴즈코어 하드코딩 금지 규칙과 어댑터 교체 완료 기준 추가
+  - 목적: 점프맵 구현을 유지하면서도 퀴즈코어 재사용성을 보장하는 구조를 선제 고정.
+- 점프맵-퀴즈 통합 운영값 확정 반영(최신, 2026-02-21):
+  - 확정:
+    - 오답 게이지 회복 `+0`
+    - 오답 후 `3초 딜레이`
+    - 퀴즈는 개인 세션, 타 플레이어는 계속 진행
+    - 문제 종료마다 결과 안내 + `다음 문제/맵으로 복귀` 팝업
+    - 이벤트 누락 시 `drop + warn + counter` 로깅
+  - 반영 문서:
+    - `docs/jumpmap-runtime-quiz-plan.md`
+    - `docs/jumpmap-runtime-quiz-checklist.md`
+    - `docs/skills/jumpmap-runtime-quiz/SKILL.md`
+- 점프맵-퀴즈 통합 문서 점검/보강(최신, 2026-02-21):
+  - 배경: 통합 실행 전 `개발계획/체크리스트/스킬` 간 경계 정의와 검증 순서를 더 명확히 고정할 필요가 있었음.
+  - 변경:
+    - `docs/jumpmap-runtime-quiz-plan.md`
+      - 비범위(Non-goal), 브리지 이벤트 계약 필수 필드, 저장 호환 규칙, 단계 통과 기준 보강
+      - 로컬 실행 절차를 명령 단위로 명시
+    - `docs/jumpmap-runtime-quiz-checklist.md`
+      - repo 루트 진입/구문 체크/로컬 우선 검증/회귀 맵 2종 검증 항목 추가
+      - 멀티플레이 입력 구역 분리 확인 항목 추가
+    - `docs/skills/jumpmap-runtime-quiz/SKILL.md`
+      - 사용/미사용 시점, 문서 동기화 절차, 실패 시 중단 기준 추가
+  - 목적: 구현 전 문서만으로도 누가 실행해도 동일한 통합 검증이 가능하도록 절차를 표준화.
+- 점프맵-퀴즈 통합 문서 3종 추가(최신, 2026-02-22):
+  - 추가:
+    - `docs/jumpmap-runtime-quiz-plan.md`
+    - `docs/jumpmap-runtime-quiz-checklist.md`
+    - `docs/skills/jumpmap-runtime-quiz/SKILL.md`
+  - 의도:
+    - 멀티플레이 공통 모드(기본 점프맵)와 플레이어별 독립 상태를 전제로,
+      게이지/퀴즈 브리지/회귀 검증을 구현 전에 고정하기 위함.
+- 멀티플레이-퀴즈 통합 계획/체크리스트 보강(최신, 2026-02-21):
+  - 배경: 점프맵 게이지 시스템과 퀴즈코어 연결을 멀티플레이(2~6인)까지 고려해 문서 기준으로 재정리 필요.
+  - 반영 문서:
+    - `docs/jumpmap-editor-plan.md`
+      - `10-1) 점프맵-퀴즈코어 통합 규칙 (멀티플레이 기준)` 추가
+      - 런타임/퀴즈코어/브리지 책임 분리, 상태 머신, 게이지/세션 분리 원칙 명시
+    - `docs/jumpmap-editor-phase6-checklist.md`
+      - 8) 게이지 시스템 검증
+      - 9) 퀴즈 브리지 루프 검증
+      - 10) 멀티플레이 분리 검증
+      - 11) 통합 회귀 검증
+    - `docs/jumpmap-quiz-integration-direction.md`
+      - 멀티플레이 보강 체크포인트(상태 분리/이벤트 계약/왕복 UX) 추가
+      - 체크리스트 링크 섹션 추가
+  - 목적: 코드 변경 전, 기능 경계와 검증 기준을 명확히 고정해 이후 구현 리스크를 낮춤.
 - 얼음 표면 미끄러짐 분리 + 히트박스 y-밀림 재발 방지(최신, 2026-02-20):
   - 요청 반영:
     - `얼음판 미끄러짐`과 `경사면 미끄러짐`을 분리.
@@ -1084,3 +2122,260 @@ Date: 2026-02-08
     - `node --check public/jumpmap-editor/editor.js`
     - `node --check public/jumpmap-editor/test-runtime.js`
     - `node scripts/jumpmap-phase6-validate.mjs` (`pass=67, fail=0`)
+
+- 점프맵-퀴즈 루프 1차 연결(2026-02-22 추가):
+  - 목적:
+    - 에디터 테스트모드에서 `퀴즈 버튼 -> 브리지 -> 퀴즈 결과 -> 게이지 반영 -> 다음/복귀` 루프를 먼저 검증하고,
+      이후 운영 런타임 분리의 기준 동작으로 사용.
+  - 조치:
+    - `public/jumpmap-editor/game-rule-adapter.js`
+      - 이동 소모를 `dt` 기반으로 계산할 수 있도록 `getActionCost('move', context)` 확장.
+    - `public/jumpmap-editor/integration-bridge.js`
+      - 플레이어별 자원 상태(`gauge`) 저장소 추가(기존 API 호환 유지).
+      - `snapshotForPlayer`, `getPlayerGauge`, `setPlayerGauge` 추가.
+    - `public/jumpmap-editor/test-runtime.js`
+      - 플레이어별 게이지 표시 UI 추가.
+      - 플레이어별 `퀴즈 풀기` 버튼 및 팝업 UI 루프 추가.
+      - 퀴즈코어(`engine.js`, `bank.js`) + 문항 JSON 동적 로드 기반 게이트웨이 연결.
+      - 정답/오답 결과 후 `다음 문제 / 맵으로 복귀` 선택 흐름 추가.
+      - 오답 딜레이 동안 해당 플레이어 선택 버튼 잠금 처리.
+      - 퀴즈 열림/결과 상태에서 해당 플레이어 입력만 차단(다른 플레이어 계속 진행).
+      - 지상 이동/점프에 브리지 기반 게이지 소모 연결(공중 이동 허용 규칙 유지).
+    - `public/jumpmap-editor/editor.css`
+      - 테스트모드 퀴즈 버튼/게이지/팝업 스타일 추가.
+  - 저장 호환성:
+    - 맵 저장 포맷(`version:2`) 변경 없음. 런타임 메모리 상태만 추가.
+  - 검증(정적):
+    - `node --check public/jumpmap-editor/game-rule-adapter.js`
+    - `node --check public/jumpmap-editor/integration-bridge.js`
+    - `node --check public/jumpmap-editor/test-runtime.js`
+    - `node --check public/jumpmap-editor/editor.js`
+  - 수동 확인 필요:
+    - 로컬 `jumpmap-editor` 테스트모드에서 플레이어별 퀴즈 버튼 동작
+    - 오답 3초 딜레이 후 다음/복귀 버튼 활성화
+    - 멀티플레이에서 A 퀴즈 중 B 이동 지속
+    - 게이지 감소/회복이 플레이어별로 분리되는지 확인
+
+- 테스트모드 렌더/퀴즈 UI 성능 점검 및 최적화(2026-02-22 추가):
+  - 목적:
+    - 테스트모드 이동 시 발생하는 버벅임을 줄이기 위해 프레임 루프 내 불필요한 DOM 갱신/배경 repaint를 줄임.
+  - 주요 점검 결과(병목 후보):
+    - `public/jumpmap-editor/test-runtime.js`
+      - `applyTestBackgroundLayer()`가 매 프레임마다 배경 이미지/사이즈/반복/위치 스타일 전체를 재설정.
+      - `updateQuizActionButtons()`가 매 프레임마다 버튼 상태/피드백을 반복 갱신.
+      - 숨김 처리된 게이지 숫자 요소도 매 프레임 텍스트 갱신.
+  - 조치:
+    - 배경 레이어 스타일 캐시(`WeakMap`) 추가:
+      - 배경 설정이 바뀌지 않으면 정적 스타일(backgroundImage/size/repeat/opacity) 재적용 생략.
+      - 패럴랙스 위치(`background-position`)만 필요 시 갱신.
+    - 패럴랙스 배경 위치 정밀도 축소:
+      - `toFixed(2)` -> `toFixed(1)`로 줄여 full-layer repaint 빈도 완화.
+    - 퀴즈 액션 버튼 상태 캐시:
+      - `next/return` 버튼 `disabled` 상태 변경 시에만 DOM 쓰기.
+      - 결과 잠금 카운트다운 피드백도 문구 변경 시에만 갱신.
+      - 잠금 해제 후 결과 피드백 문구가 정상 복구되도록 정리.
+    - `setQuizFeedback()` 캐시:
+      - 동일 메시지/톤 재적용 방지.
+    - 숨김 게이지 숫자 텍스트 갱신 제거.
+  - 검증(정적):
+    - `node --check public/jumpmap-editor/test-runtime.js`
+    - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+  - 수동 확인 필요:
+    - 테스트모드 이동/점프 시 이전 대비 버벅임 감소 체감
+    - 배경 패럴랙스가 유지되면서 자연스럽게 움직이는지
+    - 퀴즈 팝업에서 오답 딜레이 카운트다운/버튼 활성화 타이밍 정상 동작
+## 2026-02-22 (서비스 런처 1차 + 플레이 전용 자동 진입)
+- `public/index.html`를 서비스 시작용 런처로 교체
+  - 인원 선택(1~6)
+  - 퀴즈 프리셋 선택
+  - 게임 선택(점프맵 / 기본 퀴즈)
+  - 캐릭터 선택(점프맵, 현재 세종 1종)
+  - 플레이어 이름 로컬 저장
+- 런처 설정 저장 키 추가: `jumpmap.launcher.setup.v1`
+- `jumpmap-editor`에 플레이 전용 진입 모드 추가
+  - `?launchMode=play&autoStartTest=1`
+  - 에디터 UI 숨기고 테스트 오버레이 자동 시작
+- 테스트런타임 API 보강
+  - `setPlayerCount(count)` 추가 (런처 자동 시작용)
+- 테스트런타임 퀴즈 세션 생성 시 런처 퀴즈 프리셋 반영 훅 추가
+  - `jumpmap-net-30`, `jumpmap-net-12`, `cube-only-24`, `cuboid-only-24`
+- 맵 저장 포맷(`version:2`) 변경 없음
+
+## 2026-02-22 (서비스 런처 1차 보강 - 기본 퀴즈 자동 시작 연결)
+- `public/index.html`
+  - `기본 모드(퀴즈)` 시작 시 `./quiz/?launchMode=play&fromLauncher=1`로 진입하도록 변경
+  - 점프맵 시작에도 `fromLauncher=1` 플래그 추가(출처 식별)
+- `public/quiz/app.js`
+  - 런처 설정 저장 키(`jumpmap.launcher.setup.v1`)를 읽어 기본 퀴즈 자동 시작 훅 추가
+  - 런처 쿼리(`launchMode=play`, `fromLauncher=1`)가 있을 때만 자동 시작하도록 제한해 기존 퀴즈 앱 개발/수동 사용 흐름 유지
+  - 런처 퀴즈 프리셋(`jumpmap-net-30`, `jumpmap-net-12`, `cube-only-24`, `cuboid-only-24`)을 퀴즈 앱 설정으로 변환하는 매핑 추가
+  - 런처 플레이어 수/이름을 `groupNames`로 반영하여 멀티 퀴즈 시작 가능
+- 저장/호환성
+  - 맵 저장 포맷(`version:2`) 영향 없음
+  - 런처 설정은 `localStorage`의 별도 키로 관리
+- 검증(정적)
+  - `node --check public/quiz/app.js`
+
+## 2026-02-22 (로컬 기록 저장 레이어 1차 - 퀴즈 세션 자동 저장)
+- 목적
+  - 서버/DB 없이도 플레이어 이름/기록/정답률/오답문제모음 누적을 위한 로컬 저장 기반을 구축.
+  - 점프맵/기본모드가 공용으로 재사용할 수 있는 저장 모듈 형태로 시작.
+- 조치
+  - `public/shared/local-game-records.js` 추가 (IndexedDB 기반)
+    - DB: `math-net-master-local-records`
+    - stores:
+      - `sessions` (게임 세션 기록)
+      - `players` (플레이어 누적 통계)
+      - `wrongAnswers` (오답 문항 엔트리)
+    - `saveQuizSessionRecord(...)` 구현
+  - `public/quiz/app.js`
+    - `finishAllPlayers()`에서 퀴즈 종료 시 로컬 기록 자동 저장 연결
+    - 저장 실패 시 앱 흐름은 유지하고 콘솔 경고만 출력 (비차단)
+- 저장 호환성
+  - 맵 저장 포맷(`version:2`) 영향 없음
+  - 기존 퀴즈 오답 저장(localStorage) 기능과 병행 가능
+- 검증
+  - `node --check public/shared/local-game-records.js`
+  - `node --check public/quiz/app.js`
+  - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+
+## 2026-02-22 (점프맵 세션 로컬 저장 1차 - 테스트모드 종료/재시작 스냅샷)
+- 목적
+  - 점프맵 테스트/플레이 흐름에서도 로컬 기록 저장 레이어를 재사용해 플레이 결과(높이/퀴즈 사용량/점프 수)를 남기기 위한 연결을 추가.
+  - 프레임 루프 성능에 영향 없도록 종료/재시작/인원변경 시점에만 스냅샷 저장.
+- 조치
+  - `public/jumpmap-editor/test-runtime.js`
+    - `public/shared/local-game-records.js` 동적 import(`ensureLocalRecordsModule`) 추가
+    - 점프맵 세션 기록 런타임 상태(`recordRuntimeState`)를 활용한 세션 시퀀스/중복 저장 방지 처리 추가
+    - 플레이어별 세션 통계 카운터 추가:
+      - `quizAttempts`, `quizCorrect`, `quizWrong`, `jumps`, `doubleJumps`
+    - 퀴즈 제출/점프 소비 시 카운터 집계 연결
+    - `buildTestViews()` 이후 세션 시작 시각 기록
+    - `restartTestMode()`, `exitTestMode()`, 테스트 중 인원 변경 시 현재 세션 스냅샷 저장
+    - 저장 페이로드에 맵/배경 요약 포함:
+      - 맵 크기, 오브젝트 수, 세이브포인트 수, 배경 이미지 경로
+  - `public/shared/local-game-records.js` (이전 단계에서 추가된 `saveJumpmapSessionRecord(...)`)와 연동
+- 저장 호환성
+  - 맵 저장 포맷(`version:2`) 영향 없음
+  - 저장맵 JSON 구조 변경 없음 (점프맵 세션 기록은 IndexedDB 별도 저장)
+- 검증
+  - `node --check public/jumpmap-editor/test-runtime.js`
+  - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+
+## 2026-02-22 (테스트모드 충돌/버벅임 완화 - 루프/재구성 경로 정리)
+- 목적
+  - 테스트 중 인원 변경/재시작 시 루프와 DOM 재구성이 동시에 진행되며 발생할 수 있는 버벅임/엉킴 가능성 완화
+  - 입력 상태가 테스트 전환 사이에 남아 의도치 않은 이동/점프를 유발하는 문제 예방
+- 조치
+  - `public/jumpmap-editor/test-runtime.js`
+    - `rebuildActiveTestViews(reason)` 추가
+      - 현재 세션 기록 저장 → 입력 초기화 → 루프 정지 → 뷰 재구성 → 루프 재시작 순서로 통합
+    - `restartTestMode()` / 테스트 중 인원 변경 경로가 위 헬퍼를 사용하도록 변경
+    - `startTestLoop()` 시작 전 `stopTestLoop()` 호출 추가 (루프 중복 시작 방지)
+    - `enterTestMode()` 중복 진입 가드 추가
+    - `exitTestMode()`에서 입력 초기화/퀴즈 세션 정리/기록 세션 상태 초기화 추가
+- 효과
+  - 재시작/인원변경 시 프레임 루프와 DOM이 엇갈리며 생길 수 있는 끊김/레이스 위험 감소
+  - 테스트 종료 후 재진입 시 키 입력 잔류로 인한 오동작 가능성 감소
+- 검증
+  - `node --check public/jumpmap-editor/test-runtime.js`
+  - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+
+## 2026-02-22 (서비스 플레이 라우터 1차 - /play/ 경계 추가)
+- 목적
+  - 런처(`public/index.html`)가 점프맵 에디터/퀴즈 페이지로 직접 진입하지 않고, 서비스용 플레이 라우터(`/play/`)를 거쳐 게임 실행 경계를 분리.
+  - 추후 `운영용 jumpmap-runtime`로 교체할 자리(진입 계층)를 먼저 확보.
+- 조치
+  - `public/index.html`
+    - 시작 버튼 진입 경로를 `./play/?fromLauncher=1&launchMode=play`로 변경
+  - `public/play/index.html` 추가
+    - 런처 설정 요약 표시 + 자동 라우팅 상태 UI
+    - 설정이 없거나 잘못된 경우 런처 복귀 버튼 제공
+  - `public/play/app.js` 추가
+    - `jumpmap.launcher.setup.v1` 읽기/정규화
+    - 게임 모드별 라우팅:
+      - `jumpmap` -> `../jumpmap-editor/?launchMode=play&fromLauncher=1&autoStartTest=1`
+      - `basic-quiz` -> `../quiz/?launchMode=play&fromLauncher=1`
+- 일관성/충돌 방지 포인트
+  - 기존 저장맵 포맷(`version:2`) 영향 없음
+  - 기존 점프맵 플레이모드/기본 퀴즈 자동 시작 로직은 그대로 재사용 (진입 경로만 `/play/`로 분리)
+  - 추후 운영 런타임 분리 시 `/play/app.js`의 목적지 교체만으로 전환 가능
+- 검증
+  - `node --check public/play/app.js`
+  - `node scripts/jumpmap-phase6-validate.mjs` (`pass=69, fail=0`)
+
+## 2026-02-22 (점프맵 플레이 경계 1차 - /jumpmap-play/ 전용 진입점 추가)
+- 목적
+  - `/play/` 라우터가 점프맵 구현체(`jumpmap-editor` 테스트 플레이 모드)를 직접 알지 않도록, 점프맵 전용 서비스 경계(`/jumpmap-play/`)를 추가.
+  - 추후 `운영용 jumpmap-runtime` 분리 시 런처/플레이 라우터를 다시 뜯지 않고 `/jumpmap-play/` 내부 구현만 교체 가능하도록 준비.
+- 조치
+  - `public/play/app.js`
+    - `jumpmap` 모드 시작 목적지를 `../jumpmap-play/`로 변경
+  - `public/jumpmap-play/index.html` 추가
+    - 점프맵 플레이 준비/요약/오류 복구 UI 추가
+    - 런처/플레이 라우터/로컬 기록 페이지 이동 링크 제공
+  - `public/jumpmap-play/app.js` 추가
+    - `jumpmap.launcher.setup.v1` 읽기/정규화
+    - 점프맵 전용 요약 렌더링
+    - 현재 단계에서는 기존 구현체 재사용:
+      - `../jumpmap-editor/?launchMode=play&fromLauncher=1&autoStartTest=1`로 안전 리디렉트
+  - `public/index.html`, `public/play/index.html`
+    - `로컬 기록 보기` 링크 노출 (기록 조회 UI 접근 경로 연결)
+- 일관성/충돌 방지 포인트
+  - 현재 맵 저장 포맷(`version:2`) 및 저장맵 재사용 흐름 영향 없음
+  - 점프맵 실제 플레이 구현은 기존 테스트 런타임을 그대로 사용하여 회귀 리스크 최소화
+  - 서비스 경계(`/play/` -> `/jumpmap-play/` -> 구현체)를 먼저 고정해 이후 런타임 분리 작업의 충돌 범위를 축소
+- 검증
+  - `node --check public/play/app.js`
+  - `node --check public/jumpmap-play/app.js`
+  - `node --check public/play/records/app.js`
+
+## 2026-02-22 (점프맵 런타임 분리 1차 - 공용 코어 경계 파일 추가)
+- 목적
+  - 테스트 런타임에서 운영용 런타임 분리의 첫 단계로 공용 코어 경계 파일을 추가.
+  - 이후 단계에서 `test-runtime`과 `jumpmap-play`가 동일 코어를 공유하도록 단계적 전환 준비.
+- 조치
+  - `public/shared/jumpmap-runtime-core.js` 추가
+    - 현재는 최소 경계(의존성 묶음)만 제공하여 동작 변화 없이 경계만 고정
+- 일관성/충돌 방지 포인트
+  - 기존 `test-runtime` 동작 변경 없음
+  - 저장맵 포맷(`version:2`) 영향 없음
+- 검증
+  - `node --check public/shared/jumpmap-runtime-core.js`
+
+## 2026-02-22 (플레이어 식별 강화 + 퀴즈 상세 기록 확장)
+- 목적
+  - 동일 이름(플레이어1 등) 반복 시 기록이 섞이는 문제 방지.
+  - 퀴즈에서 선택한 문제 유형/문항 ID를 상세 조회 가능하게 확장.
+  - 오답문항을 A4 활동지 형태로 출력할 수 있는 인쇄 경로 제공.
+- 조치
+  - `public/index.html`
+    - 플레이어 입력에 `번호`(태그) 필드 추가, 요약에 `이름(번호)` 표기
+  - `public/play/app.js`, `public/jumpmap-play/app.js`
+    - 라우터 요약에서도 `이름(번호)` 표시
+  - `public/jumpmap-editor/editor.js`
+    - 런처 `playerTags`를 테스트 런타임 상태에 반영
+  - `public/jumpmap-editor/test-runtime.js`
+    - 점프맵 기록 저장 시 `tag` 포함
+    - 플레이어 표시 이름에 태그 반영
+  - `public/quiz/app.js`
+    - 런처 `playerTags`를 `studentIds`로 반영하여 개인 번호 기반 기록 분리
+  - `public/shared/local-game-records.js`
+    - playerId 생성 시 `name + tag` 결합
+    - 퀴즈 세션에 `questionTypeSummary`, `questionIds` 저장
+    - 오답 기록에 `playerTag` 저장
+  - `public/play/records/index.html`
+    - 인쇄 버튼 추가 + print 스타일 적용
+  - `public/play/records/app.js`
+    - 태그 표기 강화
+    - 퀴즈 세션에서 출제 유형/문항 ID 일부 표시
+- 일관성/충돌 방지 포인트
+  - 맵 포맷(`version:2`) 영향 없음
+  - 기존 기록은 유지되며 새 기록부터 태그가 적용됨
+- 검증
+  - `node --check public/play/app.js`
+  - `node --check public/jumpmap-play/app.js`
+  - `node --check public/jumpmap-editor/test-runtime.js`
+  - `node --check public/shared/local-game-records.js`
+  - `node --check public/play/records/app.js`
+  - `node --check public/quiz/app.js`
