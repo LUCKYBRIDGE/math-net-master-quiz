@@ -3,6 +3,15 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) monorepo churn 억제 변경 묶음 커밋 기준선 고정(최신, 2026-02-26):
+  - monorepo 최신 커밋(이 턴 기준):
+    - `e7589ba` (`chore: reduce split repo sync churn`)
+  - 포함 범위:
+    - `scripts/jumpmap-split-repos.mjs`
+    - `docs/jumpmap-editor-status.md`
+  - 의미:
+    - split scaffold 타임스탬프 churn 억제 + editor status 로그 미러링 중단 + 관련 기준선 기록을 monorepo 커밋 1개로 추적 가능
+    - 이후 `R7` 운영 이관 작업은 이 커밋 이후 변경만 보면 됨
 - 레포 분리(R7 운영 이관) split 레포 최신 커밋 기준선/clean 상태 배치 동기화(최신, 2026-02-26):
   - split 레포 최신 커밋(현재 기준선):
     - `nolquiz-editor`: `36f0b6c` (`chore: stop mirroring monorepo status log`)
