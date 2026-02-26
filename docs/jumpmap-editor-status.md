@@ -3,6 +3,14 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) split 레포 readiness 점검 스크립트 추가(최신, 2026-02-26):
+  - `scripts/jumpmap-check-split-repo-readiness.mjs` 추가
+    - `nolquiz-editor`, `nolquiz-runtime`의 존재/깃 상태/최신 커밋/remote(`origin`) 설정 여부를 한 번에 출력
+    - split 레포 `docs/repo-operations.md` 존재 및 `TBD` 잔존 여부 확인
+  - 목적:
+    - `origin` URL 확정 전/후에 R7 운영 이관 readiness를 빠르게 점검하고 handoff 기준선을 반복 확인하는 비용 절감
+  - 연계 문서:
+    - `docs/repo-split-r7-release-checklist.md` Preconditions 섹션에 quick pre-check로 연결
 - 레포 분리(R7 운영 이관) handoff quick baseline(최신, 2026-02-26):
   - 단계: `R7 운영 이관 실작업`
   - 기준선: monorepo `eb23c85`(status baseline 기록), split editor/runtime latest=`36f0b6c`/`1df60f1`, `verify-split --skip-smoke`=`pass=37 fail=0`, `--skip-smoke --with-browser-e2e`=`pass=38 fail=0`
