@@ -29,11 +29,21 @@ cd /Users/baekjiyun/Desktop/WAN/math-net-master-quiz
 node scripts/jumpmap-check-split-repo-readiness.mjs
 ```
 
+원격 URL/운영값 입력 후 게이팅 모드(권장):
+
+```bash
+node scripts/jumpmap-check-split-repo-readiness.mjs --strict
+```
+
 체크 포인트:
 - split 레포 존재/clean 상태
 - latest commit 확인
 - `origin` remote 설정 여부
 - split 레포 `docs/repo-operations.md`의 `TBD` 잔존 여부
+
+메모:
+- 현재 단계(`R7` 준비/이관 중)에서는 `origin` 미설정, `TBD` 잔존이 정상이라 기본 모드에서 `WARN`이 나올 수 있음
+- 실제 push/CI 활성화 직전에는 `--strict`가 `PASS`가 되도록 맞추는 것을 권장
 
 ## 3) Standard Flow (Recommended)
 

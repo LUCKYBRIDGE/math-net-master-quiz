@@ -19,6 +19,10 @@ const printHelp = () => {
     `Options:\n` +
     `  --editor-dir <dir>    Editor repo dir (default: ../nolquiz-editor)\n` +
     `  --runtime-dir <dir>   Runtime repo dir (default: ../nolquiz-runtime)\n` +
+    `  --require-clean       Fail if any split repo worktree is dirty\n` +
+    `  --require-origin      Fail if any split repo has no origin remote\n` +
+    `  --require-ops-doc-no-tbd  Fail if repo-operations.md still contains (TBD)\n` +
+    `  --strict              Enable all readiness gates above\n` +
     `  --help                Show help\n`);
 };
 
@@ -31,6 +35,9 @@ const parseArgs = (argv) => {
   const opts = {
     editorDir: DEFAULT_EDITOR_DIR,
     runtimeDir: DEFAULT_RUNTIME_DIR,
+    requireClean: false,
+    requireOrigin: false,
+    requireOpsDocNoTbd: false,
     help: false
   };
 
@@ -48,6 +55,24 @@ const parseArgs = (argv) => {
     if (arg === '--runtime-dir') {
       opts.runtimeDir = resolveMaybeRelative(argv[i + 1], DEFAULT_RUNTIME_DIR);
       i += 1;
+      continue;
+    }
+    if (arg === '--require-clean') {
+      opts.requireClean = true;
+      continue;
+    }
+    if (arg === '--require-origin') {
+      opts.requireOrigin = true;
+      continue;
+    }
+    if (arg === '--require-ops-doc-no-tbd') {
+      opts.requireOpsDocNoTbd = true;
+      continue;
+    }
+    if (arg === '--strict') {
+      opts.requireClean = true;
+      opts.requireOrigin = true;
+      opts.requireOpsDocNoTbd = true;
       continue;
     }
     throw new Error(`unknown argument: ${arg}`);
@@ -112,7 +137,10 @@ const inspectRepo = (label, dirPath) => {
   return out;
 };
 
-const mark = (ok, text) => `${ok ? 'PASS' : 'WARN'} ${text}`;
+const mark = (ok, text, { required = false } = {}) => {
+  if (ok) return `PASS ${text}`;
+  return `${required ? 'FAIL' : 'WARN'} ${text}`;
+};
 
 const printRepo = (repo) => {
   console.log(`- ${repo.label}`);
@@ -153,15 +181,23 @@ const main = () => {
   const allClean = repos.every((repo) => repo.isGitRepo && repo.clean);
   const allOpsDocs = repos.every((repo) => repo.opsDocExists);
   const allOrigin = repos.every((repo) => repo.originConfigured);
+  const allOpsDocNoTbd = repos.every((repo) => repo.opsDocExists && !repo.opsDocHasTbd);
 
   console.log('[summary]');
   console.log(mark(allExist, 'split repo directories exist'));
   console.log(mark(allGit, 'split repos are git worktrees'));
-  console.log(mark(allClean, 'split repos are clean'));
-  console.log(mark(allOpsDocs, 'repo operations docs present'));
-  console.log(mark(allOrigin, 'origin remotes configured'));
+  console.log(mark(allClean, 'split repos are clean', { required: opts.requireClean }));
+  console.log(mark(allOpsDocs, 'repo operations docs present', { required: opts.requireOpsDocNoTbd }));
+  console.log(mark(allOrigin, 'origin remotes configured', { required: opts.requireOrigin }));
+  console.log(mark(allOpsDocNoTbd, 'repo operations docs have no (TBD) markers', { required: opts.requireOpsDocNoTbd }));
 
-  if (!allExist || !allGit) {
+  const requiredFailures = (
+    (opts.requireClean && !allClean) ||
+    (opts.requireOrigin && !allOrigin) ||
+    (opts.requireOpsDocNoTbd && (!allOpsDocs || !allOpsDocNoTbd))
+  );
+
+  if (!allExist || !allGit || requiredFailures) {
     process.exitCode = 1;
   }
 };

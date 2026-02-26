@@ -3,6 +3,14 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) split readiness 점검 스크립트 strict 게이팅 옵션 추가(최신, 2026-02-26):
+  - `scripts/jumpmap-check-split-repo-readiness.mjs`
+    - `--require-clean`, `--require-origin`, `--require-ops-doc-no-tbd`, `--strict` 추가
+    - 기본 모드에서는 readiness 상태를 `WARN`로 보고, `--strict` 모드에서는 `origin`/`TBD` 미정 상태를 `FAIL`로 승격 가능
+  - 목적:
+    - 현재(`origin` 미정) 단계에서는 안내용 점검으로 사용하고, 실제 push/CI 직전에는 같은 스크립트를 게이트로 재사용
+  - 연계 문서:
+    - `docs/repo-split-r7-release-checklist.md` Preconditions 섹션에 기본/strict 예시 추가
 - 레포 분리(R7 운영 이관) split 레포 readiness 점검 스크립트 추가(최신, 2026-02-26):
   - `scripts/jumpmap-check-split-repo-readiness.mjs` 추가
     - `nolquiz-editor`, `nolquiz-runtime`의 존재/깃 상태/최신 커밋/remote(`origin`) 설정 여부를 한 번에 출력
