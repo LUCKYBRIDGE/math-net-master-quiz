@@ -3,6 +3,13 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) handoff에 readiness 요약 포함 규칙 추가(최신, 2026-02-26):
+  - `docs/repo-split-r7-release-checklist.md`
+    - `Commit / Handoff Suggestion (R7)`의 최소 정보에 readiness 요약 3줄 추가
+    - 권장 명령: `node scripts/jumpmap-check-split-repo-readiness.mjs`
+    - `push` 직전에는 `--strict` 결과 포함 권장
+  - 목적:
+    - 다음 스레드/담당자 handoff 시 split repo 상태(clean/latest/origin/TBD)를 반복 질의 없이 바로 확인 가능하게 고정
 - 레포 분리(R7 운영 이관) split readiness 점검 스크립트 strict 게이팅 옵션 추가(최신, 2026-02-26):
   - `scripts/jumpmap-check-split-repo-readiness.mjs`
     - `--require-clean`, `--require-origin`, `--require-ops-doc-no-tbd`, `--strict` 추가
