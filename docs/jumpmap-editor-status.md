@@ -3,6 +3,15 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) split 레포 운영 문서 preflight 가이드 최신 커밋 동기화(최신, 2026-02-26):
+  - split 레포 최신 커밋(현재 기준선):
+    - `nolquiz-editor`: `e057b02` (`docs: add r7 preflight guidance`)
+    - `nolquiz-runtime`: `564621a` (`docs: add r7 preflight guidance`)
+  - 상태:
+    - 두 split 레포 모두 `main` 기준 clean (`git status --short --branch`)
+    - `origin` remote는 아직 미설정 (URL 미확정)
+  - 의미:
+    - split 레포 운영 문서에서도 `R7 preflight` / `--release-gate` / readiness 요약 규칙을 바로 사용할 수 있는 상태로 동기화 완료
 - 레포 분리(R7 운영 이관) preflight release-gate 프리셋(alias) 추가(최신, 2026-02-26):
   - `scripts/jumpmap-r7-preflight.mjs`
     - `--release-gate` 추가
