@@ -161,7 +161,14 @@ handoff에 포함할 최소 정보:
 - `pass/fail` 수치
 - publish 대상 맵 경로
 - readiness 요약 3줄(권장)
-  - 실행 명령: `node scripts/jumpmap-check-split-repo-readiness.mjs`
+  - 실행 명령: `node scripts/jumpmap-check-split-repo-readiness.mjs --summary-lines`
   - split repo clean 여부 + latest commit
   - `origin`/`TBD` 상태 (`push` 직전에는 `--strict` 결과 포함)
 - 남은 리스크(있으면 1~3줄)
+
+예시(푸시 전 게이팅 포함):
+
+```bash
+node scripts/jumpmap-check-split-repo-readiness.mjs --summary-lines
+node scripts/jumpmap-check-split-repo-readiness.mjs --strict --summary-lines
+```

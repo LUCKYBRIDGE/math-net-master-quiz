@@ -22,6 +22,7 @@ const printHelp = () => {
     `  --require-clean       Fail if any split repo worktree is dirty\n` +
     `  --require-origin      Fail if any split repo has no origin remote\n` +
     `  --require-ops-doc-no-tbd  Fail if repo-operations.md still contains (TBD)\n` +
+    `  --summary-lines       Print 3-line handoff summary block after checks\n` +
     `  --strict              Enable all readiness gates above\n` +
     `  --help                Show help\n`);
 };
@@ -38,6 +39,7 @@ const parseArgs = (argv) => {
     requireClean: false,
     requireOrigin: false,
     requireOpsDocNoTbd: false,
+    summaryLines: false,
     help: false
   };
 
@@ -67,6 +69,10 @@ const parseArgs = (argv) => {
     }
     if (arg === '--require-ops-doc-no-tbd') {
       opts.requireOpsDocNoTbd = true;
+      continue;
+    }
+    if (arg === '--summary-lines') {
+      opts.summaryLines = true;
       continue;
     }
     if (arg === '--strict') {
@@ -162,6 +168,13 @@ const printRepo = (repo) => {
   }
 };
 
+const formatShortRepo = (repo) => {
+  if (!repo.exists) return `${repo.label}=missing`;
+  if (!repo.isGitRepo) return `${repo.label}=not-git`;
+  const latest = repo.latestCommit ? repo.latestCommit.split(' ')[0] : '(none)';
+  return `${repo.label}=${repo.clean ? 'clean' : 'dirty'}@${latest}`;
+};
+
 const main = () => {
   const opts = parseArgs(process.argv.slice(2));
   if (opts.help) {
@@ -196,6 +209,16 @@ const main = () => {
     (opts.requireOrigin && !allOrigin) ||
     (opts.requireOpsDocNoTbd && (!allOpsDocs || !allOpsDocNoTbd))
   );
+
+  if (opts.summaryLines) {
+    const latestLine = `${formatShortRepo(editor)}, ${formatShortRepo(runtime)}`;
+    const originLine = `origin=${allOrigin ? 'configured' : 'missing'}, ops-doc-tbd=${allOpsDocNoTbd ? 'no' : 'yes'}`;
+    const gateLine = `mode=${opts.requireClean || opts.requireOrigin || opts.requireOpsDocNoTbd ? 'strict-ish' : 'informational'}, result=${(!allExist || !allGit || requiredFailures) ? 'fail' : 'pass'}`;
+    console.log('[handoff-summary]');
+    console.log(latestLine);
+    console.log(originLine);
+    console.log(gateLine);
+  }
 
   if (!allExist || !allGit || requiredFailures) {
     process.exitCode = 1;

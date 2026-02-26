@@ -3,6 +3,14 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) readiness handoff 3줄 요약 출력 옵션 추가(최신, 2026-02-26):
+  - `scripts/jumpmap-check-split-repo-readiness.mjs`
+    - `--summary-lines` 추가 (`[handoff-summary]` 블록으로 3줄 요약 출력)
+    - 기본 모드/`--strict`와 조합 가능 (`--strict --summary-lines`)
+  - 목적:
+    - handoff에 넣는 readiness 요약 3줄을 수동 정리 대신 스크립트 출력으로 고정
+  - 연계 문서:
+    - `docs/repo-split-r7-release-checklist.md` handoff 최소 정보/예시에 `--summary-lines` 명령 추가
 - 레포 분리(R7 운영 이관) handoff에 readiness 요약 포함 규칙 추가(최신, 2026-02-26):
   - `docs/repo-split-r7-release-checklist.md`
     - `Commit / Handoff Suggestion (R7)`의 최소 정보에 readiness 요약 3줄 추가
