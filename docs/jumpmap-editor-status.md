@@ -3,6 +3,14 @@
 Date: 2026-02-08
 
 ## Summary
+- 레포 분리(R7 운영 이관) preflight release-gate 프리셋(alias) 추가(최신, 2026-02-26):
+  - `scripts/jumpmap-r7-preflight.mjs`
+    - `--release-gate` 추가
+    - 의미: `--strict-readiness --with-browser-e2e --browser-e2e-timeout-ms 30000` 프리셋
+  - 목적:
+    - push/CI 직전 점검 조합을 옵션 기억 없이 1개 플래그로 실행 가능하게 해서 운영 반복 비용 감소
+  - 연계 문서:
+    - `docs/repo-split-r7-release-checklist.md` preflight 예시에 `--release-gate` 추가
 - 레포 분리(R7 운영 이관) 로컬 preflight 래퍼 스크립트 추가(최신, 2026-02-26):
   - `scripts/jumpmap-r7-preflight.mjs` 추가
     - 실행 순서 고정:

@@ -28,6 +28,7 @@ const printHelp = () => {
       '  --editor-dir <dir>            Editor split repo dir (default: ../nolquiz-editor)',
       '  --runtime-dir <dir>           Runtime split repo dir (default: ../nolquiz-runtime)',
       '  --strict-readiness            Run readiness check with --strict',
+      '  --release-gate                Alias: --strict-readiness --with-browser-e2e --browser-e2e-timeout-ms 30000',
       '  --with-browser-e2e           Pass through to verify-split',
       '  --browser-e2e-headed         Pass through to verify-split',
       '  --browser-e2e-timeout-ms <n> Pass through to verify-split',
@@ -47,6 +48,7 @@ const parseArgs = (argv) => {
     editorDir: DEFAULT_EDITOR_DIR,
     runtimeDir: DEFAULT_RUNTIME_DIR,
     strictReadiness: false,
+    releaseGate: false,
     withBrowserE2E: false,
     browserE2EHeaded: false,
     browserE2ETimeoutMs: 0,
@@ -72,6 +74,15 @@ const parseArgs = (argv) => {
     }
     if (arg === '--strict-readiness') {
       opts.strictReadiness = true;
+      continue;
+    }
+    if (arg === '--release-gate') {
+      opts.releaseGate = true;
+      opts.strictReadiness = true;
+      opts.withBrowserE2E = true;
+      if (!opts.browserE2ETimeoutMs) {
+        opts.browserE2ETimeoutMs = 30000;
+      }
       continue;
     }
     if (arg === '--with-browser-e2e') {
@@ -114,6 +125,11 @@ const main = () => {
   if (opts.help) {
     printHelp();
     return;
+  }
+
+  // Re-apply alias defaults if the user passed --browser-e2e-timeout-ms before --release-gate.
+  if (opts.releaseGate && !opts.browserE2ETimeoutMs) {
+    opts.browserE2ETimeoutMs = 30000;
   }
 
   const sharedDirArgs = [

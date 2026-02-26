@@ -58,6 +58,16 @@ node scripts/jumpmap-r7-preflight.mjs
 node scripts/jumpmap-r7-preflight.mjs --with-browser-e2e --browser-e2e-timeout-ms 30000
 ```
 
+예시 (push/CI 직전 게이트 프리셋):
+
+```bash
+node scripts/jumpmap-r7-preflight.mjs --release-gate
+```
+
+메모:
+- 현재 단계(`origin` 미설정, `TBD` 잔존)에서는 `--release-gate`가 readiness strict 단계에서 의도적으로 실패할 수 있음
+- remote/운영값을 채운 뒤에는 `--release-gate` PASS를 목표로 사용
+
 ## 3) Standard Flow (Recommended)
 
 ### 3-1) Edit In Editor
