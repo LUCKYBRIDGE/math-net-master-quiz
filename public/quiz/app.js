@@ -1,8 +1,17 @@
 import { createQuizEngine } from './core/engine.js';
 import { buildWeightedQuestionBank } from './core/bank.js';
 import { validateQuestionBank } from './core/validate.js';
+import { generatePlaceValueAreaModelBank } from './core/generators/place-value-area-model.js';
+import { parseCsvQuestionBank } from './core/importers/csv-question-bank.js';
+import {
+  isPlaceValueAreaModelQuestion,
+  renderPlaceValueAreaModelQuestion
+} from './renderers/place-value-area-model.js';
+import { saveQuizSessionRecord } from '../shared/local-game-records.js';
 
 const $ = (selector) => document.querySelector(selector);
+const launchParams = new URLSearchParams(window.location.search);
+const csvToolMode = String(launchParams.get('mode') || '').trim().toLowerCase() === 'csv';
 
 const settingsCard = $('#settings-card');
 const quizGrid = $('#quiz-grid');
@@ -21,9 +30,12 @@ const presetCancel = $('#preset-cancel');
 const presetConfirm = $('#preset-confirm');
 const presetText = $('#preset-text');
 const presetSummary = $('#preset-summary');
+const quizAppTitleEl = document.getElementById('quiz-app-title');
+const appModeBannerEl = $('#app-mode-banner');
 const basicListEl = $('#basic-list');
 const basicFiveBtn = $('#basic-5min');
 const basicTwelveBtn = $('#basic-12q');
+const basicPvamBtn = $('#basic-pvam');
 const advancedToggle = $('#advanced-toggle');
 const advancedSettings = $('#advanced-settings');
 const typeToggle = $('#type-toggle');
@@ -71,6 +83,11 @@ const customListEl = $('#custom-list');
 const customRandomBtn = $('#custom-random');
 const customRandomCount = $('#custom-random-count');
 const customClearBtn = $('#custom-clear');
+const customCsvFileInput = $('#custom-csv-file');
+const customCsvClearBtn = $('#custom-csv-clear');
+const customCsvStatusEl = $('#custom-csv-status');
+const customCsvTemplateBtn = $('#custom-csv-template');
+const customPackExportBtn = $('#custom-pack-export');
 const confirmTypeCountsBtn = $('#confirm-type-counts');
 const confirmStatusEl = $('#count-confirm-status');
 
@@ -79,6 +96,11 @@ const resetBtn = $('#reset-btn');
 const restartBtn = $('#restart-btn');
 const copyLogBtn = $('#copy-log-btn');
 const downloadLogBtn = $('#download-log-btn');
+const downloadReportCsvBtn = $('#download-report-csv-btn');
+const resultDownloadNoteEl = $('#result-download-note');
+const resultRecordsLink = $('#result-records-link');
+const resultClassroomLink = $('#result-classroom-link');
+const LAUNCHER_SETUP_STORAGE_KEY = 'jumpmap.launcher.setup.v1';
 
 const settingsInputs = {
   players: $('#setting-players'),
@@ -98,6 +120,7 @@ const settingsInputs = {
   timeBonusPer: $('#setting-time-bonus-per'),
   timeBonusCap: $('#setting-time-bonus-cap'),
   customEnabled: $('#setting-custom-enabled'),
+  customCsvEnabled: $('#setting-custom-csv-enabled'),
   customIds: $('#setting-custom-ids')
 };
 
@@ -138,8 +161,190 @@ let pendingStartSettings = null;
 let countsConfirmed = false;
 let pendingBasicMode = null;
 let typeOpen = false;
+let uploadedCsvQuestionBank = null;
 const CUSTOM_PRESET_KEY = 'quiz_custom_presets_v1';
 let customPresets = [];
+const QUIZ_STORAGE_DB_NAME = 'knolquiz-quiz-storage';
+const QUIZ_STORAGE_DB_VERSION = 1;
+const QUIZ_STORAGE_STORE = 'kv';
+const QUIZ_STORE_KEY_CUSTOM_PRESETS = 'customPresets';
+const QUIZ_STORE_KEY_WRONGS = 'savedWrongs';
+const QUIZ_STORE_KEY_STUDENT_NAMES = 'studentNames';
+const QUIZ_STORE_KEY_GROUP_NAMES = 'groupNames';
+let quizStorageDbPromise = null;
+let cachedCustomPresets = [];
+
+const normalizeStudentNo = (raw) => {
+  const parsed = Math.round(Number(raw));
+  if (!Number.isFinite(parsed) || parsed < 1 || parsed > 50) return null;
+  return parsed;
+};
+
+const normalizePeriodDays = (raw) => {
+  const value = String(raw ?? '').trim().toLowerCase();
+  if (!value || value === 'all') return null;
+  const parsed = Math.round(Number(value));
+  if (parsed === 7 || parsed === 30) return parsed;
+  return null;
+};
+
+const buildPlayPageHrefWithFilters = (basePath, filters = {}) => {
+  const studentNo = normalizeStudentNo(filters?.studentNo);
+  const periodDays = normalizePeriodDays(filters?.periodDays);
+  const params = new URLSearchParams();
+  if (studentNo) params.set('studentNo', String(studentNo));
+  if (periodDays) params.set('periodDays', String(periodDays));
+  const query = params.toString();
+  return `${basePath}${query ? `?${query}` : ''}`;
+};
+
+const readResultFilterContextFromQuery = () => ({
+  studentNo: normalizeStudentNo(launchParams.get('studentNo')),
+  periodDays: normalizePeriodDays(launchParams.get('periodDays'))
+});
+
+const resultFilterContext = readResultFilterContextFromQuery();
+
+const syncResultNavigationLinks = (filters = resultFilterContext) => {
+  if (resultRecordsLink) {
+    resultRecordsLink.href = buildPlayPageHrefWithFilters('../play/records/', filters);
+  }
+  if (resultClassroomLink) {
+    resultClassroomLink.href = buildPlayPageHrefWithFilters('../play/classroom/', filters);
+  }
+};
+
+const resolveSingleStudentNoFromLogs = (logs = []) => {
+  const unique = new Set();
+  (Array.isArray(logs) ? logs : []).forEach((log) => {
+    const studentNo = normalizeStudentNo(log?.settings?.studentId);
+    if (studentNo) unique.add(studentNo);
+  });
+  if (unique.size !== 1) return null;
+  const [onlyOne] = unique;
+  return onlyOne || null;
+};
+
+syncResultNavigationLinks(resultFilterContext);
+let latestQuizResultPayload = null;
+let cachedSavedWrongs = [];
+let cachedStudentNames = [];
+let cachedGroupNames = [];
+
+const escapeReportCsvCell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
+
+const downloadCsvTextFile = (fileName, text) => {
+  const withBom = `\ufeff${String(text || '')}`;
+  const blob = new Blob([withBom], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = fileName;
+  link.click();
+  URL.revokeObjectURL(url);
+};
+
+const setResultDownloadNote = (message, tone = '') => {
+  if (!resultDownloadNoteEl) return;
+  resultDownloadNoteEl.textContent = message || '';
+  resultDownloadNoteEl.classList.remove('is-success', 'is-warn');
+  if (tone === 'success') resultDownloadNoteEl.classList.add('is-success');
+  if (tone === 'warn') resultDownloadNoteEl.classList.add('is-warn');
+};
+
+const buildQuizResultReportCsv = (payload) => {
+  const rows = [[
+    '리포트유형',
+    '생성시각',
+    '플레이어순번',
+    '학생번호',
+    '모둠명',
+    '총점',
+    '정답수',
+    '총문항',
+    '정답률',
+    '문항ID',
+    '문항유형',
+    '문항내용',
+    '선택값',
+    '정답값',
+    '정오',
+    '응답시간ms',
+    '점수증감'
+  ]];
+  const logs = Array.isArray(payload?.players) ? payload.players : [];
+  const createdAt = new Date().toISOString();
+  logs.forEach((log, index) => {
+    const studentNo = normalizeStudentNo(log?.settings?.studentId);
+    const groupName = String(log?.groupName || '').trim();
+    const summary = log?.summary || {};
+    rows.push([
+      '퀴즈요약',
+      createdAt,
+      index + 1,
+      studentNo || '',
+      groupName || '',
+      Number(summary.totalScore) || 0,
+      Number(summary.correctCount) || 0,
+      Number(summary.totalCount) || 0,
+      Number(summary.accuracy) || 0,
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      ''
+    ]);
+    const answers = Array.isArray(log?.answers) ? log.answers : [];
+    answers.forEach((answer) => {
+      rows.push([
+        '퀴즈문항',
+        createdAt,
+        index + 1,
+        studentNo || '',
+        groupName || '',
+        Number(summary.totalScore) || 0,
+        Number(summary.correctCount) || 0,
+        Number(summary.totalCount) || 0,
+        Number(summary.accuracy) || 0,
+        answer?.questionId || '',
+        answer?.type || '',
+        answer?.prompt || answer?.question || '',
+        answer?.choice ?? '',
+        answer?.answer ?? '',
+        answer?.correct ? '정답' : '오답',
+        Number(answer?.timeMs) || 0,
+        Number(answer?.scoreDelta) || 0
+      ]);
+    });
+  });
+  return rows.map((row) => row.map((cell) => escapeReportCsvCell(cell)).join(',')).join('\n');
+};
+
+const downloadQuizResultReportCsv = () => {
+  let payload = latestQuizResultPayload;
+  if (!payload && logOutputEl?.value) {
+    try {
+      payload = JSON.parse(logOutputEl.value);
+    } catch (_error) {
+      payload = null;
+    }
+  }
+  if (!payload || !Array.isArray(payload?.players) || !payload.players.length) {
+    setResultDownloadNote('저장할 결과 데이터가 없습니다. 먼저 퀴즈를 완료해 주세요.', 'warn');
+    return false;
+  }
+  const csvText = buildQuizResultReportCsv(payload);
+  const fileName = `quiz-result-report-${Date.now()}.csv`;
+  downloadCsvTextFile(fileName, csvText);
+  setResultDownloadNote(
+    `CSV 저장 요청 완료 (${fileName}) · Android에서 바로 열기 앱이 안 뜨면 파일 앱(내 파일) > Download 폴더를 확인해 주세요.`,
+    'success'
+  );
+  return true;
+};
 const syncRepeatSetting = () => {
   if (!settingsInputs.mode || !settingsInputs.repeat) return;
   if (settingsInputs.mode.value === 'sequential') {
@@ -160,6 +365,169 @@ const CACHE_BUST = Date.now();
 const WRONG_STORAGE_KEY = 'mathNetMasterWrongSets';
 const GROUP_NAMES_KEY = 'mathNetMasterGroupNames';
 const STUDENT_NAMES_KEY = 'mathNetMasterStudentNames';
+
+const supportsQuizIndexedDb = () => typeof indexedDB !== 'undefined';
+
+const clonePersisted = (value) => {
+  if (typeof structuredClone === 'function') return structuredClone(value);
+  return JSON.parse(JSON.stringify(value));
+};
+
+const parseLegacyArray = (key) => {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn(`failed to parse legacy storage: ${key}`, error);
+    return [];
+  }
+};
+
+const idbRequestToPromise = (request) =>
+  new Promise((resolve, reject) => {
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error || new Error('indexeddb request failed'));
+  });
+
+const idbTxDone = (tx) =>
+  new Promise((resolve, reject) => {
+    tx.oncomplete = () => resolve();
+    tx.onabort = () => reject(tx.error || new Error('indexeddb transaction aborted'));
+    tx.onerror = () => reject(tx.error || new Error('indexeddb transaction failed'));
+  });
+
+const openQuizStorageDb = () => {
+  if (quizStorageDbPromise) return quizStorageDbPromise;
+  quizStorageDbPromise = new Promise((resolve, reject) => {
+    if (!supportsQuizIndexedDb()) {
+      reject(new Error('indexeddb_unavailable'));
+      return;
+    }
+    const request = indexedDB.open(QUIZ_STORAGE_DB_NAME, QUIZ_STORAGE_DB_VERSION);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains(QUIZ_STORAGE_STORE)) {
+        db.createObjectStore(QUIZ_STORAGE_STORE, { keyPath: 'key' });
+      }
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error || new Error('indexeddb open failed'));
+  });
+  return quizStorageDbPromise;
+};
+
+const readQuizStoreValue = async (key) => {
+  const db = await openQuizStorageDb();
+  const tx = db.transaction([QUIZ_STORAGE_STORE], 'readonly');
+  const store = tx.objectStore(QUIZ_STORAGE_STORE);
+  const row = await idbRequestToPromise(store.get(key));
+  await idbTxDone(tx);
+  const value = row?.value;
+  return Array.isArray(value) ? value : [];
+};
+
+const writeQuizStoreValue = async (key, value) => {
+  const normalized = Array.isArray(value) ? value : [];
+  const db = await openQuizStorageDb();
+  const tx = db.transaction([QUIZ_STORAGE_STORE], 'readwrite');
+  const store = tx.objectStore(QUIZ_STORAGE_STORE);
+  store.put({
+    key,
+    value: normalized,
+    updatedAt: new Date().toISOString()
+  });
+  await idbTxDone(tx);
+};
+
+const persistQuizStoreValue = (key, value, legacyKey) => {
+  const normalized = Array.isArray(value) ? value : [];
+  if (!supportsQuizIndexedDb()) {
+    try {
+      localStorage.setItem(legacyKey, JSON.stringify(normalized));
+    } catch (error) {
+      console.warn(`failed to persist legacy storage: ${legacyKey}`, error);
+    }
+    return;
+  }
+  writeQuizStoreValue(key, normalized)
+    .then(() => {
+      try {
+        localStorage.removeItem(legacyKey);
+      } catch (_error) {
+        // ignore localStorage remove failure
+      }
+    })
+    .catch((error) => {
+      console.warn(`failed to persist indexeddb store: ${key}`, error);
+      try {
+        localStorage.setItem(legacyKey, JSON.stringify(normalized));
+      } catch (_legacyError) {
+        // ignore fallback failure
+      }
+    });
+};
+
+const bootstrapQuizPersistentStorage = async () => {
+  cachedCustomPresets = parseLegacyArray(CUSTOM_PRESET_KEY);
+  cachedSavedWrongs = parseLegacyArray(WRONG_STORAGE_KEY);
+  cachedStudentNames = parseLegacyArray(STUDENT_NAMES_KEY);
+  cachedGroupNames = parseLegacyArray(GROUP_NAMES_KEY);
+  if (!supportsQuizIndexedDb()) return;
+  try {
+    const [
+      dbCustomPresets,
+      dbSavedWrongs,
+      dbStudentNames,
+      dbGroupNames
+    ] = await Promise.all([
+      readQuizStoreValue(QUIZ_STORE_KEY_CUSTOM_PRESETS),
+      readQuizStoreValue(QUIZ_STORE_KEY_WRONGS),
+      readQuizStoreValue(QUIZ_STORE_KEY_STUDENT_NAMES),
+      readQuizStoreValue(QUIZ_STORE_KEY_GROUP_NAMES)
+    ]);
+
+    const maybeMigrate = async (dbValue, legacyValue, storeKey, legacyKey) => {
+      if (dbValue.length) return dbValue;
+      if (!legacyValue.length) return [];
+      await writeQuizStoreValue(storeKey, legacyValue);
+      try {
+        localStorage.removeItem(legacyKey);
+      } catch (_error) {
+        // ignore remove error
+      }
+      return legacyValue;
+    };
+
+    cachedCustomPresets = await maybeMigrate(
+      dbCustomPresets,
+      cachedCustomPresets,
+      QUIZ_STORE_KEY_CUSTOM_PRESETS,
+      CUSTOM_PRESET_KEY
+    );
+    cachedSavedWrongs = await maybeMigrate(
+      dbSavedWrongs,
+      cachedSavedWrongs,
+      QUIZ_STORE_KEY_WRONGS,
+      WRONG_STORAGE_KEY
+    );
+    cachedStudentNames = await maybeMigrate(
+      dbStudentNames,
+      cachedStudentNames,
+      QUIZ_STORE_KEY_STUDENT_NAMES,
+      STUDENT_NAMES_KEY
+    );
+    cachedGroupNames = await maybeMigrate(
+      dbGroupNames,
+      cachedGroupNames,
+      QUIZ_STORE_KEY_GROUP_NAMES,
+      GROUP_NAMES_KEY
+    );
+  } catch (error) {
+    console.warn('failed to bootstrap quiz indexeddb storage', error);
+  }
+};
 
 const loadJson = async (path) => {
   const res = await fetch(`${path}?v=${CACHE_BUST}`);
@@ -323,6 +691,9 @@ const applyDefaultSettings = (settings) => {
   if (settingsInputs.customEnabled) {
     settingsInputs.customEnabled.value = settings.customQuestionMode ? 'true' : 'false';
   }
+  if (settingsInputs.customCsvEnabled) {
+    settingsInputs.customCsvEnabled.value = settings.customCsvMode ? 'true' : 'false';
+  }
   if (settingsInputs.customIds) {
     settingsInputs.customIds.value = (settings.customQuestionIds || []).join(', ');
   }
@@ -363,6 +734,27 @@ const applyDefaultSettings = (settings) => {
 };
 
 const presets = [
+  {
+    id: 'pvam-mixed-demo',
+    label: '영역모델 곱셈 데모',
+    description: '과정+결과 혼합 10문제',
+    settings: {
+      quizEndMode: 'count',
+      quizTimeLimitSec: 0,
+      timeLimitSec: 0,
+      rankingEnabled: false,
+      shuffleChoices: false,
+      selectionMode: 'sequential',
+      avoidRepeat: true
+    },
+    pvamDemo: {
+      count: 10,
+      seed: 1,
+      min: 11,
+      max: 99,
+      taskKinds: ['mixed_process', 'partial_sums', 'partial_cells', 'final_product']
+    }
+  },
   {
     id: 'parallel-focus',
     label: '평행한 면 집중',
@@ -476,22 +868,12 @@ const presets = [
 ];
 
 const loadCustomPresets = () => {
-  try {
-    const raw = localStorage.getItem(CUSTOM_PRESET_KEY);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (err) {
-    console.warn('failed to load custom presets', err);
-    return [];
-  }
+  return clonePersisted(cachedCustomPresets);
 };
 
 const saveCustomPresets = () => {
-  try {
-    localStorage.setItem(CUSTOM_PRESET_KEY, JSON.stringify(customPresets));
-  } catch (err) {
-    console.warn('failed to save custom presets', err);
-  }
+  cachedCustomPresets = Array.isArray(customPresets) ? clonePersisted(customPresets) : [];
+  persistQuizStoreValue(QUIZ_STORE_KEY_CUSTOM_PRESETS, cachedCustomPresets, CUSTOM_PRESET_KEY);
 };
 
 const basicModes = {
@@ -552,6 +934,42 @@ const basicModes = {
       shuffleChoices: true,
       rankingEnabled: false
     }
+  },
+  pvam: {
+    label: '영역모델 곱셈 데모',
+    settings: {
+      quizEndMode: 'count',
+      quizTimeLimitSec: 0,
+      timeLimitSec: 0,
+      questionTypes: {
+        cube_facecolor: { enabled: true, count: 2 },
+        cube_edgecolor: { enabled: true, count: 2 },
+        cube_validity: { enabled: true, count: 2 },
+        cuboid_facecolor: { enabled: true, count: 2 },
+        cuboid_edgecolor: { enabled: true, count: 2 },
+        cuboid_validity: { enabled: true, count: 2 }
+      },
+      score: {
+        base: 10,
+        comboEnabled: false,
+        comboBonus: 0,
+        timeBonusEnabled: false,
+        timeBonusPerSec: 0,
+        timeBonusMaxRatio: 0
+      },
+      wrongDelaySec: 1,
+      selectionMode: 'sequential',
+      avoidRepeat: true,
+      shuffleChoices: false,
+      rankingEnabled: false
+    },
+    pvamDemo: {
+      count: 10,
+      seed: 1,
+      min: 11,
+      max: 99,
+      taskKinds: ['decompose_factors', 'partial_cells', 'partial_sums', 'mixed_process', 'final_product']
+    }
   }
 };
 
@@ -568,37 +986,260 @@ const mergeSettings = (base, override = {}) => {
   return merged;
 };
 
+const parseQueryBool = (value) => {
+  if (value == null) return false;
+  const normalized = String(value).trim().toLowerCase();
+  return ['1', 'true', 'yes', 'on'].includes(normalized);
+};
+
+const buildPvamDemoQuestionBank = (settings) => {
+  const params = new URLSearchParams(window.location.search);
+  if (!parseQueryBool(params.get('pvamDemo'))) return null;
+
+  const countFallback = Math.max(1, Math.min(20, Number(settings?.questionCount) || 10));
+  const count = Math.max(1, Math.min(50, Number(params.get('pvamCount')) || countFallback));
+  const seedValue = params.get('pvamSeed');
+  const seed = seedValue != null && seedValue !== '' ? Number.parseInt(seedValue, 10) : 1;
+  const min = Math.max(10, Math.min(99, Number(params.get('pvamMin')) || 11));
+  const max = Math.max(min, Math.min(99, Number(params.get('pvamMax')) || 99));
+  const supportedTaskKinds = new Set(['decompose_factors', 'decompose', 'final_product', 'partial_cells', 'partial_sums', 'partial_sum', 'mixed_process']);
+  const taskKindsRaw = String(params.get('pvamTaskKinds') || 'decompose_factors,partial_cells,partial_sums,mixed_process,final_product')
+    .split(',')
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const taskKinds = taskKindsRaw
+    .filter((kind) => supportedTaskKinds.has(kind))
+    .map((kind) => (kind === 'partial_sum'
+      ? 'partial_sums'
+      : (kind === 'decompose' ? 'decompose_factors' : kind)));
+  const finalTaskKinds = taskKinds.length ? taskKinds : ['decompose_factors', 'partial_cells', 'partial_sums', 'mixed_process', 'final_product'];
+
+  const bank = generatePlaceValueAreaModelBank({
+    count,
+    seed: Number.isInteger(seed) ? seed : 1,
+    min,
+    max,
+    taskKinds: finalTaskKinds
+  });
+  const validation = validateQuestionBank(bank);
+  if (!validation.valid) {
+    console.warn('pvam demo bank invalid', validation.errors);
+    return null;
+  }
+  return bank;
+};
+
+const buildPvamPresetQuestionBank = (preset, settings) => {
+  const config = preset?.pvamDemo;
+  if (!config) return null;
+
+  const countFallback = Math.max(1, Math.min(20, Number(settings?.questionCount) || 10));
+  const count = Math.max(1, Math.min(50, Number(config.count) || countFallback));
+  const seed = Number.isInteger(config.seed) ? config.seed : 1;
+  const min = Math.max(10, Math.min(99, Number(config.min) || 11));
+  const max = Math.max(min, Math.min(99, Number(config.max) || 99));
+  const supportedTaskKinds = new Set(['decompose_factors', 'decompose', 'final_product', 'partial_cells', 'partial_sums', 'partial_sum', 'mixed_process']);
+  const taskKinds = Array.isArray(config.taskKinds)
+    ? config.taskKinds
+        .filter((kind) => supportedTaskKinds.has(kind))
+        .map((kind) => (kind === 'partial_sum'
+          ? 'partial_sums'
+          : (kind === 'decompose' ? 'decompose_factors' : kind)))
+    : [];
+
+  const bank = generatePlaceValueAreaModelBank({
+    count,
+    seed,
+    min,
+    max,
+    taskKinds: taskKinds.length ? taskKinds : ['decompose_factors', 'partial_cells', 'partial_sums', 'mixed_process', 'final_product']
+  });
+  const validation = validateQuestionBank(bank);
+  if (!validation.valid) {
+    console.warn('pvam preset bank invalid', validation.errors);
+    return null;
+  }
+  return bank;
+};
+
+const loadLauncherSetup = () => {
+  try {
+    const raw = localStorage.getItem(LAUNCHER_SETUP_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : null;
+  } catch (err) {
+    console.warn('failed to load launcher setup', err);
+    return null;
+  }
+};
+
+const buildCsvBankFromLauncherSetup = (launcher) => {
+  const enabled = launcher?.customCsvEnabled === true;
+  const text = typeof launcher?.customCsvText === 'string' ? launcher.customCsvText : '';
+  if (!enabled || !text.trim()) {
+    return { bank: null, message: '' };
+  }
+  const parsed = parseUploadedQuestionBankText(text, {
+    fileName: typeof launcher?.customCsvFileName === 'string' ? launcher.customCsvFileName : ''
+  });
+  if (!parsed.bank) {
+    return { bank: null, message: `런처 업로드 문제 무시: ${parsed.error || '파싱 실패'}` };
+  }
+  const formatLabel = parsed.format === 'json' ? '문제팩(JSON)' : 'CSV';
+  return {
+    bank: parsed.bank,
+    message: `런처 ${formatLabel} 문제 ${parsed.bank.questions.length}개를 사용합니다.`
+  };
+};
+
+const hydrateCsvBankFromLauncherStorage = () => {
+  const launcher = loadLauncherSetup();
+  if (!launcher) return;
+  const launcherCsv = presetId === 'csv-upload'
+    ? buildCsvBankFromLauncherSetup(launcher)
+    : { bank: null, message: '' };
+  if (!launcherCsv.bank) return;
+  uploadedCsvQuestionBank = launcherCsv.bank;
+  if (settingsInputs.customEnabled) settingsInputs.customEnabled.value = 'true';
+  if (settingsInputs.customCsvEnabled) settingsInputs.customCsvEnabled.value = 'true';
+  setCustomCsvStatus(launcherCsv.message || `런처 업로드 문제 ${launcherCsv.bank.questions.length}개 로드 완료`, 'success');
+};
+
+const buildLauncherBasicQuizSettings = () => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('launchMode') !== 'play' || params.get('fromLauncher') !== '1') return null;
+  if (!defaultSettings) return null;
+
+  const launcher = loadLauncherSetup();
+  if (!launcher || launcher.gameMode !== 'basic-quiz') return null;
+
+  const presetId = String(launcher.quizPresetId || '').trim();
+  const launcherQuizEndMode = launcher.quizEndMode === 'time' ? 'time' : 'count';
+  const launcherQuizCountLimitRaw = Math.round(Number(launcher.quizCountLimit) || 0);
+  const launcherQuizTimeLimitSec = Math.max(10, Math.min(3600, Math.round(Number(launcher.quizTimeLimitSec) || 180)));
+  const playerCount = Math.max(1, Math.min(6, Math.round(Number(launcher.players) || 1)));
+  const playerNames = Array.isArray(launcher.playerNames)
+    ? launcher.playerNames
+        .slice(0, playerCount)
+        .map((name, idx) => (typeof name === 'string' && name.trim()) ? name.trim() : `사용자${idx + 1}`)
+    : Array.from({ length: playerCount }, (_, idx) => `사용자${idx + 1}`);
+  const playerTags = Array.isArray(launcher.playerTags)
+    ? launcher.playerTags
+        .slice(0, playerCount)
+        .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))
+    : Array.from({ length: playerCount }, () => '');
+
+  const baseMode = basicModes['12q']?.settings || {};
+  const settings = mergeSettings(defaultSettings, baseMode);
+  settings.playerCount = playerCount;
+  settings.twoPlayerLayout = '1x2';
+  settings.groupNames = playerNames;
+  settings.studentIds = playerTags;
+  settings.studentId = '01';
+  settings.rankingEnabled = false;
+  settings.customQuestionMode = false;
+  settings.customQuestionIds = [];
+  settings.quizEndMode = launcherQuizEndMode;
+  settings.quizTimeLimitSec = launcherQuizEndMode === 'time' ? launcherQuizTimeLimitSec : 0;
+  settings.timeLimitSec = 30;
+  settings.selectionMode = 'random';
+  settings.avoidRepeat = true;
+  settings.shuffleChoices = true;
+  settings.wrongDelaySec = 3;
+  settings.score = {
+    ...settings.score,
+    comboEnabled: false,
+    comboBonus: 0,
+    timeBonusEnabled: false,
+    timeBonusPerSec: 0,
+    timeBonusMaxRatio: 0
+  };
+
+  const setAllTypeCounts = (countEach) => {
+    Object.keys(settings.questionTypes || {}).forEach((key) => {
+      settings.questionTypes[key] = { ...(settings.questionTypes[key] || {}), enabled: true, count: countEach };
+    });
+  };
+  const setShapeOnlyCounts = (prefix, countEach) => {
+    Object.keys(settings.questionTypes || {}).forEach((key) => {
+      const enabled = key.startsWith(prefix);
+      settings.questionTypes[key] = { ...(settings.questionTypes[key] || {}), enabled, count: enabled ? countEach : 0 };
+    });
+  };
+
+  switch (presetId) {
+    case 'jumpmap-net-30':
+      setAllTypeCounts(5);
+      break;
+    case 'jumpmap-net-12':
+      setAllTypeCounts(2);
+      break;
+    case 'cube-only-24':
+      setShapeOnlyCounts('cube_', 8);
+      break;
+    case 'cuboid-only-24':
+      setShapeOnlyCounts('cuboid_', 8);
+      break;
+    default:
+      setAllTypeCounts(2);
+      break;
+  }
+
+  settings.questionCount = Object.values(settings.questionTypes || {})
+    .reduce((sum, cfg) => sum + ((cfg && cfg.enabled) ? (cfg.count || 0) : 0), 0);
+  const baseQuestionCount = Math.max(1, settings.questionCount);
+  const launcherQuizCountLimit = launcherQuizCountLimitRaw > 0
+    ? Math.max(1, Math.min(baseQuestionCount, launcherQuizCountLimitRaw))
+    : baseQuestionCount;
+  if (launcherQuizEndMode !== 'time') {
+    settings.questionCount = launcherQuizCountLimit;
+  }
+  settings.loopQuestions = settings.quizEndMode === 'time';
+  const launcherCsv = buildCsvBankFromLauncherSetup(launcher);
+  return {
+    settings,
+    launcherCsv,
+    launcherQuizCountLimit
+  };
+};
+
+const maybeAutoStartQuizFromLauncher = () => {
+  const launcherConfig = buildLauncherBasicQuizSettings();
+  if (!launcherConfig) return false;
+  const { settings, launcherCsv, launcherQuizCountLimit } = launcherConfig;
+  if (launcherCsv?.bank) {
+    uploadedCsvQuestionBank = launcherCsv.bank;
+    settings.customQuestionMode = true;
+    settings.customCsvMode = true;
+    settings.customQuestionIds = [];
+    const availableCount = launcherCsv.bank.questions.length;
+    settings.questionCount = settings.quizEndMode === 'time'
+      ? availableCount
+      : Math.max(1, Math.min(availableCount, launcherQuizCountLimit || availableCount));
+    setLoadStatus(launcherCsv.message || '런처 업로드 문제를 불러왔습니다.', 'success');
+  } else if (launcherCsv?.message) {
+    uploadedCsvQuestionBank = null;
+    setLoadStatus(launcherCsv.message, 'fail');
+  } else {
+    setLoadStatus('런처 설정으로 기본 퀴즈를 시작합니다.', 'success');
+  }
+  startQuizWithSettings(settings, false);
+  return true;
+};
+
 const loadSavedWrongs = () => {
   if (!savedWrongListEl) return [];
-  try {
-    const raw = localStorage.getItem(WRONG_STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (err) {
-    console.warn('failed to load saved wrongs', err);
-    return [];
-  }
+  return clonePersisted(cachedSavedWrongs);
 };
 
 const loadStudentNames = () => {
-  try {
-    const raw = localStorage.getItem(STUDENT_NAMES_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (err) {
-    console.warn('failed to load student names', err);
-    return [];
-  }
+  return clonePersisted(cachedStudentNames);
 };
 
 const saveStudentNames = (list) => {
-  try {
-    localStorage.setItem(STUDENT_NAMES_KEY, JSON.stringify(list));
-  } catch (err) {
-    console.warn('failed to save student names', err);
-  }
+  cachedStudentNames = Array.isArray(list) ? clonePersisted(list) : [];
+  persistQuizStoreValue(QUIZ_STORE_KEY_STUDENT_NAMES, cachedStudentNames, STUDENT_NAMES_KEY);
 };
 
 const parseGroupNames = (value) => {
@@ -615,6 +1256,219 @@ const parseCustomIds = (value) => {
     .split(/[\n,]+/)
     .map((entry) => entry.trim())
     .filter((entry) => entry.length > 0);
+};
+
+const setCustomCsvStatus = (message, type) => {
+  if (!customCsvStatusEl) return;
+  customCsvStatusEl.textContent = message || '';
+  customCsvStatusEl.classList.remove('success', 'fail', 'warn');
+  if (type) customCsvStatusEl.classList.add(type);
+};
+
+const resolveQuestionBankFromJsonPayload = (payload) => {
+  if (!payload) return null;
+  if (Array.isArray(payload)) {
+    return { version: 1, questions: payload };
+  }
+  if (typeof payload !== 'object') return null;
+  if (Array.isArray(payload.questions)) return payload;
+  if (payload.bank && typeof payload.bank === 'object' && Array.isArray(payload.bank.questions)) {
+    return payload.bank;
+  }
+  if (payload.questionBank && typeof payload.questionBank === 'object' && Array.isArray(payload.questionBank.questions)) {
+    return payload.questionBank;
+  }
+  return null;
+};
+
+const cloneQuestionBank = (bank) => JSON.parse(JSON.stringify(bank));
+
+const parseUploadedQuestionBankText = (text, { fileName = '' } = {}) => {
+  const sourceText = String(text || '');
+  const trimmed = sourceText.trim();
+  if (!trimmed) {
+    return { bank: null, format: '', error: '업로드 파일이 비어 있습니다.' };
+  }
+
+  const normalizedName = String(fileName || '').trim().toLowerCase();
+  const forceJson = normalizedName.endsWith('.json');
+  const forceCsv = normalizedName.endsWith('.csv');
+  const tryJsonFirst = forceJson || (!forceCsv && /^[\[{]/.test(trimmed));
+
+  const tryParseJson = () => {
+    try {
+      const payload = JSON.parse(trimmed);
+      const bankCandidate = resolveQuestionBankFromJsonPayload(payload);
+      if (!bankCandidate?.questions?.length) {
+        return { bank: null, format: 'json', error: 'JSON 문제팩에서 questions 목록을 찾지 못했습니다.' };
+      }
+      const validation = validateQuestionBank(bankCandidate);
+      if (!validation.valid) {
+        return { bank: null, format: 'json', error: `문제 형식 오류: ${validation.errors[0]}` };
+      }
+      return { bank: cloneQuestionBank(bankCandidate), format: 'json', warnings: [] };
+    } catch (error) {
+      return { bank: null, format: 'json', error: `JSON 파싱 실패: ${error?.message || 'invalid json'}` };
+    }
+  };
+
+  const tryParseCsv = () => {
+    const parsed = parseCsvQuestionBank(sourceText);
+    if (!parsed.valid || !parsed.bank) {
+      const firstError = parsed.errors?.[0] || 'CSV 파싱 실패';
+      return { bank: null, format: 'csv', error: firstError };
+    }
+    const validation = validateQuestionBank(parsed.bank);
+    if (!validation.valid) {
+      return { bank: null, format: 'csv', error: `문제 형식 오류: ${validation.errors[0]}` };
+    }
+    return {
+      bank: parsed.bank,
+      format: 'csv',
+      warnings: Array.isArray(parsed.warnings) ? parsed.warnings : []
+    };
+  };
+
+  if (tryJsonFirst) {
+    const jsonResult = tryParseJson();
+    if (jsonResult.bank || forceJson) return jsonResult;
+    if (!forceCsv) {
+      const csvResult = tryParseCsv();
+      if (csvResult.bank) return csvResult;
+      return { bank: null, format: '', error: `${jsonResult.error} / ${csvResult.error}` };
+    }
+    return jsonResult;
+  }
+
+  const csvResult = tryParseCsv();
+  if (csvResult.bank || forceCsv) return csvResult;
+  const jsonResult = tryParseJson();
+  if (jsonResult.bank) return jsonResult;
+  return { bank: null, format: '', error: `${csvResult.error} / ${jsonResult.error}` };
+};
+
+const clearCsvQuestionBank = ({ silent = false } = {}) => {
+  uploadedCsvQuestionBank = null;
+  if (settingsInputs.customCsvEnabled) {
+    settingsInputs.customCsvEnabled.value = 'false';
+  }
+  if (customCsvFileInput) {
+    customCsvFileInput.value = '';
+  }
+  if (!silent) {
+    setCustomCsvStatus('업로드된 문제 파일을 해제했습니다.', 'warn');
+  }
+  applyQuestionModeUI();
+};
+
+const isTextChoiceQuestion = (question) => (
+  question?.renderKind === 'text_choice'
+  || question?.type === 'csv_choice'
+);
+
+const isTextShortAnswerQuestion = (question) => (
+  question?.renderKind === 'text_short_answer'
+  || question?.type === 'csv_subjective'
+);
+
+const buildCsvTemplate = () => [
+  ['문제 내용', '선택지1', '선택지2', '선택지3(선택)', '선택지4(선택)', '정답번호', '문제시간(초)', '정답인정단어', '단어포함시정답처리여부'],
+  ['37 x 24의 값을 고르세요.', '888', '740', '148', '628', '1', '20', '', ''],
+  ['(30+7) x (20+4) 에서 30x4는?', '120', '140', '600', '28', '1', '15', '', ''],
+  ['세종대왕의 이름을 쓰세요.', '', '', '', '', '', '0', '세종,세종대왕', 'Y']
+].map((row) => row.map((value) => `"${String(value).replace(/"/g, '""')}"`).join(',')).join('\n');
+
+const loadCsvQuestionBankFromFile = async (file) => {
+  if (!file) {
+    setCustomCsvStatus('CSV 또는 JSON 문제 파일을 선택해 주세요.', 'fail');
+    return;
+  }
+  const name = String(file.name || '').toLowerCase();
+  if (!name.endsWith('.csv') && !name.endsWith('.json')) {
+    setCustomCsvStatus('CSV(.csv) 또는 JSON(.json) 파일만 업로드할 수 있습니다.', 'fail');
+    return;
+  }
+  const text = await file.text();
+  const parsed = parseUploadedQuestionBankText(text, { fileName: file.name || '' });
+  if (!parsed.bank) {
+    setCustomCsvStatus(parsed.error || '문제 파일 파싱 실패', 'fail');
+    return;
+  }
+
+  uploadedCsvQuestionBank = parsed.bank;
+  if (settingsInputs.customCsvEnabled) settingsInputs.customCsvEnabled.value = 'true';
+  if (settingsInputs.customEnabled) settingsInputs.customEnabled.value = 'true';
+  applyQuestionModeUI();
+
+  const warning = parsed.warnings?.[0] ? ` · 참고: ${parsed.warnings[0]}` : '';
+  const formatLabel = parsed.format === 'json' ? 'JSON 문제팩' : 'CSV 문제';
+  setCustomCsvStatus(
+    `${formatLabel} ${uploadedCsvQuestionBank.questions.length}개 로드 완료${warning}`,
+    'success'
+  );
+  setLoadStatus(`업로드 문제 ${uploadedCsvQuestionBank.questions.length}개를 사용할 준비가 되었습니다.`, 'success');
+};
+
+const buildQuestionBankForPackExport = () => {
+  const settings = readSettings();
+  if (settings.customCsvMode && uploadedCsvQuestionBank?.questions?.length) {
+    return {
+      bank: cloneQuestionBank(uploadedCsvQuestionBank),
+      source: 'upload'
+    };
+  }
+  if (settings.customQuestionMode && settings.customQuestionIds?.length) {
+    const customBank = buildCustomQuestionBank(settings.customQuestionIds);
+    if (!customBank?.questions?.length) {
+      return { bank: null, error: '선택한 문제 ID를 찾지 못했습니다.' };
+    }
+    return {
+      bank: cloneQuestionBank(customBank),
+      source: 'custom-ids'
+    };
+  }
+  const generated = buildWeightedQuestionBank(banks, settings);
+  if (!generated?.questions?.length) {
+    return { bank: null, error: '현재 설정으로 문제를 구성하지 못했습니다.' };
+  }
+  return {
+    bank: cloneQuestionBank(generated),
+    source: 'weighted'
+  };
+};
+
+const exportQuestionPackJson = () => {
+  const built = buildQuestionBankForPackExport();
+  if (!built.bank) {
+    const message = built.error || '문제팩 생성 실패';
+    setCustomCsvStatus(message, 'fail');
+    setLoadStatus(message, 'fail');
+    return;
+  }
+  const payload = {
+    kind: 'knolquiz-question-pack',
+    version: 1,
+    title: 'math-net 문제팩',
+    createdAt: new Date().toISOString(),
+    source: {
+      app: window.location.host.includes('math-net-master-quiz')
+        ? 'math-net-master-quiz/quiz'
+        : 'knolquiz/quiz',
+      mode: built.source
+    },
+    bank: built.bank
+  };
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const fileName = `knolquiz-question-pack-${stamp}.json`;
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = fileName;
+  link.click();
+  URL.revokeObjectURL(url);
+  setCustomCsvStatus(`문제팩(JSON) ${payload.bank.questions.length}문항 저장 완료`, 'success');
+  setLoadStatus('문제팩(JSON) 저장 완료. 런처에서 업로드해 사용할 수 있습니다.', 'success');
 };
 
 const getTotalTypeCount = () => {
@@ -769,14 +1623,22 @@ const renderCustomQuestionList = () => {
 const updateCustomPanelVisibility = () => {
   if (!customPanelEl || !settingsInputs.customEnabled) return;
   const enabled = settingsInputs.customEnabled.value === 'true';
+  const csvMode = settingsInputs.customCsvEnabled?.value === 'true'
+    && uploadedCsvQuestionBank?.questions?.length > 0;
   customPanelEl.classList.toggle('hidden', !enabled);
   if (enabled) {
-    renderCustomQuestionList();
+    if (!csvMode) renderCustomQuestionList();
+  }
+  customPanelEl.classList.toggle('csv-loaded', Boolean(csvMode));
+  if (csvMode && customCsvStatusEl && !customCsvStatusEl.textContent.trim()) {
+    setCustomCsvStatus(`업로드 문제 ${uploadedCsvQuestionBank.questions.length}개가 적용됩니다.`, 'success');
   }
 };
 
 const applyQuestionModeUI = () => {
   const isCustom = settingsInputs.customEnabled?.value === 'true';
+  const csvMode = settingsInputs.customCsvEnabled?.value === 'true'
+    && uploadedCsvQuestionBank?.questions?.length > 0;
   if (modeButtons.length) {
     modeButtons.forEach((btn) => {
       const mode = btn.dataset.modeSelect;
@@ -784,9 +1646,17 @@ const applyQuestionModeUI = () => {
     });
   }
   if (modeHelp) {
-    modeHelp.textContent = isCustom
-      ? '현재: 교사 커스텀 문제 사용 중 (전개도 문제 세트는 반영되지 않음)'
-      : '현재: 전개도 문제 세트 사용 중 (교사 커스텀 문제는 반영되지 않음)';
+    if (csvToolMode) {
+      modeHelp.textContent = csvMode
+        ? `현재: 업로드 문제 사용 중 (${uploadedCsvQuestionBank.questions.length}문항)`
+        : '현재: 업로드 파일 대기 중';
+    } else if (!isCustom) {
+      modeHelp.textContent = '현재: 전개도 문제 세트 사용 중 (교사 커스텀 문제는 반영되지 않음)';
+    } else if (csvMode) {
+      modeHelp.textContent = `현재: 업로드 문제 사용 중 (${uploadedCsvQuestionBank.questions.length}문항)`;
+    } else {
+      modeHelp.textContent = '현재: 교사 커스텀 문제 사용 중 (전개도 문제 세트는 반영되지 않음)';
+    }
   }
   if (typeToggle) {
     typeToggle.disabled = isCustom;
@@ -800,6 +1670,34 @@ const applyQuestionModeUI = () => {
   }
   updateCountConfirmStatus();
   updateCustomPanelVisibility();
+};
+
+const applyCsvToolModeUI = () => {
+  if (!csvToolMode) return;
+  document.body.classList.add('csv-tool-mode');
+  if (quizAppTitleEl) {
+    quizAppTitleEl.textContent = '업로드 문제 생성 퀴즈';
+  }
+  if (appModeBannerEl) {
+    appModeBannerEl.textContent = '업로드 문제(CSV/JSON) 전용 모드입니다. 기존 문제은행 선택 기능은 숨김 처리됩니다.';
+    appModeBannerEl.classList.remove('hidden');
+  }
+  if (advancedSettings) {
+    advancedSettings.classList.remove('hidden');
+  }
+  if (advancedToggle) {
+    advancedToggle.classList.add('hidden');
+  }
+  if (settingsInputs.customEnabled) {
+    settingsInputs.customEnabled.value = 'true';
+  }
+  if (uploadedCsvQuestionBank?.questions?.length && settingsInputs.customCsvEnabled) {
+    settingsInputs.customCsvEnabled.value = 'true';
+  }
+  applyQuestionModeUI();
+  if (!uploadedCsvQuestionBank?.questions?.length) {
+    setLoadStatus('업로드 문제 생성 모드입니다. 문제양식(CSV/JSON) 업로드 후 시작하세요.', null);
+  }
 };
 
 const invalidateConfirmedCounts = () => {
@@ -845,23 +1743,12 @@ const clearCustomSelection = () => {
 
 const loadGroupNames = () => {
   if (!groupNameListEl) return [];
-  try {
-    const raw = localStorage.getItem(GROUP_NAMES_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (err) {
-    console.warn('failed to load group names', err);
-    return [];
-  }
+  return clonePersisted(cachedGroupNames);
 };
 
 const saveGroupNames = (list) => {
-  try {
-    localStorage.setItem(GROUP_NAMES_KEY, JSON.stringify(list));
-  } catch (err) {
-    console.warn('failed to save group names', err);
-  }
+  cachedGroupNames = Array.isArray(list) ? clonePersisted(list) : [];
+  persistQuizStoreValue(QUIZ_STORE_KEY_GROUP_NAMES, cachedGroupNames, GROUP_NAMES_KEY);
 };
 
 const formatGroupLabel = (names) => {
@@ -981,11 +1868,8 @@ const handleSaveStudentName = () => {
 };
 
 const saveSavedWrongs = (list) => {
-  try {
-    localStorage.setItem(WRONG_STORAGE_KEY, JSON.stringify(list));
-  } catch (err) {
-    console.warn('failed to save wrongs', err);
-  }
+  cachedSavedWrongs = Array.isArray(list) ? clonePersisted(list) : [];
+  persistQuizStoreValue(QUIZ_STORE_KEY_WRONGS, cachedSavedWrongs, WRONG_STORAGE_KEY);
 };
 
 const formatTimestamp = (date) => {
@@ -1107,6 +1991,22 @@ const openPresetModal = (preset) => {
   }
   if (presetSummary && defaultSettings) {
     const merged = mergeSettings(defaultSettings, preset.settings || {});
+    if (preset?.pvamDemo) {
+      const config = preset.pvamDemo;
+      const taskKinds = Array.isArray(config.taskKinds) && config.taskKinds.length
+        ? config.taskKinds.join(', ')
+        : 'final_product, partial_cells';
+      const lines = [
+        '모드: 자릿값 기반 직사각형 영역모델 곱셈(구조화 입력)',
+        `문항 수: ${config.count ?? 10}`,
+        `범위: ${config.min ?? 11} ~ ${config.max ?? 99} (2자리 x 2자리)`,
+        `문항 종류: ${taskKinds}`,
+        `선택지 퀴즈와 별도 데모 bank로 시작`
+      ];
+      presetSummary.innerHTML = `<ul>${lines.map((line) => `<li>${line}</li>`).join('')}</ul>`;
+      presetModal.classList.remove('hidden');
+      return;
+    }
     const typeCounts = Object.entries(merged.questionTypes || {})
       .filter(([, cfg]) => cfg.enabled && (cfg.count ?? 0) > 0)
       .map(([key, cfg]) => {
@@ -1117,9 +2017,11 @@ const openPresetModal = (preset) => {
       ? typeCounts.map((item) => `${item.label} ${item.count}`).join(', ')
       : '없음';
     const totalCount = typeCounts.reduce((sum, item) => sum + item.count, 0);
-    const customSummary = merged.customQuestionMode
-      ? `문제 직접 선택 및 출제: ${merged.customQuestionIds?.length || 0}개`
-      : '문제 직접 선택 및 출제: 사용 안 함';
+    const customSummary = merged.customCsvMode
+      ? `업로드 문제 사용: ${uploadedCsvQuestionBank?.questions?.length || 0}개`
+      : (merged.customQuestionMode
+        ? `문제 직접 선택 및 출제: ${merged.customQuestionIds?.length || 0}개`
+        : '문제 직접 선택 및 출제: 사용 안 함');
     const lines = [
       `플레이어: ${merged.playerCount ?? 1}`,
       `종료 기준: ${merged.quizEndMode === 'time' ? `시간 ${merged.quizTimeLimitSec || 0}초` : `문제 ${totalCount}문제`}`,
@@ -1152,7 +2054,12 @@ const applyPresetAndStart = () => {
   applyDefaultSettings(merged);
   syncRepeatSetting();
   updateCustomPanelVisibility();
+  const pvamPresetBank = buildPvamPresetQuestionBank(pendingPreset, merged);
   closePresetModal();
+  if (pvamPresetBank) {
+    startQuizWithSettings(merged, false, pvamPresetBank);
+    return;
+  }
   startQuiz();
 };
 
@@ -1211,7 +2118,11 @@ const openBasicModal = (modeKey) => {
   if (!mode) return;
   pendingBasicMode = modeKey;
   if (basicTitle) basicTitle.textContent = mode.label;
-  if (basicDesc) basicDesc.textContent = '인원, 시간/문제 수, 보너스를 조정할 수 있어요.';
+  if (basicDesc) {
+    basicDesc.textContent = mode.pvamDemo
+      ? '인원과 문제 수를 조정해 자릿값 영역모델 곱셈 퀴즈를 시작합니다.'
+      : '인원, 시간/문제 수, 보너스를 조정할 수 있어요.';
+  }
   if (basicPlayers) basicPlayers.value = '1';
   if (basicRanking) basicRanking.value = mode.settings.rankingEnabled ? 'true' : 'false';
   if (basicGame) basicGame.value = 'quiz';
@@ -1246,7 +2157,11 @@ const applyBasicMode = () => {
   if (!pendingBasicMode || !defaultSettings) return;
   const mode = basicModes[pendingBasicMode];
   if (!mode) return;
-  if (basicDesc) basicDesc.textContent = '인원, 시간/문제 수, 보너스를 조정할 수 있어요.';
+  if (basicDesc) {
+    basicDesc.textContent = mode.pvamDemo
+      ? '인원과 문제 수를 조정해 자릿값 영역모델 곱셈 퀴즈를 시작합니다.'
+      : '인원, 시간/문제 수, 보너스를 조정할 수 있어요.';
+  }
   const isTimeMode = mode.settings.quizEndMode === 'time';
   const timeValue = Math.max(0, Number(basicTime?.value) || 0);
   const countValue = Math.max(0, Number(basicCount?.value) || 0);
@@ -1283,12 +2198,28 @@ const applyBasicMode = () => {
   if (basicTimeBonusPer) merged.score.timeBonusPerSec = Math.max(0, Number(basicTimeBonusPer.value) || 0);
   if (basicTimeBonusCap) merged.score.timeBonusMaxRatio = Math.max(0, Number(basicTimeBonusCap.value) || 0);
 
+  let pvamDemoBank = null;
+  if (mode.pvamDemo) {
+    const pvamMode = {
+      ...mode,
+      pvamDemo: {
+        ...mode.pvamDemo,
+        count: (!isTimeMode && countValue > 0) ? countValue : (mode.pvamDemo.count ?? 10)
+      }
+    };
+    pvamDemoBank = buildPvamPresetQuestionBank(pvamMode, merged);
+    if (!pvamDemoBank) {
+      if (basicDesc) basicDesc.textContent = '영역모델 데모 문제 생성에 실패했습니다.';
+      return;
+    }
+  }
+
   closeBasicModal();
   if (playerCount === 2 && twoPlayerLayout === '1x2') {
     openFaceModal(merged);
     return;
   }
-  startQuizWithSettings(merged, false);
+  startQuizWithSettings(merged, false, pvamDemoBank || undefined);
 };
 
 const startWithFaceSetting = (faceToFace) => {
@@ -1357,6 +2288,9 @@ const readSettings = () => {
   const groupNames = parseGroupNames(groupNamesInput?.value || '');
   const rankingEnabled = settingsInputs.ranking?.value === 'true';
   const customQuestionMode = settingsInputs.customEnabled?.value === 'true';
+  const customCsvMode = customQuestionMode
+    && settingsInputs.customCsvEnabled?.value === 'true'
+    && uploadedCsvQuestionBank?.questions?.length > 0;
   const customQuestionIds = settingsInputs.customIds
     ? parseCustomIds(settingsInputs.customIds.value || '')
     : collectCustomSelectedIds();
@@ -1399,6 +2333,7 @@ const readSettings = () => {
     groupNames,
     rankingEnabled,
     customQuestionMode,
+    customCsvMode,
     customQuestionIds,
     questionTypes,
     timeLimitSec: Number(settingsInputs.time.value) || 0,
@@ -1438,11 +2373,58 @@ const closeZoom = () => {
   zoomModal.classList.add('hidden');
 };
 
+const renderTextShortAnswerQuestion = ({ choicesEl, question, onSubmit }) => {
+  if (!choicesEl || !isTextShortAnswerQuestion(question)) return;
+  const root = document.createElement('div');
+  root.className = 'short-answer-widget';
+
+  const description = document.createElement('div');
+  description.className = 'short-answer-desc';
+  description.textContent = '답을 직접 입력하고 제출하세요.';
+  root.appendChild(description);
+
+  const inputRow = document.createElement('div');
+  inputRow.className = 'short-answer-row';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.autocomplete = 'off';
+  input.spellcheck = false;
+  input.className = 'short-answer-input';
+  input.placeholder = '정답 입력';
+  input.setAttribute('aria-label', '주관식 정답 입력');
+
+  const submitBtn = document.createElement('button');
+  submitBtn.type = 'button';
+  submitBtn.className = 'primary short-answer-submit';
+  submitBtn.textContent = '제출';
+
+  const submit = () => {
+    if (typeof onSubmit !== 'function') return;
+    onSubmit(input.value || '');
+  };
+
+  submitBtn.addEventListener('click', submit);
+  input.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
+    submit();
+  });
+
+  inputRow.append(input, submitBtn);
+  root.appendChild(inputRow);
+  choicesEl.innerHTML = '';
+  choicesEl.classList.add('structured-choices');
+  choicesEl.style.removeProperty('height');
+  choicesEl.appendChild(root);
+  requestAnimationFrame(() => input.focus());
+};
+
 const updateChoiceLayout = (card) => {
   if (!card) return;
   const choicesEl = card.querySelector('[data-role="choices"]');
   const questionImg = card.querySelector('[data-role="question-img"]');
   if (!choicesEl || !questionImg) return;
+  if (choicesEl.classList.contains('structured-choices')) return;
   const count = choicesEl.children.length;
   if (!count) return;
 
@@ -1646,20 +2628,42 @@ const createPlayerSession = ({ index, studentId, groupName, settings, questionBa
     if (accuracyEl) accuracyEl.textContent = `${accuracy}%`;
   };
 
+  const resolveQuestionTimeLimitSec = (question) => {
+    const questionRaw = question?.timeLimitSec;
+    if (questionRaw == null || questionRaw === '') {
+      return Math.max(0, Number(engine.getState().settings.timeLimitSec) || 0);
+    }
+    const parsed = Number(questionRaw);
+    if (!Number.isFinite(parsed)) {
+      return Math.max(0, Number(engine.getState().settings.timeLimitSec) || 0);
+    }
+    return Math.max(0, parsed);
+  };
+
   const renderQuestion = (question) => {
-    currentQuestion = fixChoices(question);
-    card.classList.toggle('no-question', currentQuestion.type === 'validity');
+    const structuredQuestion = isPlaceValueAreaModelQuestion(question);
+    const shortAnswerQuestion = isTextShortAnswerQuestion(question);
+    currentQuestion = structuredQuestion ? { ...question } : fixChoices(question);
+    const textChoiceQuestion = isTextChoiceQuestion(currentQuestion);
+    card.classList.toggle(
+      'no-question',
+      currentQuestion.type === 'validity' || structuredQuestion || textChoiceQuestion || shortAnswerQuestion
+    );
     if (promptEl) {
       if (currentQuestion.type === 'validity') {
         promptEl.textContent = currentQuestion.mode === 'invalid'
           ? '잘못된 형태의 전개도를 고르세요'
           : '올바른 형태의 전개도를 고르세요';
+      } else if (shortAnswerQuestion) {
+        promptEl.textContent = currentQuestion.prompt || currentQuestion.question || '문항';
+      } else if (textChoiceQuestion) {
+        promptEl.textContent = currentQuestion.prompt || currentQuestion.question || '문항';
       } else {
         promptEl.textContent = currentQuestion.prompt;
       }
     }
     if (questionImg && questionFrame) {
-      if (currentQuestion.type === 'validity') {
+      if (currentQuestion.type === 'validity' || structuredQuestion || textChoiceQuestion || shortAnswerQuestion) {
         questionFrame.style.display = 'none';
         questionImg.removeAttribute('src');
       } else {
@@ -1668,38 +2672,64 @@ const createPlayerSession = ({ index, studentId, groupName, settings, questionBa
         questionImg.onload = () => requestAnimationFrame(() => updateChoiceLayout(card));
       }
     }
-    if (choicesEl) choicesEl.innerHTML = '';
+    if (choicesEl) {
+      choicesEl.innerHTML = '';
+      if (!structuredQuestion) choicesEl.classList.remove('structured-choices');
+      choicesEl.style.removeProperty('height');
+    }
     setFeedback('', null);
     locked = false;
 
-    currentQuestion.choices.forEach((choice, idx) => {
-      const btn = document.createElement('button');
-      const choiceIndex = (idx % 4) + 1;
-      btn.className = `choice-btn choice-color-${choiceIndex}`;
-      btn.dataset.choice = choice;
-      const badge = document.createElement('span');
-      badge.className = 'choice-badge';
-      badge.textContent = `${idx + 1}`;
-      const img = document.createElement('img');
-      img.src = `./nets/${choice}`;
-      img.alt = 'choice';
-      img.onload = () => requestAnimationFrame(() => updateChoiceLayout(card));
-      btn.appendChild(badge);
-      btn.appendChild(img);
-      btn.addEventListener('click', () => handleAnswer(choice, false));
-      choicesEl?.appendChild(btn);
-    });
+    if (structuredQuestion) {
+      renderPlaceValueAreaModelQuestion({
+        choicesEl,
+        question: currentQuestion,
+        onSubmit: (answerInput) => handleAnswer(answerInput, false)
+      });
+    } else if (shortAnswerQuestion) {
+      renderTextShortAnswerQuestion({
+        choicesEl,
+        question: currentQuestion,
+        onSubmit: (answerInput) => handleAnswer(answerInput, false)
+      });
+    } else {
+      currentQuestion.choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        const choiceIndex = (idx % 4) + 1;
+        btn.className = `choice-btn choice-color-${choiceIndex}`;
+        btn.dataset.choice = choice;
+        const badge = document.createElement('span');
+        badge.className = 'choice-badge';
+        badge.textContent = `${idx + 1}`;
+        btn.appendChild(badge);
+        if (textChoiceQuestion) {
+          btn.classList.add('choice-btn-text');
+          const label = document.createElement('span');
+          label.className = 'choice-text';
+          label.textContent = choice;
+          btn.appendChild(label);
+        } else {
+          const img = document.createElement('img');
+          img.src = `./nets/${choice}`;
+          img.alt = 'choice';
+          img.onload = () => requestAnimationFrame(() => updateChoiceLayout(card));
+          btn.appendChild(img);
+        }
+        btn.addEventListener('click', () => handleAnswer(choice, false));
+        choicesEl?.appendChild(btn);
+      });
 
-    requestAnimationFrame(() => updateChoiceLayout(card));
+      requestAnimationFrame(() => updateChoiceLayout(card));
+    }
+    const questionTimeLimitSec = resolveQuestionTimeLimitSec(currentQuestion);
     if (settings.quizEndMode !== 'time') {
-      startTimer(engine.getState().settings.timeLimitSec);
+      startTimer(questionTimeLimitSec);
     } else {
       clearQuestionTimeout();
-      const limitSec = engine.getState().settings.timeLimitSec;
-      if (limitSec > 0) {
+      if (questionTimeLimitSec > 0) {
         questionTimeoutId = setTimeout(() => {
           handleAnswer(null, true);
-        }, limitSec * 1000);
+        }, questionTimeLimitSec * 1000);
       }
     }
   };
@@ -1778,6 +2808,23 @@ const createPlayerSession = ({ index, studentId, groupName, settings, questionBa
       if (value === currentQuestion.answer) btn.classList.add('correct');
       if (value === choice && value !== currentQuestion.answer) btn.classList.add('wrong');
     });
+    if (result.answerKind === 'structured') {
+      const wrongFields = new Set(result.wrongFields || []);
+      const structuredInputs = [...(choicesEl?.querySelectorAll('[data-structured-input]') || [])];
+      structuredInputs.forEach((inputEl) => {
+        inputEl.classList.remove('is-correct', 'is-wrong');
+        if (result.correct) {
+          inputEl.classList.add('is-correct');
+          return;
+        }
+        const fieldId = inputEl.dataset.structuredInput || '';
+        if (wrongFields.has(fieldId)) {
+          inputEl.classList.add('is-wrong');
+        } else {
+          inputEl.classList.add('is-correct');
+        }
+      });
+    }
 
     if (result.correct) {
       setFeedback('정답입니다!', 'success');
@@ -2005,6 +3052,11 @@ const finishAllPlayers = () => {
   summaryCard.classList.remove('hidden');
   quizGrid?.classList.add('hidden');
   const logs = players.map((player) => player.getLog());
+  const inferredStudentNo = resolveSingleStudentNoFromLogs(logs);
+  syncResultNavigationLinks({
+    studentNo: resultFilterContext.studentNo || inferredStudentNo,
+    periodDays: resultFilterContext.periodDays
+  });
   const summaryText = logs
     .map((log) => {
       const label = log.groupName || `학생 ${log.settings.studentId}`;
@@ -2018,10 +3070,23 @@ const finishAllPlayers = () => {
     settings: sessionSettings,
     players: logs
   };
+  latestQuizResultPayload = payload;
 
   if (logOutputEl) {
     logOutputEl.value = JSON.stringify(payload, null, 2);
   }
+
+  saveQuizSessionRecord({
+    settings: sessionSettings,
+    players: logs,
+    source: 'quiz-app'
+  })
+    .then((result) => {
+      console.info('[QuizApp] local record saved', result);
+    })
+    .catch((error) => {
+      console.warn('[QuizApp] local record save failed', error);
+    });
 
   renderRetryActions(logs);
   renderRanking(logs, sessionSettings?.rankingEnabled);
@@ -2073,20 +3138,42 @@ document.addEventListener('keydown', (event) => {
 const startQuizWithSettings = (settings, faceToFace, customBank) => {
   sessionSettings = { ...settings, faceToFace };
   if (logOutputEl) logOutputEl.value = '';
+  const csvCustomBank = settings.customCsvMode && uploadedCsvQuestionBank?.questions?.length
+    ? uploadedCsvQuestionBank
+    : null;
+  const pvamDemoBank = (!customBank && !settings.customQuestionMode)
+    ? buildPvamDemoQuestionBank(settings)
+    : null;
   const customBankFromIds = settings.customQuestionMode && settings.customQuestionIds?.length
     ? buildCustomQuestionBank(settings.customQuestionIds)
     : null;
-  if (settings.customQuestionMode && settings.customQuestionIds?.length && customBankFromIds?.questions?.length) {
+  if (csvCustomBank) {
+    questionBank = csvCustomBank;
+    setLoadStatus(`업로드 문제로 시작합니다. (${questionBank.questions.length}문항)`, 'success');
+  } else if (settings.customQuestionMode && settings.customQuestionIds?.length && customBankFromIds?.questions?.length) {
     questionBank = customBankFromIds;
     setLoadStatus('커스텀 문제로 시작합니다.', 'success');
   } else if (settings.customQuestionMode && settings.customQuestionIds?.length) {
     questionBank = buildWeightedQuestionBank(banks, settings);
     setLoadStatus('커스텀 문제를 찾지 못했습니다. 일반 출제로 시작합니다.', 'fail');
   } else {
-    questionBank = customBank || buildWeightedQuestionBank(banks, settings);
+    questionBank = customBank || pvamDemoBank || buildWeightedQuestionBank(banks, settings);
+    if (pvamDemoBank) {
+      setLoadStatus(`영역모델 데모 문제로 시작합니다. (${questionBank.questions.length}문항)`, 'success');
+    }
   }
-  settings.questionCount = questionBank.questions.length;
-  settings.loopQuestions = settings.quizEndMode === 'time';
+  const availableQuestionCount = questionBank.questions.length;
+  if (availableQuestionCount <= 0) {
+    settings.questionCount = 0;
+    settings.loopQuestions = false;
+  } else if (settings.quizEndMode === 'time') {
+    settings.questionCount = availableQuestionCount;
+    settings.loopQuestions = true;
+  } else {
+    const requestedCount = Math.round(Number(settings.questionCount) || availableQuestionCount);
+    settings.questionCount = Math.max(1, Math.min(availableQuestionCount, requestedCount));
+    settings.loopQuestions = false;
+  }
 
   const isMobile = window.innerWidth < 720;
   const requestedPlayers = settings.playerCount || 1;
@@ -2113,6 +3200,7 @@ const startQuizWithSettings = (settings, faceToFace, customBank) => {
   updateGridLayout(playerCount, settings.twoPlayerLayout, isMobile);
 
   const baseStudent = parseInt(settings.studentId, 10) || 1;
+  const studentIds = Array.isArray(settings.studentIds) ? settings.studentIds : [];
   const groupNames = settings.groupNames || [];
   let finishedCount = 0;
 
@@ -2122,8 +3210,10 @@ const startQuizWithSettings = (settings, faceToFace, customBank) => {
   };
 
   for (let i = 0; i < playerCount; i += 1) {
-    const studentNum = Math.min(99, baseStudent + i);
-    const studentId = `${studentNum}`.padStart(2, '0');
+    const tagRaw = typeof studentIds[i] === 'string' ? studentIds[i].trim() : '';
+    const studentId = tagRaw
+      ? (/^\d+$/.test(tagRaw) ? tagRaw.padStart(2, '0') : tagRaw)
+      : `${Math.min(99, baseStudent + i)}`.padStart(2, '0');
     const groupName = playerCount > 1
       ? (groupNames[i] || `모둠 ${i + 1}`)
       : (groupNames[0] || null);
@@ -2154,6 +3244,10 @@ const startQuizWithSettings = (settings, faceToFace, customBank) => {
 };
 
 const startQuiz = () => {
+  if (csvToolMode && !(uploadedCsvQuestionBank?.questions?.length > 0)) {
+    setLoadStatus('문제 파일(CSV/JSON)을 먼저 업로드해 주세요.', 'fail');
+    return;
+  }
   const settings = readSettings();
   if (settings.playerCount === 2 && settings.twoPlayerLayout === '1x2') {
     openFaceModal(settings);
@@ -2213,6 +3307,9 @@ const init = async () => {
   validityShapePools.cuboid = validityPools.cuboid;
   defaultSettings = await loadJson('./data/quiz-settings.default.json');
   applyDefaultSettings(defaultSettings);
+  await bootstrapQuizPersistentStorage();
+  hydrateCsvBankFromLauncherStorage();
+  applyCsvToolModeUI();
   customPresets = loadCustomPresets();
   renderPresets();
   renderSavedWrongs();
@@ -2222,6 +3319,7 @@ const init = async () => {
   syncRepeatSetting();
   settingsInputs.mode?.addEventListener('change', syncRepeatSetting);
   settingsInputs.customEnabled?.addEventListener('change', updateCustomPanelVisibility);
+  settingsInputs.customCsvEnabled?.addEventListener('change', applyQuestionModeUI);
   settingsInputs.customIds?.addEventListener('input', syncCustomCheckboxes);
   Object.values(typeInputs).forEach((fields) => {
     fields.enabled?.addEventListener('change', () => {
@@ -2233,22 +3331,52 @@ const init = async () => {
   confirmTypeCountsBtn?.addEventListener('click', confirmTypeCounts);
   customRandomBtn?.addEventListener('click', handleRandomCustomSelection);
   customClearBtn?.addEventListener('click', clearCustomSelection);
+  customCsvFileInput?.addEventListener('change', async () => {
+    const [file] = customCsvFileInput.files || [];
+    try {
+      await loadCsvQuestionBankFromFile(file);
+    } catch (error) {
+      console.error(error);
+      setCustomCsvStatus('업로드 파일을 읽는 중 오류가 발생했습니다.', 'fail');
+    }
+  });
+  customCsvClearBtn?.addEventListener('click', () => clearCsvQuestionBank());
+  customCsvTemplateBtn?.addEventListener('click', (event) => {
+    event.preventDefault();
+    const content = buildCsvTemplate();
+    const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'knolquiz-question-template.csv';
+    link.click();
+    URL.revokeObjectURL(url);
+  });
+  customPackExportBtn?.addEventListener('click', (event) => {
+    event.preventDefault();
+    exportQuestionPackJson();
+  });
   updateCustomPanelVisibility();
 
   basicFiveBtn?.addEventListener('click', () => openBasicModal('5min'));
   basicTwelveBtn?.addEventListener('click', () => openBasicModal('12q'));
+  basicPvamBtn?.addEventListener('click', () => openBasicModal('pvam'));
   if (advancedToggle && advancedSettings) {
     const setAdvancedOpen = (open) => {
       advancedSettings.classList.toggle('hidden', !open);
       advancedToggle.textContent = open ? '퀴즈 설계 닫기' : '퀴즈 설계하기';
       advancedToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     };
-    let advancedOpen = false;
+    let advancedOpen = csvToolMode;
     setAdvancedOpen(advancedOpen);
-    advancedToggle.addEventListener('click', () => {
-      advancedOpen = !advancedOpen;
-      setAdvancedOpen(advancedOpen);
-    });
+    if (!csvToolMode) {
+      advancedToggle.addEventListener('click', () => {
+        advancedOpen = !advancedOpen;
+        setAdvancedOpen(advancedOpen);
+      });
+    } else {
+      advancedToggle.classList.add('hidden');
+    }
   }
   if (typeToggle && typeGrid) {
     const setTypeOpen = (open) => {
@@ -2312,6 +3440,11 @@ const init = async () => {
     a.click();
     URL.revokeObjectURL(url);
   });
+  downloadReportCsvBtn?.addEventListener('click', () => {
+    downloadQuizResultReportCsv();
+  });
+
+  maybeAutoStartQuizFromLauncher();
 };
 
 init();
